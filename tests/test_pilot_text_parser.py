@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import io
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import pytest
+from openpyxl import Workbook
 
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
@@ -13,6 +15,7 @@ sys.path.insert(0, str(SCRIPTS))
 from pilot_audit import (  # noqa: E402
     detect_text_encoding,
     inspect_three_column_text_header,
+    read_dispatch_xlsx,
 )
 
 
@@ -58,3 +61,32 @@ def test_header_scan_is_bounded() -> None:
     stream = io.BytesIO(("\uc124\uba85\n" * 101).encode("cp949"))
     with pytest.raises(RuntimeError, match="first 100 lines"):
         inspect_three_column_text_header("dispatch", stream, label="broken.txt")
+
+
+def test_dispatch_xlsx_with_preamble_and_headerless_followup_sheet() -> None:
+    workbook = Workbook()
+    first = workbook.active
+    first.title = "first"
+    first.append(["description"])
+    first.append([None, "시간", "발전기CODE", "BASEPOINT"])
+    first.append([None, datetime(2022, 1, 1, 0, 0), 1, 100.5])
+    first.append([None, datetime(2022, 1, 1, 0, 5), 1, 101.5])
+
+    second = workbook.create_sheet("second")
+    second.append([datetime(2022, 1, 2, 0, 0), 2, 200.5])
+    second.append([datetime(2022, 1, 2, 0, 5), 2, 201.5])
+
+    buffer = io.BytesIO()
+    workbook.save(buffer)
+    workbook.close()
+
+    frame, metadata = read_dispatch_xlsx(buffer.getvalue())
+
+    assert list(frame.columns) == ["TIME", "GEN_CODE", "BASEPOINT"]
+    assert len(frame) == 4
+    assert frame.iloc[0].tolist() == [datetime(2022, 1, 1, 0, 0), 1, 100.5]
+    assert frame.iloc[-1].tolist() == [datetime(2022, 1, 2, 0, 5), 2, 201.5]
+    assert metadata["worksheet_count"] == 2
+    assert metadata["worksheet_layout"][0]["header_row_1based"] == 2
+    assert metadata["worksheet_layout"][0]["data_columns_1based"] == [2, 3, 4]
+    assert metadata["worksheet_layout"][1]["header_row_1based"] is None

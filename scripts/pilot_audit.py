@@ -4,6 +4,7 @@ import codecs
 import csv
 import hashlib
 import io
+import itertools
 import json
 import math
 import time
@@ -13,6 +14,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 MONTH = "2026-07"
@@ -53,6 +55,10 @@ def sha256(path: Path) -> str:
 
 def recover_name(info: zipfile.ZipInfo) -> str:
     if info.flag_bits & 0x800:
+        return info.filename
+    try:
+        return info.filename.encode("cp437").decode("cp949")
+    except (UnicodeEncodeError, UnicodeDecodeError):
         return info.filename
 
 
@@ -129,10 +135,107 @@ def inspect_three_column_text_header(
         f"{source}: could not locate expected 3-column CSV header in first "
         f"{max_lines} lines of {label}"
     )
-    try:
-        return info.filename.encode("cp437").decode("cp949")
-    except (UnicodeEncodeError, UnicodeDecodeError):
-        return info.filename
+
+
+def _dispatch_xlsx_header_columns(row: tuple) -> tuple[int, int, int] | None:
+    values = ["" if value is None else _normalize_header_token(str(value)) for value in row]
+    for start in range(max(0, len(values) - 2)):
+        first, second, third = values[start : start + 3]
+        if third == "BASEPOINT" and "CODE" in second and first:
+            return start, start + 1, start + 2
+    return None
+
+
+def _is_xlsx_timestamp_value(value) -> bool:
+    if isinstance(value, (datetime, pd.Timestamp)):
+        return True
+    if not isinstance(value, str):
+        return False
+    text = value.strip()
+    if len(text) < 10 or "-" not in text:
+        return False
+    return bool(text[:4].isdigit() and text[5:7].isdigit() and text[8:10].isdigit())
+
+
+def _dispatch_xlsx_data_columns(row: tuple) -> tuple[int, int, int] | None:
+    for start in range(max(0, len(row) - 2)):
+        first, second, third = row[start : start + 3]
+        if _is_xlsx_timestamp_value(first) and second is not None and third is not None:
+            return start, start + 1, start + 2
+    return None
+
+
+def read_dispatch_xlsx(data: bytes) -> tuple[pd.DataFrame, dict]:
+    workbook = load_workbook(io.BytesIO(data), read_only=True, data_only=True)
+    frames: list[pd.DataFrame] = []
+    layouts: list[dict] = []
+
+    for worksheet in workbook.worksheets:
+        row_iter = worksheet.iter_rows(values_only=True)
+        probe_rows = list(itertools.islice(row_iter, 20))
+        header_index = None
+        columns = None
+
+        for index, row in enumerate(probe_rows):
+            columns = _dispatch_xlsx_header_columns(row)
+            if columns is not None:
+                header_index = index
+                break
+
+        if columns is not None:
+            data_start = header_index + 1
+        else:
+            data_start = None
+            for index, row in enumerate(probe_rows):
+                columns = _dispatch_xlsx_data_columns(row)
+                if columns is not None:
+                    data_start = index
+                    break
+
+        if columns is None or data_start is None:
+            raise RuntimeError(
+                f"dispatch xlsx: could not locate a 3-column data block in worksheet "
+                f"{worksheet.title!r}"
+            )
+
+        c0, c1, c2 = columns
+        all_rows = itertools.chain(probe_rows[data_start:], row_iter)
+
+        def selected_rows():
+            for row in all_rows:
+                if len(row) <= c2:
+                    continue
+                values = (row[c0], row[c1], row[c2])
+                if all(value is None for value in values):
+                    continue
+                if not _is_xlsx_timestamp_value(values[0]):
+                    continue
+                yield values
+
+        frame = pd.DataFrame(
+            selected_rows(),
+            columns=["TIME", "GEN_CODE", "BASEPOINT"],
+        )
+        frames.append(frame)
+        layouts.append(
+            {
+                "worksheet": worksheet.title,
+                "max_row": worksheet.max_row,
+                "max_column": worksheet.max_column,
+                "header_row_1based": None if header_index is None else header_index + 1,
+                "data_columns_1based": [c0 + 1, c1 + 1, c2 + 1],
+                "parsed_rows": int(len(frame)),
+            }
+        )
+
+    workbook.close()
+    if not frames:
+        raise RuntimeError("dispatch xlsx: workbook has no readable worksheets")
+
+    return pd.concat(frames, ignore_index=True), {
+        "worksheet_count": len(layouts),
+        "worksheet_layout": layouts,
+    }
 
 
 def finite_number_summary(series: pd.Series) -> dict:
@@ -274,29 +377,49 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
             }
         else:
             with z.open(info) as f:
-                encoding, columns, preamble_rows = inspect_three_column_text_header(
-                    source,
-                    f,
-                    label=name,
-                )
-                df = pd.read_csv(
-                    f,
-                    encoding=encoding,
-                    dtype=str,
-                    names=columns,
-                    header=None,
-                    low_memory=False,
-                )
-            physical = {
-                "zip_test_bad_member": bad,
-                "raw_zip_member_name": raw_name,
-                "recovered_member_name": name,
-                "member_size_bytes": info.file_size,
-                "member_compressed_size_bytes": info.compress_size,
-                "physical_format": "comma-delimited text",
-                "encoding_used_for_full_parse": encoding,
-                "preamble_rows_skipped": preamble_rows,
-            }
+                magic = f.read(8)
+
+            if source == "dispatch" and magic[:4] == b"PK\x03\x04":
+                data = z.read(info)
+                df, workbook_meta = read_dispatch_xlsx(data)
+                physical = {
+                    "zip_test_bad_member": bad,
+                    "raw_zip_member_name": raw_name,
+                    "recovered_member_name": name,
+                    "member_size_bytes": info.file_size,
+                    "member_compressed_size_bytes": info.compress_size,
+                    "member_magic_hex": magic.hex(),
+                    "physical_format": "Office Open XML .xlsx workbook",
+                    "reader": "openpyxl.load_workbook(read_only=True, data_only=True)",
+                    "encoding_used_for_full_parse": None,
+                    "preamble_rows_skipped": None,
+                    **workbook_meta,
+                }
+            else:
+                with z.open(info) as f:
+                    encoding, columns, preamble_rows = inspect_three_column_text_header(
+                        source,
+                        f,
+                        label=name,
+                    )
+                    df = pd.read_csv(
+                        f,
+                        encoding=encoding,
+                        dtype=str,
+                        names=columns,
+                        header=None,
+                        low_memory=False,
+                    )
+                physical = {
+                    "zip_test_bad_member": bad,
+                    "raw_zip_member_name": raw_name,
+                    "recovered_member_name": name,
+                    "member_size_bytes": info.file_size,
+                    "member_compressed_size_bytes": info.compress_size,
+                    "physical_format": "comma-delimited text",
+                    "encoding_used_for_full_parse": encoding,
+                    "preamble_rows_skipped": preamble_rows,
+                }
     return df, physical
 
 

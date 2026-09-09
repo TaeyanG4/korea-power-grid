@@ -1,6 +1,6 @@
 # Phase 3 — Checkpoint 2 Plan: Extend to Recent 5 Years
 
-Status: **READY — LONG-RUN COLLECTION NOT STARTED**
+Status: **IN PROGRESS — 72/72 RAW DOWNLOADS COMPLETE; CONTENT QA RUNNING**
 
 Checkpoint 1 already covers 2023-08 through 2026-07. Checkpoint 2 extends the
 logical dataset to a five-year window without regenerating the completed
@@ -16,7 +16,9 @@ Only the missing older segment is required:
 - sources: 3
 - additional source-month records: 72
 
-The existing source index contains all 72 required source-month posts.
+The existing source index contains all 72 required source-month posts. The
+incremental download has completed successfully for all 72 records and raw ZIP
+integrity QA passed with zero problems and zero leftover `.part` files.
 
 ## Long-running collection
 
@@ -92,4 +94,3 @@ Checkpoint 2 is complete only when all of the following hold:
 - extension Parquet manifests are complete
 - the combined logical window is exactly 2021-08 through 2026-07
 - source-level missingness is summarized rather than silently imputed
-
