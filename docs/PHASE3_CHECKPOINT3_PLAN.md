@@ -1,6 +1,6 @@
 # Phase 3 — Checkpoint 3 Plan: Extend to Recent Eight Years
 
-Status: **READY**
+Status: **IN PROGRESS — 108-RECORD INCREMENTAL COLLECTION RUNNING**
 
 Checkpoint 2 validated the logical five-year window `2021-08` through
 `2026-07`. Checkpoint 3 extends it to eight years without regenerating any
