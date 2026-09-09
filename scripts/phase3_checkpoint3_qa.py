@@ -39,6 +39,17 @@ def processed_root_for_month(month: str) -> Path:
 
 def parquet_missing(source: str, month: str) -> pd.DatetimeIndex:
     year, mon = month.split("-")
+    manifest_path = (
+        processed_root_for_month(month)
+        / source
+        / f"year={year}"
+        / f"month={mon}"
+        / "manifest.json"
+    )
+    if manifest_path.exists():
+        manifest = load_json(manifest_path)
+        if manifest.get("status") == "source_unavailable":
+            return month_expected(month)
     path = (
         processed_root_for_month(month)
         / source
@@ -200,12 +211,16 @@ def main() -> int:
         "extension_download_records_108": int(download_qa["manifest_records"]) == 108,
         "extension_download_problem_count_zero": int(download_qa["problem_count"]) == 0,
         "extension_download_part_files_zero": int(download_qa["part_file_count"]) == 0,
-        "extension_format_qa_records_108": int(format_qa["records_inspected"]) == 108,
+        "extension_one_source_unavailable": int(download_qa.get("source_unavailable_count", 0)) == 1,
+        "extension_format_qa_records_accounted_108": int(format_qa["records_accounted"]) == 108,
+        "extension_format_qa_one_source_unavailable": int(format_qa.get("source_unavailable_count", 0)) == 1,
         "extension_format_qa_problem_count_zero": int(format_qa["problem_count"]) == 0,
         "extension_content_qa_records_108": int(extension_content_qa["records"]) == 108,
+        "extension_content_qa_one_source_unavailable": int(extension_content_qa.get("source_unavailable_count", 0)) == 1,
         "extension_processed_summary_records_108": int(extension_summary["records"]) == 108,
         "extension_processed_manifest_records_108": len(extension_manifests) == 108,
-        "extension_processed_all_success": extension_status == Counter({"success": 108}),
+        "extension_processed_status_accounting": extension_status
+        == Counter({"success": 107, "source_unavailable": 1}),
         "extension_timestamp_parse_failures_zero": extension_parse_failures == 0,
         "extension_remaining_candidate_duplicates_zero": (
             extension_remaining_duplicates == 0
@@ -235,6 +250,12 @@ def main() -> int:
             "problem_count": int(download_qa["problem_count"]),
             "part_file_count": int(download_qa["part_file_count"]),
             "total_bytes": int(download_qa["total_bytes"]),
+            "source_unavailable_count": int(
+                download_qa.get("source_unavailable_count", 0)
+            ),
+            "source_unavailable_records": download_qa.get(
+                "source_unavailable_records", []
+            ),
         },
         "processed_extension": {
             "records": len(extension_manifests),
@@ -245,6 +266,7 @@ def main() -> int:
             "parquet_size_bytes": int(extension_summary["parquet_size_bytes"]),
             "timestamp_parse_failure_count": extension_parse_failures,
             "remaining_candidate_key_duplicate_rows": extension_remaining_duplicates,
+            "source_unavailable_records": int(extension_status["source_unavailable"]),
         },
         "logical_eight_year_dataset": {
             "source_month_records": len(all_manifests),
@@ -255,6 +277,9 @@ def main() -> int:
             "timestamp_parse_failure_count": full_parse_failures,
             "exact_duplicate_rows_removed": full_dedup_removed,
             "remaining_candidate_key_duplicate_rows": full_remaining_duplicates,
+            "source_unavailable_records": sum(
+                1 for row in all_manifests if row.get("status") == "source_unavailable"
+            ),
             "roots": [
                 "data/processed/checkpoint_8y_extension",
                 "data/processed/checkpoint_5y_extension",

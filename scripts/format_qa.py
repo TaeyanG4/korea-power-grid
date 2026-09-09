@@ -14,6 +14,7 @@ sys.path.insert(0, str((ROOT / "scripts").resolve()))
 from pilot_audit import (  # noqa: E402
     detect_text_encoding,
     inspect_three_column_text_header,
+    select_source_zip_member,
 )
 
 
@@ -107,6 +108,7 @@ def main() -> int:
 
     details: list[dict] = []
     problems: list[dict] = []
+    unavailable: list[dict] = []
     signatures: Counter[str] = Counter()
 
     months = sorted(
@@ -117,6 +119,21 @@ def main() -> int:
 
     for month in months:
         for source in SOURCES:
+            manifest_path = (
+                ROOT / "data" / "manifests" / "downloads" / source / f"{month}.json"
+            )
+            if manifest_path.exists():
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                if manifest.get("status") == "source_unavailable":
+                    unavailable.append(
+                        {
+                            "source": source,
+                            "month": month,
+                            "status": "source_unavailable",
+                            "evidence": manifest.get("evidence"),
+                        }
+                    )
+                    continue
             path = (
                 ROOT
                 / "data"
@@ -128,11 +145,7 @@ def main() -> int:
             try:
                 with zipfile.ZipFile(path) as archive:
                     infos = archive.infolist()
-                    if len(infos) != 1:
-                        raise RuntimeError(
-                            f"expected one ZIP member, found {len(infos)}"
-                        )
-                    info = infos[0]
+                    info, ignored_members = select_source_zip_member(source, archive)
                     if source == "demand":
                         physical = inspect_demand(archive, info)
                     else:
@@ -148,6 +161,8 @@ def main() -> int:
                     "month": month,
                     "member_name": info.filename,
                     "member_size_bytes": info.file_size,
+                    "outer_zip_member_count": len(infos),
+                    "ignored_outer_zip_members": ignored_members,
                     **physical,
                 }
                 details.append(detail)
@@ -179,6 +194,9 @@ def main() -> int:
         "months": len(months),
         "records_expected": len(months) * len(SOURCES),
         "records_inspected": len(details),
+        "records_accounted": len(details) + len(unavailable),
+        "source_unavailable_count": len(unavailable),
+        "source_unavailable_records": unavailable,
         "problem_count": len(problems),
         "signature_counts": [
             {"signature": json.loads(signature), "records": count}
@@ -196,6 +214,8 @@ def main() -> int:
                 "months": summary["months"],
                 "records_expected": summary["records_expected"],
                 "records_inspected": summary["records_inspected"],
+                "records_accounted": summary["records_accounted"],
+                "source_unavailable_count": summary["source_unavailable_count"],
                 "problem_count": summary["problem_count"],
                 "signature_counts": summary["signature_counts"],
                 "problems": summary["problems"],

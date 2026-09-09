@@ -48,6 +48,39 @@ def process_one(source: str, month: str, out_root: Path) -> dict:
     out_path = out_dir / "data.parquet"
     manifest_path = out_dir / "manifest.json"
 
+    download_manifest_path = (
+        ROOT / "data" / "manifests" / "downloads" / source / f"{month}.json"
+    )
+    if download_manifest_path.exists():
+        download_manifest = json.loads(
+            download_manifest_path.read_text(encoding="utf-8")
+        )
+        if download_manifest.get("status") == "source_unavailable":
+            out_dir.mkdir(parents=True, exist_ok=True)
+            manifest = {
+                "source": source,
+                "month": month,
+                "status": "source_unavailable",
+                "input_zip": None,
+                "output_parquet": None,
+                "source_download_manifest": str(download_manifest_path.relative_to(ROOT)),
+                "source_unavailable_evidence": download_manifest.get("evidence"),
+                "physical": None,
+                "original_columns": None,
+                "candidate_grain": None,
+                "input_rows": 0,
+                "exact_duplicate_rows_removed": 0,
+                "output_rows": 0,
+                "remaining_candidate_key_duplicate_rows": 0,
+                "timestamp_parse_failure_count": 0,
+                "timestamp_min": None,
+                "timestamp_max": None,
+                "parquet_size_bytes": 0,
+                "elapsed_seconds": 0.0,
+            }
+            atomic_json(manifest_path, manifest)
+            return manifest
+
     if out_path.exists() and manifest_path.exists():
         existing = json.loads(manifest_path.read_text(encoding="utf-8"))
         existing["status"] = "skipped_existing"

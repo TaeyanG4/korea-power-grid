@@ -56,6 +56,13 @@ def main() -> int:
             "exists": zip_path.exists(),
         }
 
+        if data.get("status") == "source_unavailable":
+            record["source_unavailable"] = True
+            record["evidence"] = data.get("evidence")
+            record["observed_payload_size"] = data.get("observed_payload_size")
+            records.append(record)
+            continue
+
         if not zip_path.exists():
             problems.append({**record, "problem": "missing_zip"})
             records.append(record)
@@ -116,6 +123,12 @@ def main() -> int:
         "part_file_count": len(part_files),
         "problem_count": len(problems),
         "problems": problems,
+        "source_unavailable_count": sum(
+            1 for record in records if record.get("source_unavailable")
+        ),
+        "source_unavailable_records": [
+            record for record in records if record.get("source_unavailable")
+        ],
     }
 
     out_dir = root / "data" / "audits"

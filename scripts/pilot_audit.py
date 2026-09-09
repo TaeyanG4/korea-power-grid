@@ -238,6 +238,71 @@ def read_dispatch_xlsx(data: bytes) -> tuple[pd.DataFrame, dict]:
     }
 
 
+def select_source_zip_member(
+    source: str,
+    archive: zipfile.ZipFile,
+) -> tuple[zipfile.ZipInfo, list[str]]:
+    """Select the one archive member matching the requested source schema."""
+    infos = archive.infolist()
+    if not infos:
+        raise RuntimeError(f"{source}: ZIP archive has no members")
+    if len(infos) == 1:
+        return infos[0], []
+
+    candidates: list[zipfile.ZipInfo] = []
+    for info in infos:
+        try:
+            with archive.open(info) as handle:
+                probe = handle.read(65536)
+
+            if source == "demand":
+                if probe[:8] == bytes.fromhex("d0cf11e0a1b11ae1"):
+                    candidates.append(info)
+                    continue
+                if probe[:4] == b"PK\x03\x04" and Path(info.filename).suffix.lower() in {
+                    ".xlsx",
+                    ".xlsm",
+                }:
+                    candidates.append(info)
+                    continue
+                encoding = detect_text_encoding(probe[:4096])
+                text = probe.decode(encoding)
+                if any(
+                    "," in line
+                    and ("시간" in line or line.lstrip("\ufeff").upper().startswith("TIME,"))
+                    for line in text.splitlines()[:20]
+                ):
+                    candidates.append(info)
+                continue
+
+            if source == "dispatch" and probe[:4] == b"PK\x03\x04":
+                if Path(info.filename).suffix.lower() in {".xlsx", ".xlsm"}:
+                    candidates.append(info)
+                continue
+
+            if probe[:4] == b"PK\x03\x04":
+                continue
+            with archive.open(info) as handle:
+                inspect_three_column_text_header(
+                    source,
+                    handle,
+                    label=info.filename,
+                )
+            candidates.append(info)
+        except (RuntimeError, UnicodeDecodeError, csv.Error):
+            continue
+
+    if len(candidates) != 1:
+        raise RuntimeError(
+            f"{source}: expected exactly one source-matching ZIP member, "
+            f"found {len(candidates)} among {len(infos)} members"
+        )
+
+    selected = candidates[0]
+    ignored = [recover_name(info) for info in infos if info is not selected]
+    return selected, ignored
+
+
 def finite_number_summary(series: pd.Series) -> dict:
     num = pd.to_numeric(series, errors="coerce")
     values = num.to_numpy(dtype="float64", na_value=np.nan)
@@ -323,9 +388,7 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
     with zipfile.ZipFile(path) as z:
         bad = z.testzip()
         infos = z.infolist()
-        if len(infos) != 1:
-            raise RuntimeError(f"{source}: expected one ZIP member, found {len(infos)}")
-        info = infos[0]
+        info, ignored_members = select_source_zip_member(source, z)
         name = recover_name(info)
         raw_name = info.filename
         if source == "demand":
@@ -365,6 +428,8 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
                 preamble_rows = header_index
             physical = {
                 "zip_test_bad_member": bad,
+                "outer_zip_member_count": len(infos),
+                "ignored_outer_zip_members": ignored_members,
                 "raw_zip_member_name": raw_name,
                 "recovered_member_name": name,
                 "member_size_bytes": info.file_size,
@@ -384,6 +449,8 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
                 df, workbook_meta = read_dispatch_xlsx(data)
                 physical = {
                     "zip_test_bad_member": bad,
+                    "outer_zip_member_count": len(infos),
+                    "ignored_outer_zip_members": ignored_members,
                     "raw_zip_member_name": raw_name,
                     "recovered_member_name": name,
                     "member_size_bytes": info.file_size,
@@ -412,6 +479,8 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
                     )
                 physical = {
                     "zip_test_bad_member": bad,
+                    "outer_zip_member_count": len(infos),
+                    "ignored_outer_zip_members": ignored_members,
                     "raw_zip_member_name": raw_name,
                     "recovered_member_name": name,
                     "member_size_bytes": info.file_size,

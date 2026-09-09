@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import json
@@ -40,6 +40,29 @@ def main() -> int:
         for source in sources:
             n += 1
             print(f"[{n}/{total}] {month} {source}", flush=True)
+            manifest_path = (
+                ROOT / "data/manifests/downloads" / source / f"{month}.json"
+            )
+            if manifest_path.exists():
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                if manifest.get("status") == "source_unavailable":
+                    details.append({
+                        "source": source,
+                        "month": month,
+                        "source_unavailable": True,
+                        "source_unavailable_evidence": manifest.get("evidence"),
+                        "row_count": 0,
+                        "schema": None,
+                        "timestamp_parse_failure_count": 0,
+                        "unique_timestamp_count": 0,
+                        "expected_timestamp_count": int(len(exp)),
+                        "missing_timestamp_count": int(len(exp)),
+                        "missing_examples": [x.isoformat() for x in exp[:20]],
+                        "outside_timestamp_count": 0,
+                        "outside_examples": [],
+                        "duplicate_candidate_key_row_count": 0,
+                    })
+                    continue
             path = ROOT / "data/raw" / source / month / f"{source}_{month.replace('-', '_')}.zip"
             raw, physical = read_source(source, path)
             canonical, schema = normalize(source, raw)
@@ -79,6 +102,12 @@ def main() -> int:
         "end": args.end,
         "months": len(months),
         "records": len(details),
+        "source_unavailable_count": sum(
+            1 for detail in details if detail.get("source_unavailable")
+        ),
+        "source_unavailable_records": [
+            detail for detail in details if detail.get("source_unavailable")
+        ],
         "schema_signatures": {
             s: [{"signature": json.loads(k), "months": v} for k, v in groups.items()]
             for s, groups in signatures.items()

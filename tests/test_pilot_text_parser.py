@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import io
 import sys
+import tempfile
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -16,6 +18,7 @@ from pilot_audit import (  # noqa: E402
     detect_text_encoding,
     inspect_three_column_text_header,
     read_dispatch_xlsx,
+    select_source_zip_member,
 )
 
 
@@ -90,3 +93,24 @@ def test_dispatch_xlsx_with_preamble_and_headerless_followup_sheet() -> None:
     assert metadata["worksheet_layout"][0]["header_row_1based"] == 2
     assert metadata["worksheet_layout"][0]["data_columns_1based"] == [2, 3, 4]
     assert metadata["worksheet_layout"][1]["header_row_1based"] is None
+
+
+def test_state_member_selection_ignores_unrelated_nested_zip() -> None:
+    project_root = Path(__file__).resolve().parents[1]
+    with tempfile.TemporaryDirectory(dir=project_root) as temp_dir:
+        outer_path = Path(temp_dir) / "state.zip"
+        nested_buffer = io.BytesIO()
+        with zipfile.ZipFile(nested_buffer, "w", zipfile.ZIP_DEFLATED) as nested:
+            nested.writestr("reserve.txt", "시간,운전10분_양수제외\n2019-08-01 00,1\n".encode("cp949"))
+        with zipfile.ZipFile(outer_path, "w", zipfile.ZIP_DEFLATED) as outer:
+            outer.writestr(
+                "state.txt",
+                "시간,발전기CODE,상태추정MW\n2019/08/01,IJ1,0\n".encode("cp949"),
+            )
+            outer.writestr("reserve.zip", nested_buffer.getvalue())
+
+        with zipfile.ZipFile(outer_path) as archive:
+            selected, ignored = select_source_zip_member("state_estimation", archive)
+
+        assert selected.filename == "state.txt"
+        assert ignored == ["reserve.zip"]

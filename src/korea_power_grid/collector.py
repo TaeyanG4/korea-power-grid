@@ -154,6 +154,15 @@ def content_disposition_filename(value: str | None) -> str | None:
     return name or None
 
 
+def article_reports_zero_byte_attachment(
+    session: requests.Session,
+    article_url: str,
+) -> bool:
+    text = fetch_text(session, article_url)
+    compact = "".join(text.split()).lower()
+    return "0byte" in compact
+
+
 def wrap_direct_attachment(payload: Path, target: Path, member_name: str) -> None:
     """Store an unchanged direct source payload in a deterministic ZIP wrapper."""
     info = zipfile.ZipInfo(member_name, date_time=(1980, 1, 1, 0, 0, 0))
@@ -286,6 +295,30 @@ def download_record(
                 }
             else:
                 suffix = Path(response_filename or "").suffix.lower()
+                if (
+                    source_payload_size < 32
+                    and article_reports_zero_byte_attachment(session, record.article_url)
+                ):
+                    temp.unlink()
+                    manifest = {
+                        "source": record.source,
+                        "month": record.month,
+                        "source_url": record.article_url,
+                        "attachment_url": record.attachment_url,
+                        "downloaded_at": None,
+                        "file_size": None,
+                        "sha256": None,
+                        "status": "source_unavailable",
+                        "retry_count": attempt,
+                        "source_delivery_format": "official_zero_byte_attachment",
+                        "source_attachment_filename": response_filename,
+                        "observed_payload_size": source_payload_size,
+                        "observed_payload_sha256": source_payload_sha256,
+                        "local_storage_format": None,
+                        "evidence": "official article reports attachment as 0Byte",
+                    }
+                    write_json_atomic(manifest_path, manifest)
+                    return manifest
                 if suffix not in DIRECT_ATTACHMENT_EXTENSIONS:
                     raise RuntimeError(
                         "Downloaded payload is neither a ZIP archive nor a supported "
