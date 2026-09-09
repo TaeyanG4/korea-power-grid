@@ -28,6 +28,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--dry-run", action="store_true", help="Discover and plan only; do not download")
     parser.add_argument("--max-retries", type=int, default=4)
+    parser.add_argument(
+        "--retry-failed-only",
+        action="store_true",
+        help="Only retry source-months whose existing download manifest has a failed status",
+    )
     return parser.parse_args()
 
 
@@ -40,6 +45,7 @@ def main() -> int:
         source_keys=args.sources,
         dry_run=args.dry_run,
         max_retries=args.max_retries,
+        retry_failed_only=args.retry_failed_only,
     )
     counts: dict[str, int] = {}
     for result in results:
@@ -51,4 +57,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

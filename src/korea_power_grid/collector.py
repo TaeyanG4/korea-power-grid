@@ -6,8 +6,10 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
+import shutil
 import time
-from urllib.parse import urljoin
+from urllib.parse import unquote, urljoin
 
 from bs4 import BeautifulSoup
 import requests
@@ -137,6 +139,68 @@ def is_valid_zip(path: Path) -> bool:
         return False
 
 
+DIRECT_ATTACHMENT_EXTENSIONS = {".csv", ".txt", ".xls", ".xlsx"}
+
+
+def content_disposition_filename(value: str | None) -> str | None:
+    if not value:
+        return None
+    utf8_match = re.search(r"filename\*=UTF-8''([^;]+)", value, flags=re.IGNORECASE)
+    plain_match = re.search(r'filename="?([^";]+)"?', value, flags=re.IGNORECASE)
+    raw = utf8_match.group(1) if utf8_match else (plain_match.group(1) if plain_match else None)
+    if raw is None:
+        return None
+    name = unquote(raw).replace("\\", "/").split("/")[-1].strip()
+    return name or None
+
+
+def wrap_direct_attachment(payload: Path, target: Path, member_name: str) -> None:
+    """Store an unchanged direct source payload in a deterministic ZIP wrapper."""
+    info = zipfile.ZipInfo(member_name, date_time=(1980, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.external_attr = 0o644 << 16
+    info.create_system = 3
+
+    with zipfile.ZipFile(target, "w") as archive:
+        with payload.open("rb") as source_handle, archive.open(info, "w") as member_handle:
+            shutil.copyfileobj(source_handle, member_handle, length=1024 * 1024)
+
+
+def existing_manifest_with_file_state(
+    manifest_path: Path,
+    *,
+    source: str,
+    month: str,
+    source_url: str,
+    attachment_url: str | None,
+    target: Path,
+) -> dict:
+    existing: dict = {}
+    if manifest_path.exists():
+        try:
+            candidate = json.loads(manifest_path.read_text(encoding="utf-8"))
+            if candidate.get("source") == source and candidate.get("month") == month:
+                existing = candidate
+        except (OSError, json.JSONDecodeError):
+            existing = {}
+
+    existing.update(
+        {
+            "source": source,
+            "month": month,
+            "source_url": source_url,
+            "attachment_url": attachment_url,
+            "downloaded_at": existing.get("downloaded_at")
+            or datetime.fromtimestamp(target.stat().st_mtime, timezone.utc).isoformat(),
+            "file_size": target.stat().st_size,
+            "sha256": sha256(target),
+            "status": "skipped_existing",
+            "retry_count": 0,
+        }
+    )
+    return existing
+
+
 def _manifest_path(root: Path, source: str, month: str) -> Path:
     return root / "data" / "manifests" / "downloads" / source / f"{month}.json"
 
@@ -171,23 +235,19 @@ def download_record(
     target.parent.mkdir(parents=True, exist_ok=True)
 
     if target.exists() and target.stat().st_size > 0 and is_valid_zip(target):
-        manifest = {
-            "source": record.source,
-            "month": record.month,
-            "source_url": record.article_url,
-            "attachment_url": record.attachment_url,
-            "downloaded_at": datetime.fromtimestamp(
-                target.stat().st_mtime, timezone.utc
-            ).isoformat(),
-            "file_size": target.stat().st_size,
-            "sha256": sha256(target),
-            "status": "skipped_existing",
-            "retry_count": 0,
-        }
+        manifest = existing_manifest_with_file_state(
+            manifest_path,
+            source=record.source,
+            month=record.month,
+            source_url=record.article_url,
+            attachment_url=record.attachment_url,
+            target=target,
+        )
         write_json_atomic(manifest_path, manifest)
         return manifest
 
-    temp = target.with_suffix(target.suffix + ".part")
+    temp = target.with_suffix(target.suffix + ".download.part")
+    wrapper_temp = target.with_suffix(target.suffix + ".part")
     last_error: Exception | None = None
     retry_count = 0
 
@@ -196,8 +256,14 @@ def download_record(
         try:
             if temp.exists():
                 temp.unlink()
+            if wrapper_temp.exists():
+                wrapper_temp.unlink()
+            response_filename = None
             with session.get(record.attachment_url, stream=True, timeout=timeout) as response:
                 response.raise_for_status()
+                response_filename = content_disposition_filename(
+                    response.headers.get("Content-Disposition")
+                )
                 with temp.open("wb") as handle:
                     for chunk in response.iter_content(chunk_size=1024 * 1024):
                         if chunk:
@@ -206,9 +272,44 @@ def download_record(
                     os.fsync(handle.fileno())
             if temp.stat().st_size == 0:
                 raise RuntimeError("Downloaded file is empty")
-            if not is_valid_zip(temp):
-                raise RuntimeError("Downloaded file is not a valid ZIP archive")
-            os.replace(temp, target)
+
+            source_payload_size = temp.stat().st_size
+            source_payload_sha256 = sha256(temp)
+            if is_valid_zip(temp):
+                os.replace(temp, target)
+                delivery_metadata = {
+                    "source_delivery_format": "zip",
+                    "source_attachment_filename": response_filename,
+                    "source_payload_size": source_payload_size,
+                    "source_payload_sha256": source_payload_sha256,
+                    "local_storage_format": "source_zip",
+                }
+            else:
+                suffix = Path(response_filename or "").suffix.lower()
+                if suffix not in DIRECT_ATTACHMENT_EXTENSIONS:
+                    raise RuntimeError(
+                        "Downloaded payload is neither a ZIP archive nor a supported "
+                        f"direct attachment: filename={response_filename!r}, "
+                        f"size={source_payload_size}"
+                    )
+                if source_payload_size < 32:
+                    raise RuntimeError(
+                        "Downloaded direct attachment is implausibly small: "
+                        f"filename={response_filename!r}, size={source_payload_size}"
+                    )
+                wrap_direct_attachment(temp, wrapper_temp, response_filename)
+                if not is_valid_zip(wrapper_temp):
+                    raise RuntimeError("Local direct-attachment ZIP wrapper failed validation")
+                os.replace(wrapper_temp, target)
+                temp.unlink()
+                delivery_metadata = {
+                    "source_delivery_format": "direct_file",
+                    "source_attachment_filename": response_filename,
+                    "source_payload_size": source_payload_size,
+                    "source_payload_sha256": source_payload_sha256,
+                    "local_storage_format": "single_member_zip_wrapper",
+                }
+
             manifest = {
                 "source": record.source,
                 "month": record.month,
@@ -219,6 +320,7 @@ def download_record(
                 "sha256": sha256(target),
                 "status": "success",
                 "retry_count": retry_count,
+                **delivery_metadata,
             }
             write_json_atomic(manifest_path, manifest)
             return manifest
@@ -229,6 +331,8 @@ def download_record(
 
     if temp.exists():
         temp.unlink()
+    if wrapper_temp.exists():
+        wrapper_temp.unlink()
     manifest = {
         "source": record.source,
         "month": record.month,
@@ -252,6 +356,7 @@ def collect_range(
     source_keys: list[str],
     dry_run: bool = False,
     max_retries: int = 4,
+    retry_failed_only: bool = False,
 ) -> list[dict]:
     months = month_range_desc(start, end)
     session = make_session()
@@ -267,6 +372,16 @@ def collect_range(
             if record is None:
                 missing.append({"source": source, "month": month, "status": "missing_post"})
             else:
+                if retry_failed_only:
+                    manifest_path = _manifest_path(root, source, month)
+                    if not manifest_path.exists():
+                        continue
+                    try:
+                        existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+                    except (OSError, json.JSONDecodeError):
+                        continue
+                    if not str(existing.get("status", "")).startswith("failed"):
+                        continue
                 planned.append((month, source, record))
 
     write_json_atomic(
