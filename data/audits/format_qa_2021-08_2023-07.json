@@ -1,0 +1,918 @@
+{
+  "start": "2021-08",
+  "end": "2023-07",
+  "months": 24,
+  "records_expected": 72,
+  "records_inspected": 72,
+  "problem_count": 0,
+  "signature_counts": [
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 5,
+        "source": "dispatch"
+      },
+      "records": 15
+    },
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "state_estimation"
+      },
+      "records": 19
+    },
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 3,
+        "source": "state_estimation"
+      },
+      "records": 5
+    },
+    {
+      "signature": {
+        "columns": null,
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 2,
+        "source": "demand"
+      },
+      "records": 24
+    },
+    {
+      "signature": {
+        "columns": null,
+        "encoding": null,
+        "physical_format": "xlsx-ooxml",
+        "preamble_rows": null,
+        "source": "dispatch"
+      },
+      "records": 9
+    }
+  ],
+  "problems": [],
+  "details": [
+    {
+      "source": "demand",
+      "month": "2021-08",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ08┐∙.csv",
+      "member_size_bytes": 300625,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-08",
+      "member_name": "발전기별_5분_경제급전자료(202108).xlsx",
+      "member_size_bytes": 81641984,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-08",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ8┐∙.txt",
+      "member_size_bytes": 142127945,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-09",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ09┐∙.csv",
+      "member_size_bytes": 291131,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-09",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202109).txt",
+      "member_size_bytes": 107678041,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-09",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ9┐∙.txt",
+      "member_size_bytes": 136545790,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-10",
+      "member_name": "5분수요예측MW_2021년10월.csv",
+      "member_size_bytes": 301068,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-10",
+      "member_name": "발전기별_5분_경제급전자료(202110).txt",
+      "member_size_bytes": 110730883,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-10",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ10┐∙.txt",
+      "member_size_bytes": 140571667,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-11",
+      "member_name": "5분수요예측MW_2021년11월.csv",
+      "member_size_bytes": 291215,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-11",
+      "member_name": "발전기별_5분_경제급전자료(202111).txt",
+      "member_size_bytes": 108143751,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-11",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2021년11월.txt",
+      "member_size_bytes": 136826506,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-12",
+      "member_name": "5분수요예측MW_2021년12월.csv",
+      "member_size_bytes": 300385,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-12",
+      "member_name": "발전기별_5분_경제급전자료(202112).xlsx",
+      "member_size_bytes": 76925877,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-12",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2021년12월.txt",
+      "member_size_bytes": 142693293,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-01",
+      "member_name": "5분수요예측MW_2022년01월.csv",
+      "member_size_bytes": 300069,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-01",
+      "member_name": "발전기별_5분_경제급전자료(202201).xlsx",
+      "member_size_bytes": 76436563,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-01",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2022년1월.txt",
+      "member_size_bytes": 141539293,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-02",
+      "member_name": "5분수요예측MW_2022년02월.csv",
+      "member_size_bytes": 271280,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-02",
+      "member_name": "발전기별_5분_경제급전자료(202202).xlsx",
+      "member_size_bytes": 68429323,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-02",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2022년2월.txt",
+      "member_size_bytes": 127289159,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-03",
+      "member_name": "5분수요예측MW_2022년03월.csv",
+      "member_size_bytes": 300994,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-03",
+      "member_name": "발전기별_5분_경제급전자료(202203).xlsx",
+      "member_size_bytes": 74139100,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-03",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2022년3월.txt",
+      "member_size_bytes": 140153632,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-04",
+      "member_name": "5분수요예측MW_2022년04월.csv",
+      "member_size_bytes": 291402,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-04",
+      "member_name": "발전기별_5분_경제급전자료(202204).xlsx",
+      "member_size_bytes": 69480850,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-04",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2022년4월.txt",
+      "member_size_bytes": 132432001,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-05",
+      "member_name": "5분수요예측MW_2022년05월.csv",
+      "member_size_bytes": 301247,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-05",
+      "member_name": "발전기별_5분_경제급전자료(202205).xlsx",
+      "member_size_bytes": 70820677,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-05",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2022년5월.txt",
+      "member_size_bytes": 121203858,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-06",
+      "member_name": "5분수요예측MW_2022년06월.csv",
+      "member_size_bytes": 291127,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-06",
+      "member_name": "발전기별_5분_경제급전자료(202206).xlsx",
+      "member_size_bytes": 70094210,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-06",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-06월 추출.txt",
+      "member_size_bytes": 118835769,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-07",
+      "member_name": "5분수요예측MW_2022년07월.csv",
+      "member_size_bytes": 300248,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-07",
+      "member_name": "발전기별_5분_경제급전자료(202207).xlsx",
+      "member_size_bytes": 21883404,
+      "physical_format": "xlsx-ooxml",
+      "encoding": null,
+      "preamble_rows": null
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-07",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-07월 추출.txt",
+      "member_size_bytes": 125393523,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-08",
+      "member_name": "5분수요예측MW_2022년08월.csv",
+      "member_size_bytes": 300198,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-08",
+      "member_name": "발전기별_5분_경제급전자료(202208).txt",
+      "member_size_bytes": 110239385,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-08",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-08월 추출.txt",
+      "member_size_bytes": 124718648,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-09",
+      "member_name": "5분수요예측MW_2022년09월.csv",
+      "member_size_bytes": 291318,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-09",
+      "member_name": "발전기별_5분_경제급전자료(202209).txt",
+      "member_size_bytes": 104525707,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-09",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-09월 추출.txt",
+      "member_size_bytes": 118199658,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-10",
+      "member_name": "5분수요예측MW_2022년10월.csv",
+      "member_size_bytes": 301190,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-10",
+      "member_name": "발전기별_5분_경제급전자료(202210).txt",
+      "member_size_bytes": 107955429,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-10",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-10월 추출.txt",
+      "member_size_bytes": 122523832,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-11",
+      "member_name": "5분수요예측MW_2022년11월.csv",
+      "member_size_bytes": 291428,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-11",
+      "member_name": "발전기별_5분_경제급전자료(202211).txt",
+      "member_size_bytes": 106121559,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-11",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-11월 추출.txt",
+      "member_size_bytes": 119460176,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2022-12",
+      "member_name": "5분수요예측MW_2022년12월.csv",
+      "member_size_bytes": 300068,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2022-12",
+      "member_name": "발전기별_5분_경제급전자료(202212).txt",
+      "member_size_bytes": 113111265,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2022-12",
+      "member_name": "라_발전기별 5분 상태추정MW_2022-12월 추출.txt",
+      "member_size_bytes": 142683027,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-01",
+      "member_name": "5분수요예측MW_2023년01월.csv",
+      "member_size_bytes": 300216,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-01",
+      "member_name": "발전기별_5분_경제급전자료(202301).txt",
+      "member_size_bytes": 112447706,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-01",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-01월 추출.txt",
+      "member_size_bytes": 142870309,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-02",
+      "member_name": "5분수요예측MW_2023년02월.csv",
+      "member_size_bytes": 271486,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-02",
+      "member_name": "발전기별_5분_경제급전자료(202302).txt",
+      "member_size_bytes": 101132398,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-02",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-02월 추출.txt",
+      "member_size_bytes": 128001323,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-03",
+      "member_name": "5분수요예측MW_2023년03월.csv",
+      "member_size_bytes": 301262,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-03",
+      "member_name": "발전기별_5분_경제급전자료(202303).txt",
+      "member_size_bytes": 110184452,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-03",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-03월 추출.txt",
+      "member_size_bytes": 139555429,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-04",
+      "member_name": "5분수요예측MW_2023년04월.csv",
+      "member_size_bytes": 291415,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-04",
+      "member_name": "발전기별_5분_경제급전자료(202304).txt",
+      "member_size_bytes": 105522466,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-04",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-04월 추출.txt",
+      "member_size_bytes": 133883927,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-05",
+      "member_name": "5분수요예측MW_2023년05월.csv",
+      "member_size_bytes": 301070,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-05",
+      "member_name": "발전기별_5분_경제급전자료(202305).txt",
+      "member_size_bytes": 108629994,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-05",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-05월 추출.txt",
+      "member_size_bytes": 137954110,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-06",
+      "member_name": "5분수요예측MW_2023년06월.csv",
+      "member_size_bytes": 291105,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-06",
+      "member_name": "발전기별_5분_경제급전자료(202306).txt",
+      "member_size_bytes": 106240293,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-06",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-06월 추출.txt",
+      "member_size_bytes": 135400586,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2023-07",
+      "member_name": "5분수요예측MW_2023년07월.csv",
+      "member_size_bytes": 300447,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-07",
+      "member_name": "발전기별_5분_경제급전자료(202307).txt",
+      "member_size_bytes": 111424601,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-07",
+      "member_name": "라_발전기별 5분 상태추정MW_2023-07월 추출.txt",
+      "member_size_bytes": 142240144,
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    }
+  ]
+}

@@ -42,6 +42,10 @@ Historical files may contain additional physical-format drift. Perform a
 lightweight magic/encoding/header scan before the full content parse. Add
 parser support only from observed raw-file evidence; do not guess a format.
 
+```powershell
+python scripts/format_qa.py --start 2018-08 --end 2021-07
+```
+
 Then run:
 
 ```powershell
