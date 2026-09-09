@@ -167,3 +167,25 @@ The 2026-07 pilot established physical delivery details that are more specific t
 - `state_estimation`: comma-delimited CP949 TXT. Original columns are `시간`, `발전기CODE`, `상태추정MW`. Timestamps mix date-only midnight values with Korean `오전`/`오후` 12-hour strings.
 
 These measured physical formats supersede any earlier assumption that the portal's logical `CSV`/`TXT` label exactly describes the downloadable KPX attachment.
+
+## Phase 3 historical-format findings (2021-08 through 2023-07)
+
+Checkpoint 2 content QA measured all 72 source-month files in the two-year
+extension. Timestamp parsing succeeded for every record and no timestamp fell
+outside its source month.
+
+- `demand`: all 24 months are CP949 comma-delimited text with a two-row
+  preamble before the CSV header.
+- `dispatch`: 15 months are CP949 comma-delimited text with a five-row
+  preamble. Nine months are real Office Open XML `.xlsx` workbooks:
+  `2021-08`, `2021-12`, and `2022-01` through `2022-07`. Several workbooks
+  partition one month across multiple worksheets; later worksheets may omit
+  the header and continue directly with data rows.
+- `state_estimation`: all 24 months are CP949 comma-delimited text. Nineteen
+  months have no preamble and five months have a three-row preamble.
+
+The `2022-07` dispatch workbook is a source-level partial-month observation:
+it contains 2,602 unique five-minute timestamps and ends at
+`2022-07-10 00:45`, leaving 6,326 expected timestamps missing through the end
+of July. The pipeline records this as missing source coverage and does not
+impute or fabricate the absent rows.

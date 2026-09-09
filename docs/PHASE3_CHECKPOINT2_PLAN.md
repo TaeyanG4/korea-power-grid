@@ -1,6 +1,6 @@
 # Phase 3 — Checkpoint 2 Plan: Extend to Recent 5 Years
 
-Status: **IN PROGRESS — 72/72 RAW DOWNLOADS COMPLETE; CONTENT QA RUNNING**
+Status: **COMPLETE — PASS WITH OBSERVATIONS**
 
 Checkpoint 1 already covers 2023-08 through 2026-07. Checkpoint 2 extends the
 logical dataset to a five-year window without regenerating the completed

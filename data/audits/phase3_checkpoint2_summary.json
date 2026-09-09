@@ -1,0 +1,117 @@
+{
+  "phase": "Phase 3",
+  "checkpoint": "Checkpoint 2",
+  "period": {
+    "start": "2021-08",
+    "end": "2026-07",
+    "months": 60
+  },
+  "extension_period": {
+    "start": "2021-08",
+    "end": "2023-07",
+    "months": 24
+  },
+  "status": "PASS_WITH_OBSERVATIONS",
+  "hard_checks": {
+    "checkpoint1_passed": true,
+    "extension_download_records_72": true,
+    "extension_download_problem_count_zero": true,
+    "extension_download_part_files_zero": true,
+    "extension_content_qa_records_72": true,
+    "extension_processed_summary_records_72": true,
+    "extension_processed_manifest_records_72": true,
+    "extension_processed_all_success": true,
+    "extension_timestamp_parse_failures_zero": true,
+    "extension_remaining_candidate_duplicates_zero": true,
+    "combined_manifest_records_180": true,
+    "combined_timestamp_parse_failures_zero": true,
+    "combined_remaining_candidate_duplicates_zero": true,
+    "combined_exact_month_coverage": true
+  },
+  "downloads": {
+    "extension_records": 72,
+    "problem_count": 0,
+    "part_file_count": 0,
+    "total_bytes": 1352153230
+  },
+  "processed_extension": {
+    "records": 72,
+    "status_counts": {
+      "success": 72
+    },
+    "input_rows": 171704063,
+    "exact_duplicate_rows_removed": 0,
+    "output_rows": 171704063,
+    "parquet_size_bytes": 483798981,
+    "timestamp_parse_failure_count": 0,
+    "remaining_candidate_key_duplicate_rows": 0
+  },
+  "logical_five_year_dataset": {
+    "source_month_records": 180,
+    "expected_source_month_records": 180,
+    "per_source_months": {
+      "demand": 60,
+      "dispatch": 60,
+      "state_estimation": 60
+    },
+    "timestamp_parse_failure_count": 0,
+    "exact_duplicate_rows_removed": 4322568,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "roots": [
+      "data/processed/checkpoint_5y_extension",
+      "data/processed/checkpoint_3y"
+    ]
+  },
+  "source_level_missingness": {
+    "demand": {
+      "months": 60,
+      "months_with_missing": 1,
+      "missing_timestamps": 2,
+      "max_monthly_missing": 2,
+      "max_missing_month": "2026-06"
+    },
+    "dispatch": {
+      "months": 60,
+      "months_with_missing": 3,
+      "missing_timestamps": 6330,
+      "max_monthly_missing": 6326,
+      "max_missing_month": "2022-07"
+    },
+    "state_estimation": {
+      "months": 60,
+      "months_with_missing": 60,
+      "missing_timestamps": 4475,
+      "max_monthly_missing": 1228,
+      "max_missing_month": "2026-05"
+    }
+  },
+  "key_gap_observations": {
+    "demand": {
+      "month": "2026-06",
+      "missing_timestamp_count": 2,
+      "longest_contiguous_gap": {
+        "start": "2026-06-11T18:55:00",
+        "end": "2026-06-11T18:55:00",
+        "timestamps": 1
+      }
+    },
+    "dispatch": {
+      "month": "2022-07",
+      "missing_timestamp_count": 6326,
+      "longest_contiguous_gap": {
+        "start": "2022-07-10T00:50:00",
+        "end": "2022-07-31T23:55:00",
+        "timestamps": 6326
+      }
+    },
+    "state_estimation": {
+      "month": "2026-05",
+      "missing_timestamp_count": 1228,
+      "longest_contiguous_gap": {
+        "start": "2026-05-10T08:35:00",
+        "end": "2026-05-14T14:15:00",
+        "timestamps": 1221
+      }
+    }
+  }
+}

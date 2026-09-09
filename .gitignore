@@ -17,6 +17,8 @@ data/release/**
 !data/manifests/
 !data/manifests/**
 
+# Long-running local execution logs are not release metadata.
+data/audits/logs/**
+
 *.part
 *.tmp
-
