@@ -1,0 +1,139 @@
+{
+  "phase": "Phase 3",
+  "checkpoint": "Checkpoint 3",
+  "period": {
+    "start": "2018-08",
+    "end": "2026-07",
+    "months": 96
+  },
+  "extension_period": {
+    "start": "2018-08",
+    "end": "2021-07",
+    "months": 36
+  },
+  "status": "PASS_WITH_OBSERVATIONS",
+  "hard_checks": {
+    "checkpoint2_passed": true,
+    "extension_download_records_108": true,
+    "extension_download_problem_count_zero": true,
+    "extension_download_part_files_zero": true,
+    "extension_one_source_unavailable": true,
+    "extension_format_qa_records_accounted_108": true,
+    "extension_format_qa_one_source_unavailable": true,
+    "extension_format_qa_problem_count_zero": true,
+    "extension_content_qa_records_108": true,
+    "extension_content_qa_one_source_unavailable": true,
+    "extension_processed_summary_records_108": true,
+    "extension_processed_manifest_records_108": true,
+    "extension_processed_status_accounting": true,
+    "extension_timestamp_parse_failures_zero": true,
+    "extension_remaining_candidate_duplicates_zero": true,
+    "combined_manifest_records_288": true,
+    "combined_timestamp_parse_failures_zero": true,
+    "combined_remaining_candidate_duplicates_zero": true,
+    "combined_exact_month_coverage": true
+  },
+  "downloads": {
+    "extension_records": 108,
+    "problem_count": 0,
+    "part_file_count": 0,
+    "total_bytes": 1309798249,
+    "source_unavailable_count": 1,
+    "source_unavailable_records": [
+      {
+        "source": "demand",
+        "month": "2019-11",
+        "manifest": "data\\manifests\\downloads\\demand\\2019-11.json",
+        "zip": "data\\raw\\demand\\2019-11\\demand_2019_11.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      }
+    ]
+  },
+  "processed_extension": {
+    "records": 108,
+    "status_counts": {
+      "success": 107,
+      "source_unavailable": 1
+    },
+    "input_rows": 260200547,
+    "exact_duplicate_rows_removed": 206567,
+    "output_rows": 259993980,
+    "parquet_size_bytes": 753756483,
+    "timestamp_parse_failure_count": 0,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 1
+  },
+  "logical_eight_year_dataset": {
+    "source_month_records": 288,
+    "expected_source_month_records": 288,
+    "per_source_months": {
+      "demand": 96,
+      "dispatch": 96,
+      "state_estimation": 96
+    },
+    "timestamp_parse_failure_count": 0,
+    "exact_duplicate_rows_removed": 4529135,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 1,
+    "roots": [
+      "data/processed/checkpoint_8y_extension",
+      "data/processed/checkpoint_5y_extension",
+      "data/processed/checkpoint_3y"
+    ]
+  },
+  "source_level_missingness": {
+    "demand": {
+      "months": 96,
+      "months_with_missing": 3,
+      "missing_timestamps": 8645,
+      "max_monthly_missing": 8640,
+      "max_missing_month": "2019-11"
+    },
+    "dispatch": {
+      "months": 96,
+      "months_with_missing": 3,
+      "missing_timestamps": 6330,
+      "max_monthly_missing": 6326,
+      "max_missing_month": "2022-07"
+    },
+    "state_estimation": {
+      "months": 96,
+      "months_with_missing": 95,
+      "missing_timestamps": 5864,
+      "max_monthly_missing": 1228,
+      "max_missing_month": "2026-05"
+    }
+  },
+  "key_gap_observations": {
+    "demand": {
+      "month": "2019-11",
+      "missing_timestamp_count": 8640,
+      "longest_contiguous_gap": {
+        "start": "2019-11-01T00:00:00",
+        "end": "2019-11-30T23:55:00",
+        "timestamps": 8640
+      }
+    },
+    "dispatch": {
+      "month": "2022-07",
+      "missing_timestamp_count": 6326,
+      "longest_contiguous_gap": {
+        "start": "2022-07-10T00:50:00",
+        "end": "2022-07-31T23:55:00",
+        "timestamps": 6326
+      }
+    },
+    "state_estimation": {
+      "month": "2026-05",
+      "missing_timestamp_count": 1228,
+      "longest_contiguous_gap": {
+        "start": "2026-05-10T08:35:00",
+        "end": "2026-05-14T14:15:00",
+        "timestamps": 1221
+      }
+    }
+  }
+}

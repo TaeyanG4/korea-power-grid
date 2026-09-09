@@ -7,7 +7,7 @@ Generator Dispatch, State Estimation and Demand Forecasts from official Korea Po
 - Phase 0 — source/license discovery: complete
 - Phase 1 — 2026-07 one-month pilot: complete (`PASS WITH OBSERVATIONS`)
 - Phase 2 — repository/pipeline structure: complete
-- Phase 3 — historical backfill: Checkpoint 1 (recent 3 years) complete; Checkpoint 2 (recent 5 years) complete (`PASS WITH OBSERVATIONS`); Checkpoint 3 (recent 8 years) next
+- Phase 3 — historical backfill: Checkpoints 1 (3 years), 2 (5 years), and 3 (8 years) complete (`PASS WITH OBSERVATIONS`); Checkpoint 4 (10 years) next
 
 See:
 
@@ -18,9 +18,13 @@ See:
 - `docs/PHASE3_CHECKPOINT1.md`
 - `docs/PHASE3_CHECKPOINT2_PLAN.md`
 - `docs/PHASE3_CHECKPOINT2.md`
+- `docs/PHASE3_CHECKPOINT3_PLAN.md`
+- `docs/PHASE3_CHECKPOINT3.md`
+- `docs/PHASE3_CHECKPOINT4_PLAN.md`
 - `data/audits/pilot_2026_07.json`
 - `data/audits/phase3_checkpoint1_summary.json`
 - `data/audits/phase3_checkpoint2_summary.json`
+- `data/audits/phase3_checkpoint3_summary.json`
 
 ## Pilot headline numbers
 

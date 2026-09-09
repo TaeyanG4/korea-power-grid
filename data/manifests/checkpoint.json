@@ -1,23 +1,33 @@
 {
-  "updated_at_utc": "2026-09-09T22:03:29.637609+00:00",
-  "requested_start": "2021-08",
-  "requested_end": "2023-07",
+  "updated_at_utc": "2026-09-09T23:46:33.579986+00:00",
+  "requested_start": "2018-08",
+  "requested_end": "2021-07",
   "sources": [
     "demand",
     "dispatch",
     "state_estimation"
   ],
-  "completed_records": 72,
-  "planned_records": 72,
+  "completed_records": 108,
+  "planned_records": 108,
+  "accounting": {
+    "success": 107,
+    "source_unavailable": 1
+  },
   "last_result": {
-    "source": "state_estimation",
-    "month": "2021-08",
-    "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61183&tag=&nPage=6",
-    "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0068&list_no=61183&seq=2608",
-    "downloaded_at": "2026-09-09T22:03:29.621609+00:00",
-    "file_size": 22312510,
-    "sha256": "e9dc9181fabe7952d0c017f39f6243263f25d5d57454589686bcfd67e9162bfd",
-    "status": "success",
-    "retry_count": 0
+    "source": "demand",
+    "month": "2019-11",
+    "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60900&tag=&nPage=9",
+    "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0065&list_no=60900&seq=1740",
+    "downloaded_at": null,
+    "file_size": null,
+    "sha256": null,
+    "status": "source_unavailable",
+    "retry_count": 0,
+    "source_delivery_format": "official_zero_byte_attachment",
+    "source_attachment_filename": "6.5분수요예측MW_2019년11월.zip",
+    "observed_payload_size": 4,
+    "observed_payload_sha256": "dba5166ad9db9ba648c1032ebbd34dcd0d085b50023b839ef5c68ca1db93a563",
+    "local_storage_format": null,
+    "evidence": "official article reports attachment as 0Byte"
   }
 }

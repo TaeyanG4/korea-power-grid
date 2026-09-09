@@ -1,0 +1,1624 @@
+{
+  "start": "2018-08",
+  "end": "2021-07",
+  "months": 36,
+  "records_expected": 108,
+  "records_inspected": 107,
+  "records_accounted": 108,
+  "source_unavailable_count": 1,
+  "source_unavailable_records": [
+    {
+      "source": "demand",
+      "month": "2019-11",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    }
+  ],
+  "problem_count": 0,
+  "signature_counts": [
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 5,
+        "source": "dispatch"
+      },
+      "records": 36
+    },
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "state_estimation"
+      },
+      "records": 6
+    },
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 3,
+        "source": "state_estimation"
+      },
+      "records": 30
+    },
+    {
+      "signature": {
+        "columns": null,
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "demand"
+      },
+      "records": 3
+    },
+    {
+      "signature": {
+        "columns": null,
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 2,
+        "source": "demand"
+      },
+      "records": 32
+    }
+  ],
+  "problems": [],
+  "details": [
+    {
+      "source": "demand",
+      "month": "2018-08",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2018│Γ08┐∙.csv",
+      "member_size_bytes": 300030,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2018-08",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201808).txt",
+      "member_size_bytes": 110280801,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2018-08",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2018│Γ08┐∙.txt",
+      "member_size_bytes": 139693082,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2018-09",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2018│Γ09┐∙.csv",
+      "member_size_bytes": 291338,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2018-09",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201809).txt",
+      "member_size_bytes": 104678770,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2018-09",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2018│Γ09┐∙.txt",
+      "member_size_bytes": 132601492,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2018-10",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2018│Γ10┐∙.csv",
+      "member_size_bytes": 301259,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2018-10",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201810).txt",
+      "member_size_bytes": 108569652,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2018-10",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2018│Γ10┐∙.txt",
+      "member_size_bytes": 137510803,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2018-11",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2018│Γ11┐∙.csv",
+      "member_size_bytes": 291238,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2018-11",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201811).txt",
+      "member_size_bytes": 106122107,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2018-11",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2018│Γ11┐∙.txt",
+      "member_size_bytes": 134181276,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2018-12",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2018│Γ12┐∙.csv",
+      "member_size_bytes": 300384,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2018-12",
+      "member_name": "발전기별_5분_경제급전자료(201812).txt",
+      "member_size_bytes": 111252154,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2018-12",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2018│Γ12┐∙.txt",
+      "member_size_bytes": 140780222,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-01",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ01┐∙.csv",
+      "member_size_bytes": 300307,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-01",
+      "member_name": "발전기별_5분_경제급전자료(201901).txt",
+      "member_size_bytes": 111230265,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-01",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ1┐∙.txt",
+      "member_size_bytes": 128712225,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-02",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ02┐∙.csv",
+      "member_size_bytes": 271550,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-02",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201902).txt",
+      "member_size_bytes": 99969148,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-02",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñ MW_2019│Γ02┐∙.txt",
+      "member_size_bytes": 126542426,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-03",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ03┐∙.csv",
+      "member_size_bytes": 300963,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-03",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201903).txt",
+      "member_size_bytes": 109777126,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-03",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ3┐∙.txt",
+      "member_size_bytes": 138670599,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-04",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ04┐∙.csv",
+      "member_size_bytes": 291381,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-04",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201904).txt",
+      "member_size_bytes": 105843255,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-04",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ4┐∙.txt",
+      "member_size_bytes": 133589422,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-05",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ05┐∙.csv",
+      "member_size_bytes": 301244,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-05",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201905).txt",
+      "member_size_bytes": 109608741,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-05",
+      "member_name": "2_2_라_발전기별+5분+상태추정MW_2019년5월.txt",
+      "member_size_bytes": 138256712,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-06",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ06┐∙.csv",
+      "member_size_bytes": 291322,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-06",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201906).txt",
+      "member_size_bytes": 105878434,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-06",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ6┐∙.txt",
+      "member_size_bytes": 133703276,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-07",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ07┐∙.csv",
+      "member_size_bytes": 300605,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-07",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201907).txt",
+      "member_size_bytes": 111697938,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-07",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ7┐∙.txt",
+      "member_size_bytes": 140746100,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-08",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ08┐∙.csv",
+      "member_size_bytes": 300349,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-08",
+      "member_name": "발전기별_5분_경제급전자료(201908).txt",
+      "member_size_bytes": 112287802,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-08",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ8┐∙.txt",
+      "member_size_bytes": 141140480,
+      "outer_zip_member_count": 2,
+      "ignored_outer_zip_members": [
+        "1시간_운전예비전력(201908)..zip"
+      ],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-09",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ09┐∙.csv",
+      "member_size_bytes": 291175,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-09",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201909).txt",
+      "member_size_bytes": 105559658,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-09",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ9┐∙.txt",
+      "member_size_bytes": 132898482,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-10",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2019│Γ10┐∙.csv",
+      "member_size_bytes": 301118,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-10",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201910).txt",
+      "member_size_bytes": 108228312,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-10",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ10┐∙.txt",
+      "member_size_bytes": 136365808,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-11",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201911).txt",
+      "member_size_bytes": 106552285,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-11",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ11┐∙.txt",
+      "member_size_bytes": 133684661,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2019-12",
+      "member_name": "6. 5║╨╝÷┐Σ┐╣├°MW_2019│Γ12┐∙.csv",
+      "member_size_bytes": 300638,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2019-12",
+      "member_name": "2. ╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201912).txt.txt",
+      "member_size_bytes": 112735160,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2019-12",
+      "member_name": "4. 2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2019│Γ12┐∙.txt",
+      "member_size_bytes": 140080221,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-01",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ01┐∙.csv",
+      "member_size_bytes": 300669,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-01",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202001).txt",
+      "member_size_bytes": 112541358,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-01",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ1┐∙.txt",
+      "member_size_bytes": 138579720,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-02",
+      "member_name": "6. 5║╨╝÷┐Σ┐╣├°MW_2020│Γ02┐∙.csv",
+      "member_size_bytes": 245690,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-02",
+      "member_name": "2. ╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202002).txt",
+      "member_size_bytes": 104784611,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-02",
+      "member_name": "4. 2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ2┐∙.txt",
+      "member_size_bytes": 129768779,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-03",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ03┐∙.csv",
+      "member_size_bytes": 262837,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-03",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202003).txt",
+      "member_size_bytes": 110371282,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-03",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ3┐∙.txt",
+      "member_size_bytes": 145568915,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-04",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ04┐∙.csv",
+      "member_size_bytes": 254491,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-04",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202004).txt",
+      "member_size_bytes": 104639283,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-04",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ4┐∙.txt",
+      "member_size_bytes": 131385370,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-05",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ05┐∙.csv",
+      "member_size_bytes": 301202,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-05",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202005).txt",
+      "member_size_bytes": 106596737,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-05",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ5┐∙.txt",
+      "member_size_bytes": 133842693,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-06",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ06┐∙.csv",
+      "member_size_bytes": 291591,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-06",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202006).txt",
+      "member_size_bytes": 104565311,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-06",
+      "member_name": "4.╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ6┐∙.txt",
+      "member_size_bytes": 131884543,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-07",
+      "member_name": "6.5║╨╝÷┐Σ┐╣├°MW_2020│Γ07┐∙.csv",
+      "member_size_bytes": 301004,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-07",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202007).txt",
+      "member_size_bytes": 109242926,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-07",
+      "member_name": "4.╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ7┐∙.txt",
+      "member_size_bytes": 137323305,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-08",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ08┐∙.csv",
+      "member_size_bytes": 300293,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-08",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202008).txt",
+      "member_size_bytes": 111979263,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-08",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ8┐∙.txt",
+      "member_size_bytes": 140314150,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-09",
+      "member_name": "6.5║╨╝÷┐Σ┐╣├°MW_2020│Γ09┐∙.csv",
+      "member_size_bytes": 291411,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-09",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202009).txt",
+      "member_size_bytes": 107622447,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-09",
+      "member_name": "4.╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ9┐∙.txt",
+      "member_size_bytes": 135314312,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-10",
+      "member_name": "6.5║╨╝÷┐Σ┐╣├°MW_2020│Γ10┐∙.csv",
+      "member_size_bytes": 301184,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-10",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202010).txt",
+      "member_size_bytes": 109269035,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-10",
+      "member_name": "4.╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ10┐∙.txt",
+      "member_size_bytes": 137150231,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-11",
+      "member_name": "6.5║╨╝÷┐Σ┐╣├°MW_2020│Γ11┐∙.csv",
+      "member_size_bytes": 291265,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-11",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202011).txt",
+      "member_size_bytes": 106741310,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-11",
+      "member_name": "4.╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ11┐∙.txt",
+      "member_size_bytes": 133662199,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2020-12",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2020│Γ12┐∙.csv",
+      "member_size_bytes": 300323,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2020-12",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202012).txt",
+      "member_size_bytes": 113143881,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2020-12",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2020│Γ12┐∙.txt",
+      "member_size_bytes": 141681363,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-01",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ01┐∙.csv",
+      "member_size_bytes": 300229,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-01",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202101).txt",
+      "member_size_bytes": 113953748,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-01",
+      "member_name": "2_2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ1┐∙.txt",
+      "member_size_bytes": 142949776,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-02",
+      "member_name": "5분수요예측MW_2021년02월.csv",
+      "member_size_bytes": 271595,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-02",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202102).txt",
+      "member_size_bytes": 101355668,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-02",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ2┐∙.txt",
+      "member_size_bytes": 126960590,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-03",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ03┐∙.csv",
+      "member_size_bytes": 301098,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-03",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202103).txt",
+      "member_size_bytes": 111489178,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-03",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ3┐∙.txt",
+      "member_size_bytes": 139577739,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-04",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ04┐∙.csv",
+      "member_size_bytes": 291296,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-04",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202104).txt",
+      "member_size_bytes": 107037161,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-04",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ4┐∙.txt",
+      "member_size_bytes": 133754266,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-05",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ05┐∙.csv",
+      "member_size_bytes": 301122,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-05",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202105).txt",
+      "member_size_bytes": 109919674,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-05",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ5┐∙.txt",
+      "member_size_bytes": 138281261,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-06",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ06┐∙.csv",
+      "member_size_bytes": 291336,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-06",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202106).txt",
+      "member_size_bytes": 108060664,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-06",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2021│Γ6┐∙.txt",
+      "member_size_bytes": 136125717,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2021-07",
+      "member_name": "5║╨╝÷┐Σ┐╣├°MW_2021│Γ07┐∙.csv",
+      "member_size_bytes": 300263,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 2
+    },
+    {
+      "source": "dispatch",
+      "month": "2021-07",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(202107).txt",
+      "member_size_bytes": 114055172,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 5,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2021-07",
+      "member_name": "2_라_발전기별 5분 상태추정MW_2021년7월.txt",
+      "member_size_bytes": 142676044,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 3,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    }
+  ]
+}

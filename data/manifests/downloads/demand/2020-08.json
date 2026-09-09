@@ -1,0 +1,11 @@
+{
+  "source": "demand",
+  "month": "2020-08",
+  "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60909&tag=&nPage=8",
+  "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0065&list_no=60909&seq=2096",
+  "downloaded_at": "2026-09-09T22:45:38.956180+00:00",
+  "file_size": 69437,
+  "sha256": "55dc42a35924bccf425c62ddb61a17a65da110dc3b1895ee0aae04cdb833fd8a",
+  "status": "success",
+  "retry_count": 0
+}

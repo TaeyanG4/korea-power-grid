@@ -189,3 +189,27 @@ it contains 2,602 unique five-minute timestamps and ends at
 `2022-07-10 00:45`, leaving 6,326 expected timestamps missing through the end
 of July. The pipeline records this as missing source coverage and does not
 impute or fabricate the absent rows.
+
+## Phase 3 historical delivery findings (2018-08 through 2021-07)
+
+Checkpoint 3 identified delivery-level drift that is distinct from the inner
+data schema:
+
+- some KPX attachments are delivered directly as CP949 `.txt` files rather
+  than as ZIP archives. The collector preserves the exact source payload bytes
+  and SHA-256 in the download manifest, then stores those bytes unchanged as a
+  single member inside a deterministic local ZIP wrapper so downstream raw QA
+  and parsing can retain one storage convention. The manifest distinguishes
+  `source_delivery_format=direct_file` from
+  `local_storage_format=single_member_zip_wrapper`.
+- confirmed direct-file examples include dispatch `2018-12`, `2019-01`, and
+  `2019-08`, plus state estimation `2019-05`.
+- state estimation `2019-08` has two members in the outer ZIP. One is the
+  normal `시간,발전기CODE,상태추정MW` source file; the other is a nested ZIP
+  containing a separate one-hour average of 10-minute operating reserve.
+  Source-aware header detection selects the state-estimation member and records
+  the unrelated member as ignored provenance metadata.
+- demand `2019-11` is published by KPX with an attachment reported as
+  `0Byte`; the current download endpoint returns only four CR/LF bytes. This
+  month is recorded as `source_unavailable`. No placeholder raw data or
+  imputed demand values are created.

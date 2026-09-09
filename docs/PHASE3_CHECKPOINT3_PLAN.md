@@ -1,6 +1,6 @@
 # Phase 3 — Checkpoint 3 Plan: Extend to Recent Eight Years
 
-Status: **IN PROGRESS — 108-RECORD INCREMENTAL COLLECTION RUNNING**
+Status: **COMPLETE — PASS WITH OBSERVATIONS**
 
 Checkpoint 2 validated the logical five-year window `2021-08` through
 `2026-07`. Checkpoint 3 extends it to eight years without regenerating any
@@ -33,8 +33,9 @@ and processed Parquet outputs must not be regenerated.
 python scripts/checkpoint_qa.py --start 2018-08 --end 2021-07
 ```
 
-Stop on missing ZIPs, size/SHA mismatch, CRC failure, or leftover `.part`
-files.
+Stop on unexplained missing ZIPs, size/SHA mismatch, CRC failure, or leftover
+`.part` files. An official attachment explicitly published as `0Byte` is
+accounted as `source_unavailable`, not fabricated into a raw file.
 
 ## Format and content QA
 
@@ -74,8 +75,10 @@ The logical eight-year dataset will then consist of:
 
 ## Exit criteria
 
-- 108 / 108 extension downloads pass raw integrity QA
-- parser/schema audit covers all 108 extension source-months
+- all 108 extension source-months are accounted for by either a validated raw
+  file or an explicitly evidenced `source_unavailable` status
+- parser/schema audit covers every available extension file and accounts for
+  unavailable source-months explicitly
 - timestamp parse failures are 0 after normalization
 - exact duplicate removal, if any, is documented
 - remaining candidate-key duplicates are 0
