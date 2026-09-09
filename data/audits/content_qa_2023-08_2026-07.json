@@ -1,0 +1,5012 @@
+{
+  "start": "2023-08",
+  "end": "2026-07",
+  "months": 36,
+  "records": 108,
+  "schema_signatures": {
+    "demand": [
+      {
+        "signature": {
+          "columns": [
+            "시간",
+            "수요예측MW"
+          ],
+          "encoding": "cp949",
+          "physical_format": "cp949 comma-delimited text with optional preamble",
+          "reader": "pandas.read_csv(decoded cp949 text)"
+        },
+        "months": [
+          "2023-08",
+          "2023-09",
+          "2023-10",
+          "2023-11",
+          "2023-12",
+          "2024-01",
+          "2024-02",
+          "2024-03",
+          "2024-04",
+          "2024-05",
+          "2024-06",
+          "2024-07",
+          "2024-08",
+          "2024-09",
+          "2024-10",
+          "2024-11",
+          "2024-12",
+          "2025-01",
+          "2025-02",
+          "2025-03",
+          "2025-04",
+          "2025-05",
+          "2025-06",
+          "2025-07",
+          "2025-08",
+          "2025-09",
+          "2025-10",
+          "2025-11",
+          "2025-12",
+          "2026-01",
+          "2026-02",
+          "2026-03",
+          "2026-04",
+          "2026-05"
+        ]
+      },
+      {
+        "signature": {
+          "columns": [
+            "TIME",
+            "LF05_1"
+          ],
+          "encoding": "utf-8-sig",
+          "physical_format": "utf-8-sig comma-delimited text with optional preamble",
+          "reader": "pandas.read_csv(decoded utf-8-sig text)"
+        },
+        "months": [
+          "2026-06"
+        ]
+      },
+      {
+        "signature": {
+          "columns": [
+            "TIME",
+            "LF05_1"
+          ],
+          "encoding": null,
+          "physical_format": "Excel 97-2003 OLE .xls binary despite .xlsx member filename",
+          "reader": "pandas.read_excel(engine='xlrd')"
+        },
+        "months": [
+          "2026-07"
+        ]
+      }
+    ],
+    "dispatch": [
+      {
+        "signature": {
+          "columns": [
+            "시간",
+            "발전기CODE",
+            "BASEPOINT"
+          ],
+          "encoding": "cp949",
+          "physical_format": "comma-delimited text",
+          "reader": null
+        },
+        "months": [
+          "2023-08",
+          "2023-09",
+          "2023-10",
+          "2023-11",
+          "2023-12",
+          "2024-01",
+          "2024-02",
+          "2024-03",
+          "2024-04",
+          "2024-05",
+          "2024-06",
+          "2024-07",
+          "2024-08",
+          "2024-09",
+          "2024-10",
+          "2024-11",
+          "2024-12",
+          "2025-01",
+          "2025-02",
+          "2025-03",
+          "2025-04",
+          "2025-05",
+          "2025-06",
+          "2025-07",
+          "2025-08",
+          "2025-09",
+          "2025-10",
+          "2025-11",
+          "2025-12",
+          "2026-01",
+          "2026-02",
+          "2026-03",
+          "2026-04",
+          "2026-05"
+        ]
+      },
+      {
+        "signature": {
+          "columns": [
+            "TIME",
+            "GEN_CODE",
+            "BASEPOINT"
+          ],
+          "encoding": "ascii",
+          "physical_format": "comma-delimited text",
+          "reader": null
+        },
+        "months": [
+          "2026-06",
+          "2026-07"
+        ]
+      }
+    ],
+    "state_estimation": [
+      {
+        "signature": {
+          "columns": [
+            "시간",
+            "발전기CODE",
+            "상태추정MW"
+          ],
+          "encoding": "cp949",
+          "physical_format": "comma-delimited text",
+          "reader": null
+        },
+        "months": [
+          "2023-08",
+          "2023-09",
+          "2023-10",
+          "2023-11",
+          "2023-12",
+          "2024-01",
+          "2024-02",
+          "2024-03",
+          "2024-04",
+          "2024-05",
+          "2024-06",
+          "2024-07",
+          "2024-08",
+          "2024-09",
+          "2024-10",
+          "2024-11",
+          "2024-12",
+          "2025-01",
+          "2025-02",
+          "2025-03",
+          "2025-04",
+          "2025-05",
+          "2025-06",
+          "2025-07",
+          "2025-08",
+          "2025-09",
+          "2025-10",
+          "2025-11",
+          "2025-12",
+          "2026-01",
+          "2026-02",
+          "2026-03",
+          "2026-04",
+          "2026-05",
+          "2026-06",
+          "2026-07"
+        ]
+      }
+    ]
+  },
+  "anomaly_count": 39,
+  "anomalies": [
+    {
+      "source": "state_estimation",
+      "month": "2023-08",
+      "row_count": 3781690,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8850,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 78,
+      "missing_examples": [
+        "2023-08-01T02:45:00",
+        "2023-08-01T07:40:00",
+        "2023-08-01T18:40:00",
+        "2023-08-02T00:30:00",
+        "2023-08-02T06:15:00",
+        "2023-08-02T13:35:00",
+        "2023-08-02T16:20:00",
+        "2023-08-02T23:45:00",
+        "2023-08-03T02:40:00",
+        "2023-08-03T08:45:00",
+        "2023-08-03T14:40:00",
+        "2023-08-04T00:50:00",
+        "2023-08-04T21:15:00",
+        "2023-08-05T00:05:00",
+        "2023-08-05T03:20:00",
+        "2023-08-05T10:40:00",
+        "2023-08-05T11:00:00",
+        "2023-08-05T17:30:00",
+        "2023-08-05T21:40:00",
+        "2023-08-05T22:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-09",
+      "row_count": 3709972,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8602,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 38,
+      "missing_examples": [
+        "2023-09-05T04:05:00",
+        "2023-09-05T11:40:00",
+        "2023-09-05T21:40:00",
+        "2023-09-06T01:50:00",
+        "2023-09-06T02:20:00",
+        "2023-09-06T12:10:00",
+        "2023-09-07T00:10:00",
+        "2023-09-07T22:25:00",
+        "2023-09-07T23:40:00",
+        "2023-09-08T17:25:00",
+        "2023-09-08T17:50:00",
+        "2023-09-09T15:00:00",
+        "2023-09-10T18:40:00",
+        "2023-09-11T02:30:00",
+        "2023-09-11T22:40:00",
+        "2023-09-12T02:40:00",
+        "2023-09-12T11:30:00",
+        "2023-09-12T12:10:00",
+        "2023-09-12T20:30:00",
+        "2023-09-15T14:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-10",
+      "row_count": 3849540,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8890,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 38,
+      "missing_examples": [
+        "2023-10-01T07:10:00",
+        "2023-10-01T20:30:00",
+        "2023-10-02T21:05:00",
+        "2023-10-03T01:50:00",
+        "2023-10-03T21:10:00",
+        "2023-10-04T00:50:00",
+        "2023-10-04T16:30:00",
+        "2023-10-05T06:35:00",
+        "2023-10-05T17:40:00",
+        "2023-10-06T20:00:00",
+        "2023-10-06T23:30:00",
+        "2023-10-07T23:35:00",
+        "2023-10-08T13:25:00",
+        "2023-10-08T14:20:00",
+        "2023-10-09T11:35:00",
+        "2023-10-09T15:05:00",
+        "2023-10-10T01:35:00",
+        "2023-10-11T00:05:00",
+        "2023-10-12T08:15:00",
+        "2023-10-12T08:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-11",
+      "row_count": 3735780,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8588,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2023-11-01T02:00:00",
+        "2023-11-01T10:00:00",
+        "2023-11-01T21:40:00",
+        "2023-11-02T10:30:00",
+        "2023-11-02T19:20:00",
+        "2023-11-02T21:25:00",
+        "2023-11-03T03:40:00",
+        "2023-11-04T06:50:00",
+        "2023-11-04T07:20:00",
+        "2023-11-04T20:30:00",
+        "2023-11-05T07:35:00",
+        "2023-11-05T21:30:00",
+        "2023-11-06T09:40:00",
+        "2023-11-07T13:45:00",
+        "2023-11-08T02:35:00",
+        "2023-11-08T04:00:00",
+        "2023-11-08T05:25:00",
+        "2023-11-08T23:00:00",
+        "2023-11-09T03:30:00",
+        "2023-11-09T09:25:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-12",
+      "row_count": 3870960,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8886,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 42,
+      "missing_examples": [
+        "2023-12-01T15:15:00",
+        "2023-12-03T16:00:00",
+        "2023-12-04T18:35:00",
+        "2023-12-05T05:50:00",
+        "2023-12-05T18:40:00",
+        "2023-12-05T19:30:00",
+        "2023-12-05T21:10:00",
+        "2023-12-06T03:30:00",
+        "2023-12-06T17:50:00",
+        "2023-12-07T01:25:00",
+        "2023-12-07T05:35:00",
+        "2023-12-08T10:00:00",
+        "2023-12-08T10:25:00",
+        "2023-12-09T02:40:00",
+        "2023-12-09T09:10:00",
+        "2023-12-11T04:30:00",
+        "2023-12-11T08:40:00",
+        "2023-12-11T13:10:00",
+        "2023-12-12T15:30:00",
+        "2023-12-14T17:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-01",
+      "row_count": 3881063,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8885,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 43,
+      "missing_examples": [
+        "2024-01-01T05:40:00",
+        "2024-01-01T10:20:00",
+        "2024-01-01T22:50:00",
+        "2024-01-03T18:00:00",
+        "2024-01-04T20:20:00",
+        "2024-01-05T00:00:00",
+        "2024-01-05T21:20:00",
+        "2024-01-06T12:35:00",
+        "2024-01-06T22:50:00",
+        "2024-01-07T02:10:00",
+        "2024-01-08T04:40:00",
+        "2024-01-09T04:55:00",
+        "2024-01-09T08:25:00",
+        "2024-01-09T18:00:00",
+        "2024-01-11T03:40:00",
+        "2024-01-12T15:20:00",
+        "2024-01-13T10:20:00",
+        "2024-01-15T14:30:00",
+        "2024-01-15T19:25:00",
+        "2024-01-16T03:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-02",
+      "row_count": 3727994,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8320,
+      "expected_timestamp_count": 8352,
+      "missing_timestamp_count": 32,
+      "missing_examples": [
+        "2024-02-01T01:40:00",
+        "2024-02-01T03:00:00",
+        "2024-02-01T04:40:00",
+        "2024-02-01T11:50:00",
+        "2024-02-01T14:45:00",
+        "2024-02-02T01:40:00",
+        "2024-02-02T07:45:00",
+        "2024-02-02T09:15:00",
+        "2024-02-02T14:10:00",
+        "2024-02-02T18:30:00",
+        "2024-02-03T16:50:00",
+        "2024-02-04T03:45:00",
+        "2024-02-04T07:10:00",
+        "2024-02-04T17:00:00",
+        "2024-02-05T02:10:00",
+        "2024-02-05T02:20:00",
+        "2024-02-05T12:45:00",
+        "2024-02-06T03:55:00",
+        "2024-02-06T14:20:00",
+        "2024-02-06T19:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-03",
+      "row_count": 4036968,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8853,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 75,
+      "missing_examples": [
+        "2024-03-01T01:45:00",
+        "2024-03-01T20:50:00",
+        "2024-03-02T02:00:00",
+        "2024-03-03T20:20:00",
+        "2024-03-04T01:40:00",
+        "2024-03-04T14:30:00",
+        "2024-03-04T15:15:00",
+        "2024-03-04T18:50:00",
+        "2024-03-04T20:15:00",
+        "2024-03-05T01:00:00",
+        "2024-03-05T03:45:00",
+        "2024-03-05T14:25:00",
+        "2024-03-05T15:55:00",
+        "2024-03-06T00:30:00",
+        "2024-03-06T12:45:00",
+        "2024-03-07T19:25:00",
+        "2024-03-08T18:45:00",
+        "2024-03-09T19:50:00",
+        "2024-03-09T23:00:00",
+        "2024-03-11T03:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-04",
+      "row_count": 3921600,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8600,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 40,
+      "missing_examples": [
+        "2024-04-02T13:00:00",
+        "2024-04-03T04:00:00",
+        "2024-04-04T06:10:00",
+        "2024-04-08T07:20:00",
+        "2024-04-08T14:30:00",
+        "2024-04-09T06:50:00",
+        "2024-04-09T08:05:00",
+        "2024-04-09T09:00:00",
+        "2024-04-10T14:30:00",
+        "2024-04-12T09:20:00",
+        "2024-04-12T21:55:00",
+        "2024-04-14T09:10:00",
+        "2024-04-15T01:10:00",
+        "2024-04-15T02:20:00",
+        "2024-04-15T11:45:00",
+        "2024-04-16T03:45:00",
+        "2024-04-16T07:15:00",
+        "2024-04-17T02:15:00",
+        "2024-04-17T13:50:00",
+        "2024-04-17T14:25:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-05",
+      "row_count": 4045225,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8869,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 59,
+      "missing_examples": [
+        "2024-05-01T03:40:00",
+        "2024-05-04T05:00:00",
+        "2024-05-05T03:15:00",
+        "2024-05-05T05:40:00",
+        "2024-05-05T19:30:00",
+        "2024-05-06T08:05:00",
+        "2024-05-07T19:45:00",
+        "2024-05-07T21:15:00",
+        "2024-05-09T15:35:00",
+        "2024-05-09T21:20:00",
+        "2024-05-10T07:05:00",
+        "2024-05-11T00:45:00",
+        "2024-05-11T04:15:00",
+        "2024-05-11T17:00:00",
+        "2024-05-12T07:20:00",
+        "2024-05-12T17:20:00",
+        "2024-05-12T18:40:00",
+        "2024-05-13T13:15:00",
+        "2024-05-13T19:30:00",
+        "2024-05-14T06:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-06",
+      "row_count": 3917861,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8573,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 67,
+      "missing_examples": [
+        "2024-06-01T07:10:00",
+        "2024-06-01T23:05:00",
+        "2024-06-02T04:25:00",
+        "2024-06-02T22:20:00",
+        "2024-06-03T01:35:00",
+        "2024-06-03T11:50:00",
+        "2024-06-04T18:20:00",
+        "2024-06-05T07:10:00",
+        "2024-06-07T17:20:00",
+        "2024-06-10T00:30:00",
+        "2024-06-10T15:30:00",
+        "2024-06-10T16:30:00",
+        "2024-06-10T18:45:00",
+        "2024-06-11T03:00:00",
+        "2024-06-11T11:10:00",
+        "2024-06-11T11:40:00",
+        "2024-06-11T21:20:00",
+        "2024-06-12T07:20:00",
+        "2024-06-12T19:40:00",
+        "2024-06-13T04:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-07",
+      "row_count": 4048563,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8859,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 69,
+      "missing_examples": [
+        "2024-07-03T09:50:00",
+        "2024-07-03T11:55:00",
+        "2024-07-04T08:10:00",
+        "2024-07-04T17:15:00",
+        "2024-07-04T22:25:00",
+        "2024-07-04T23:55:00",
+        "2024-07-06T20:00:00",
+        "2024-07-06T21:20:00",
+        "2024-07-07T14:35:00",
+        "2024-07-07T23:35:00",
+        "2024-07-08T11:50:00",
+        "2024-07-08T22:15:00",
+        "2024-07-09T07:55:00",
+        "2024-07-09T17:55:00",
+        "2024-07-10T02:20:00",
+        "2024-07-10T14:00:00",
+        "2024-07-10T15:05:00",
+        "2024-07-11T12:10:00",
+        "2024-07-11T21:25:00",
+        "2024-07-11T21:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-08",
+      "row_count": 4083548,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8876,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2024-08-01T20:05:00",
+        "2024-08-02T04:10:00",
+        "2024-08-03T06:50:00",
+        "2024-08-03T20:05:00",
+        "2024-08-04T10:50:00",
+        "2024-08-04T18:30:00",
+        "2024-08-05T13:40:00",
+        "2024-08-07T02:40:00",
+        "2024-08-07T04:20:00",
+        "2024-08-07T19:35:00",
+        "2024-08-08T11:50:00",
+        "2024-08-08T19:40:00",
+        "2024-08-09T00:30:00",
+        "2024-08-09T03:00:00",
+        "2024-08-09T03:10:00",
+        "2024-08-09T21:55:00",
+        "2024-08-09T23:35:00",
+        "2024-08-10T05:50:00",
+        "2024-08-10T19:20:00",
+        "2024-08-11T16:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-09",
+      "row_count": 4005636,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8573,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 67,
+      "missing_examples": [
+        "2024-09-01T09:50:00",
+        "2024-09-01T12:50:00",
+        "2024-09-01T22:30:00",
+        "2024-09-02T01:25:00",
+        "2024-09-02T08:40:00",
+        "2024-09-02T22:50:00",
+        "2024-09-03T14:15:00",
+        "2024-09-03T20:30:00",
+        "2024-09-04T08:45:00",
+        "2024-09-04T15:55:00",
+        "2024-09-04T20:40:00",
+        "2024-09-05T05:00:00",
+        "2024-09-06T08:30:00",
+        "2024-09-06T12:40:00",
+        "2024-09-06T14:15:00",
+        "2024-09-06T18:05:00",
+        "2024-09-07T02:15:00",
+        "2024-09-08T00:50:00",
+        "2024-09-09T01:45:00",
+        "2024-09-09T14:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-10",
+      "row_count": 4161328,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8900,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 28,
+      "missing_examples": [
+        "2024-10-10T15:25:00",
+        "2024-10-10T20:50:00",
+        "2024-10-11T16:00:00",
+        "2024-10-11T17:40:00",
+        "2024-10-12T07:30:00",
+        "2024-10-14T08:00:00",
+        "2024-10-15T03:40:00",
+        "2024-10-15T08:40:00",
+        "2024-10-15T15:55:00",
+        "2024-10-16T09:55:00",
+        "2024-10-17T01:35:00",
+        "2024-10-17T21:05:00",
+        "2024-10-19T10:10:00",
+        "2024-10-19T18:55:00",
+        "2024-10-21T05:00:00",
+        "2024-10-24T17:35:00",
+        "2024-10-24T21:30:00",
+        "2024-10-25T16:30:00",
+        "2024-10-26T10:20:00",
+        "2024-10-26T17:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-11",
+      "row_count": 3971829,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8575,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 65,
+      "missing_examples": [
+        "2024-11-01T01:40:00",
+        "2024-11-01T21:20:00",
+        "2024-11-02T08:10:00",
+        "2024-11-02T13:30:00",
+        "2024-11-04T07:30:00",
+        "2024-11-04T14:30:00",
+        "2024-11-05T00:40:00",
+        "2024-11-05T07:00:00",
+        "2024-11-06T11:30:00",
+        "2024-11-06T19:15:00",
+        "2024-11-07T23:15:00",
+        "2024-11-08T01:20:00",
+        "2024-11-08T03:30:00",
+        "2024-11-08T09:40:00",
+        "2024-11-09T17:50:00",
+        "2024-11-10T14:50:00",
+        "2024-11-11T22:50:00",
+        "2024-11-11T23:05:00",
+        "2024-11-12T21:55:00",
+        "2024-11-13T09:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-12",
+      "row_count": 4118848,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8896,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 32,
+      "missing_examples": [
+        "2024-12-05T15:30:00",
+        "2024-12-06T16:20:00",
+        "2024-12-12T10:15:00",
+        "2024-12-12T23:35:00",
+        "2024-12-13T07:15:00",
+        "2024-12-13T11:10:00",
+        "2024-12-14T04:30:00",
+        "2024-12-15T03:10:00",
+        "2024-12-16T00:10:00",
+        "2024-12-17T02:00:00",
+        "2024-12-18T10:50:00",
+        "2024-12-18T22:00:00",
+        "2024-12-19T17:20:00",
+        "2024-12-20T12:55:00",
+        "2024-12-21T04:00:00",
+        "2024-12-21T17:35:00",
+        "2024-12-22T16:45:00",
+        "2024-12-23T16:25:00",
+        "2024-12-24T04:00:00",
+        "2024-12-24T18:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-01",
+      "row_count": 4130445,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8874,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 54,
+      "missing_examples": [
+        "2025-01-01T01:10:00",
+        "2025-01-01T11:15:00",
+        "2025-01-01T18:05:00",
+        "2025-01-01T19:25:00",
+        "2025-01-01T20:30:00",
+        "2025-01-02T00:15:00",
+        "2025-01-02T02:40:00",
+        "2025-01-02T17:00:00",
+        "2025-01-02T17:55:00",
+        "2025-01-04T02:20:00",
+        "2025-01-05T11:25:00",
+        "2025-01-06T03:15:00",
+        "2025-01-06T04:00:00",
+        "2025-01-06T12:55:00",
+        "2025-01-06T15:35:00",
+        "2025-01-07T04:35:00",
+        "2025-01-09T11:30:00",
+        "2025-01-09T13:35:00",
+        "2025-01-09T23:10:00",
+        "2025-01-10T14:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-02",
+      "row_count": 3740921,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7991,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 73,
+      "missing_examples": [
+        "2025-02-01T03:30:00",
+        "2025-02-01T05:10:00",
+        "2025-02-01T18:40:00",
+        "2025-02-02T13:40:00",
+        "2025-02-03T04:00:00",
+        "2025-02-03T11:55:00",
+        "2025-02-03T23:15:00",
+        "2025-02-04T02:25:00",
+        "2025-02-04T07:10:00",
+        "2025-02-04T17:30:00",
+        "2025-02-04T22:05:00",
+        "2025-02-06T02:50:00",
+        "2025-02-06T03:35:00",
+        "2025-02-06T16:40:00",
+        "2025-02-06T17:10:00",
+        "2025-02-07T09:00:00",
+        "2025-02-08T10:30:00",
+        "2025-02-09T08:00:00",
+        "2025-02-10T08:35:00",
+        "2025-02-10T19:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-03",
+      "row_count": 4147836,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8844,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 84,
+      "missing_examples": [
+        "2025-03-01T01:30:00",
+        "2025-03-01T04:30:00",
+        "2025-03-01T08:55:00",
+        "2025-03-01T09:15:00",
+        "2025-03-01T10:50:00",
+        "2025-03-01T18:00:00",
+        "2025-03-01T18:30:00",
+        "2025-03-02T01:55:00",
+        "2025-03-02T15:55:00",
+        "2025-03-03T14:20:00",
+        "2025-03-03T16:20:00",
+        "2025-03-03T17:45:00",
+        "2025-03-04T06:00:00",
+        "2025-03-04T12:30:00",
+        "2025-03-04T17:00:00",
+        "2025-03-04T19:35:00",
+        "2025-03-05T02:30:00",
+        "2025-03-05T11:30:00",
+        "2025-03-05T14:00:00",
+        "2025-03-05T21:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-04",
+      "row_count": 4027303,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8587,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 53,
+      "missing_examples": [
+        "2025-04-01T12:50:00",
+        "2025-04-02T14:30:00",
+        "2025-04-07T07:55:00",
+        "2025-04-08T14:30:00",
+        "2025-04-08T22:30:00",
+        "2025-04-09T02:40:00",
+        "2025-04-09T09:50:00",
+        "2025-04-09T14:10:00",
+        "2025-04-10T05:10:00",
+        "2025-04-10T18:20:00",
+        "2025-04-10T20:30:00",
+        "2025-04-11T06:40:00",
+        "2025-04-11T15:45:00",
+        "2025-04-12T03:20:00",
+        "2025-04-12T20:35:00",
+        "2025-04-13T02:05:00",
+        "2025-04-13T03:40:00",
+        "2025-04-13T08:55:00",
+        "2025-04-13T20:10:00",
+        "2025-04-14T08:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-05",
+      "row_count": 4159495,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8848,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 80,
+      "missing_examples": [
+        "2025-05-02T10:50:00",
+        "2025-05-02T15:25:00",
+        "2025-05-04T05:20:00",
+        "2025-05-05T06:55:00",
+        "2025-05-05T13:50:00",
+        "2025-05-05T13:55:00",
+        "2025-05-05T14:10:00",
+        "2025-05-05T15:55:00",
+        "2025-05-05T16:40:00",
+        "2025-05-05T17:20:00",
+        "2025-05-06T02:40:00",
+        "2025-05-07T02:15:00",
+        "2025-05-07T06:45:00",
+        "2025-05-08T05:20:00",
+        "2025-05-08T17:20:00",
+        "2025-05-09T00:05:00",
+        "2025-05-09T15:40:00",
+        "2025-05-10T08:00:00",
+        "2025-05-10T09:15:00",
+        "2025-05-10T11:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-06",
+      "row_count": 4053936,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8557,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 83,
+      "missing_examples": [
+        "2025-06-01T00:35:00",
+        "2025-06-01T00:55:00",
+        "2025-06-01T01:10:00",
+        "2025-06-01T15:00:00",
+        "2025-06-01T17:20:00",
+        "2025-06-02T07:45:00",
+        "2025-06-02T15:50:00",
+        "2025-06-02T19:30:00",
+        "2025-06-04T22:50:00",
+        "2025-06-05T11:25:00",
+        "2025-06-05T15:20:00",
+        "2025-06-05T17:20:00",
+        "2025-06-06T00:40:00",
+        "2025-06-06T06:45:00",
+        "2025-06-06T13:40:00",
+        "2025-06-06T18:40:00",
+        "2025-06-07T01:30:00",
+        "2025-06-07T05:20:00",
+        "2025-06-07T06:30:00",
+        "2025-06-08T12:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-07",
+      "row_count": 4256666,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8872,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 56,
+      "missing_examples": [
+        "2025-07-01T00:15:00",
+        "2025-07-01T19:10:00",
+        "2025-07-02T14:05:00",
+        "2025-07-02T15:15:00",
+        "2025-07-02T16:20:00",
+        "2025-07-02T22:20:00",
+        "2025-07-03T12:45:00",
+        "2025-07-03T18:35:00",
+        "2025-07-04T07:55:00",
+        "2025-07-06T04:10:00",
+        "2025-07-06T05:35:00",
+        "2025-07-06T17:10:00",
+        "2025-07-06T21:50:00",
+        "2025-07-06T22:50:00",
+        "2025-07-07T03:50:00",
+        "2025-07-07T07:45:00",
+        "2025-07-07T10:10:00",
+        "2025-07-07T21:40:00",
+        "2025-07-07T23:05:00",
+        "2025-07-09T00:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-08",
+      "row_count": 4377194,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8793,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 135,
+      "missing_examples": [
+        "2025-08-05T15:40:00",
+        "2025-08-06T07:20:00",
+        "2025-08-06T11:25:00",
+        "2025-08-06T16:50:00",
+        "2025-08-06T17:45:00",
+        "2025-08-07T03:10:00",
+        "2025-08-07T08:30:00",
+        "2025-08-07T13:30:00",
+        "2025-08-07T14:40:00",
+        "2025-08-08T00:20:00",
+        "2025-08-08T11:40:00",
+        "2025-08-08T12:55:00",
+        "2025-08-08T20:00:00",
+        "2025-08-08T20:05:00",
+        "2025-08-08T22:00:00",
+        "2025-08-08T22:55:00",
+        "2025-08-09T00:30:00",
+        "2025-08-09T04:50:00",
+        "2025-08-09T07:20:00",
+        "2025-08-09T09:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-09",
+      "row_count": 4493285,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8587,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 53,
+      "missing_examples": [
+        "2025-09-02T21:50:00",
+        "2025-09-06T23:20:00",
+        "2025-09-11T10:30:00",
+        "2025-09-11T13:30:00",
+        "2025-09-11T20:10:00",
+        "2025-09-12T12:20:00",
+        "2025-09-12T13:00:00",
+        "2025-09-12T23:35:00",
+        "2025-09-13T01:10:00",
+        "2025-09-13T03:30:00",
+        "2025-09-13T14:20:00",
+        "2025-09-13T18:10:00",
+        "2025-09-14T23:30:00",
+        "2025-09-15T16:10:00",
+        "2025-09-15T18:40:00",
+        "2025-09-16T22:55:00",
+        "2025-09-17T02:20:00",
+        "2025-09-17T06:05:00",
+        "2025-09-17T09:40:00",
+        "2025-09-17T16:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-10",
+      "row_count": 4659207,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8841,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 87,
+      "missing_examples": [
+        "2025-10-01T00:20:00",
+        "2025-10-01T08:05:00",
+        "2025-10-01T09:35:00",
+        "2025-10-01T14:20:00",
+        "2025-10-02T10:20:00",
+        "2025-10-02T15:00:00",
+        "2025-10-02T15:35:00",
+        "2025-10-02T18:20:00",
+        "2025-10-02T18:25:00",
+        "2025-10-02T19:20:00",
+        "2025-10-03T03:55:00",
+        "2025-10-03T05:50:00",
+        "2025-10-03T09:40:00",
+        "2025-10-03T12:30:00",
+        "2025-10-03T23:30:00",
+        "2025-10-04T10:25:00",
+        "2025-10-04T10:40:00",
+        "2025-10-04T10:50:00",
+        "2025-10-04T16:30:00",
+        "2025-10-04T17:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-11",
+      "row_count": 4587008,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8578,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 62,
+      "missing_examples": [
+        "2025-11-05T14:55:00",
+        "2025-11-06T08:20:00",
+        "2025-11-06T13:05:00",
+        "2025-11-06T18:20:00",
+        "2025-11-07T00:25:00",
+        "2025-11-07T09:50:00",
+        "2025-11-07T13:40:00",
+        "2025-11-07T19:50:00",
+        "2025-11-09T02:00:00",
+        "2025-11-09T03:55:00",
+        "2025-11-09T12:35:00",
+        "2025-11-09T18:20:00",
+        "2025-11-10T02:15:00",
+        "2025-11-10T19:45:00",
+        "2025-11-11T07:15:00",
+        "2025-11-11T15:00:00",
+        "2025-11-11T16:35:00",
+        "2025-11-13T03:55:00",
+        "2025-11-13T21:30:00",
+        "2025-11-14T22:50:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-12",
+      "row_count": 4783480,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8874,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 54,
+      "missing_examples": [
+        "2025-12-01T02:15:00",
+        "2025-12-02T07:35:00",
+        "2025-12-02T14:35:00",
+        "2025-12-02T14:40:00",
+        "2025-12-02T14:45:00",
+        "2025-12-02T19:15:00",
+        "2025-12-03T06:10:00",
+        "2025-12-03T19:40:00",
+        "2025-12-04T23:05:00",
+        "2025-12-05T07:10:00",
+        "2025-12-05T16:50:00",
+        "2025-12-05T18:30:00",
+        "2025-12-06T02:00:00",
+        "2025-12-06T05:20:00",
+        "2025-12-07T04:55:00",
+        "2025-12-07T06:00:00",
+        "2025-12-07T07:55:00",
+        "2025-12-07T14:40:00",
+        "2025-12-08T00:45:00",
+        "2025-12-08T01:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-01",
+      "row_count": 7281830,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8880,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 48,
+      "missing_examples": [
+        "2026-01-01T05:30:00",
+        "2026-01-01T21:25:00",
+        "2026-01-02T10:00:00",
+        "2026-01-02T13:25:00",
+        "2026-01-02T20:40:00",
+        "2026-01-03T08:05:00",
+        "2026-01-03T11:20:00",
+        "2026-01-03T12:45:00",
+        "2026-01-04T06:00:00",
+        "2026-01-04T08:05:00",
+        "2026-01-04T11:50:00",
+        "2026-01-05T02:20:00",
+        "2026-01-05T03:35:00",
+        "2026-01-05T07:45:00",
+        "2026-01-06T13:40:00",
+        "2026-01-06T22:50:00",
+        "2026-01-07T02:25:00",
+        "2026-01-07T12:20:00",
+        "2026-01-07T16:10:00",
+        "2026-01-08T15:45:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-02",
+      "row_count": 8379285,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8062,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-02-28T20:25:00",
+        "2026-02-28T23:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-02",
+      "row_count": 11166802,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7934,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 130,
+      "missing_examples": [
+        "2026-02-01T00:55:00",
+        "2026-02-01T05:00:00",
+        "2026-02-01T17:20:00",
+        "2026-02-01T21:25:00",
+        "2026-02-01T21:30:00",
+        "2026-02-01T21:35:00",
+        "2026-02-01T21:40:00",
+        "2026-02-02T01:15:00",
+        "2026-02-02T03:00:00",
+        "2026-02-02T10:20:00",
+        "2026-02-02T13:05:00",
+        "2026-02-02T19:20:00",
+        "2026-02-02T22:15:00",
+        "2026-02-02T23:35:00",
+        "2026-02-02T23:45:00",
+        "2026-02-03T02:35:00",
+        "2026-02-03T03:10:00",
+        "2026-02-03T13:40:00",
+        "2026-02-03T16:15:00",
+        "2026-02-03T23:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-03",
+      "row_count": 25502876,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8832,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 96,
+      "missing_examples": [
+        "2026-03-01T11:25:00",
+        "2026-03-02T05:05:00",
+        "2026-03-02T11:25:00",
+        "2026-03-02T14:55:00",
+        "2026-03-04T06:50:00",
+        "2026-03-04T11:15:00",
+        "2026-03-04T11:30:00",
+        "2026-03-04T18:10:00",
+        "2026-03-04T20:10:00",
+        "2026-03-04T20:30:00",
+        "2026-03-04T23:25:00",
+        "2026-03-05T11:30:00",
+        "2026-03-05T18:35:00",
+        "2026-03-06T09:05:00",
+        "2026-03-06T18:20:00",
+        "2026-03-06T19:30:00",
+        "2026-03-07T03:45:00",
+        "2026-03-07T11:25:00",
+        "2026-03-07T15:30:00",
+        "2026-03-07T17:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-04",
+      "row_count": 8617228,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8588,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2026-04-01T02:05:00",
+        "2026-04-01T16:00:00",
+        "2026-04-01T16:55:00",
+        "2026-04-01T17:30:00",
+        "2026-04-01T20:45:00",
+        "2026-04-01T22:00:00",
+        "2026-04-02T07:00:00",
+        "2026-04-02T08:30:00",
+        "2026-04-02T19:30:00",
+        "2026-04-03T03:50:00",
+        "2026-04-03T23:50:00",
+        "2026-04-04T14:45:00",
+        "2026-04-04T16:40:00",
+        "2026-04-05T14:15:00",
+        "2026-04-05T22:50:00",
+        "2026-04-07T13:30:00",
+        "2026-04-07T14:05:00",
+        "2026-04-07T15:55:00",
+        "2026-04-07T17:45:00",
+        "2026-04-07T18:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-05",
+      "row_count": 4371664,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7700,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 1228,
+      "missing_examples": [
+        "2026-05-04T17:00:00",
+        "2026-05-04T17:30:00",
+        "2026-05-06T08:45:00",
+        "2026-05-06T08:50:00",
+        "2026-05-08T10:00:00",
+        "2026-05-08T10:45:00",
+        "2026-05-10T08:35:00",
+        "2026-05-10T08:40:00",
+        "2026-05-10T08:45:00",
+        "2026-05-10T08:50:00",
+        "2026-05-10T08:55:00",
+        "2026-05-10T09:00:00",
+        "2026-05-10T09:05:00",
+        "2026-05-10T09:10:00",
+        "2026-05-10T09:15:00",
+        "2026-05-10T09:20:00",
+        "2026-05-10T09:25:00",
+        "2026-05-10T09:30:00",
+        "2026-05-10T09:35:00",
+        "2026-05-10T09:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 180240
+    },
+    {
+      "source": "demand",
+      "month": "2026-06",
+      "row_count": 8638,
+      "schema": {
+        "columns": [
+          "TIME",
+          "LF05_1"
+        ],
+        "physical_format": "utf-8-sig comma-delimited text with optional preamble",
+        "encoding": "utf-8-sig",
+        "reader": "pandas.read_csv(decoded utf-8-sig text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8638,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-06",
+      "row_count": 4277501,
+      "schema": {
+        "columns": [
+          "TIME",
+          "GEN_CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "ascii",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8638,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-06",
+      "row_count": 9208119,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8636,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 4,
+      "missing_examples": [
+        "2026-06-02T15:50:00",
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00",
+        "2026-06-30T16:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 8464896
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-07",
+      "row_count": 5371818,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8927,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 1,
+      "missing_examples": [
+        "2026-07-12T07:50:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    }
+  ],
+  "details": [
+    {
+      "source": "demand",
+      "month": "2023-08",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-08",
+      "row_count": 3671469,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-08",
+      "row_count": 3781690,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8850,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 78,
+      "missing_examples": [
+        "2023-08-01T02:45:00",
+        "2023-08-01T07:40:00",
+        "2023-08-01T18:40:00",
+        "2023-08-02T00:30:00",
+        "2023-08-02T06:15:00",
+        "2023-08-02T13:35:00",
+        "2023-08-02T16:20:00",
+        "2023-08-02T23:45:00",
+        "2023-08-03T02:40:00",
+        "2023-08-03T08:45:00",
+        "2023-08-03T14:40:00",
+        "2023-08-04T00:50:00",
+        "2023-08-04T21:15:00",
+        "2023-08-05T00:05:00",
+        "2023-08-05T03:20:00",
+        "2023-08-05T10:40:00",
+        "2023-08-05T11:00:00",
+        "2023-08-05T17:30:00",
+        "2023-08-05T21:40:00",
+        "2023-08-05T22:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2023-09",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-09",
+      "row_count": 3579484,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-09",
+      "row_count": 3709972,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8602,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 38,
+      "missing_examples": [
+        "2023-09-05T04:05:00",
+        "2023-09-05T11:40:00",
+        "2023-09-05T21:40:00",
+        "2023-09-06T01:50:00",
+        "2023-09-06T02:20:00",
+        "2023-09-06T12:10:00",
+        "2023-09-07T00:10:00",
+        "2023-09-07T22:25:00",
+        "2023-09-07T23:40:00",
+        "2023-09-08T17:25:00",
+        "2023-09-08T17:50:00",
+        "2023-09-09T15:00:00",
+        "2023-09-10T18:40:00",
+        "2023-09-11T02:30:00",
+        "2023-09-11T22:40:00",
+        "2023-09-12T02:40:00",
+        "2023-09-12T11:30:00",
+        "2023-09-12T12:10:00",
+        "2023-09-12T20:30:00",
+        "2023-09-15T14:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2023-10",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-10",
+      "row_count": 3714218,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-10",
+      "row_count": 3849540,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8890,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 38,
+      "missing_examples": [
+        "2023-10-01T07:10:00",
+        "2023-10-01T20:30:00",
+        "2023-10-02T21:05:00",
+        "2023-10-03T01:50:00",
+        "2023-10-03T21:10:00",
+        "2023-10-04T00:50:00",
+        "2023-10-04T16:30:00",
+        "2023-10-05T06:35:00",
+        "2023-10-05T17:40:00",
+        "2023-10-06T20:00:00",
+        "2023-10-06T23:30:00",
+        "2023-10-07T23:35:00",
+        "2023-10-08T13:25:00",
+        "2023-10-08T14:20:00",
+        "2023-10-09T11:35:00",
+        "2023-10-09T15:05:00",
+        "2023-10-10T01:35:00",
+        "2023-10-11T00:05:00",
+        "2023-10-12T08:15:00",
+        "2023-10-12T08:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2023-11",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-11",
+      "row_count": 3611520,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-11",
+      "row_count": 3735780,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8588,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2023-11-01T02:00:00",
+        "2023-11-01T10:00:00",
+        "2023-11-01T21:40:00",
+        "2023-11-02T10:30:00",
+        "2023-11-02T19:20:00",
+        "2023-11-02T21:25:00",
+        "2023-11-03T03:40:00",
+        "2023-11-04T06:50:00",
+        "2023-11-04T07:20:00",
+        "2023-11-04T20:30:00",
+        "2023-11-05T07:35:00",
+        "2023-11-05T21:30:00",
+        "2023-11-06T09:40:00",
+        "2023-11-07T13:45:00",
+        "2023-11-08T02:35:00",
+        "2023-11-08T04:00:00",
+        "2023-11-08T05:25:00",
+        "2023-11-08T23:00:00",
+        "2023-11-09T03:30:00",
+        "2023-11-09T09:25:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2023-12",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2023-12",
+      "row_count": 3737478,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2023-12",
+      "row_count": 3870960,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8886,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 42,
+      "missing_examples": [
+        "2023-12-01T15:15:00",
+        "2023-12-03T16:00:00",
+        "2023-12-04T18:35:00",
+        "2023-12-05T05:50:00",
+        "2023-12-05T18:40:00",
+        "2023-12-05T19:30:00",
+        "2023-12-05T21:10:00",
+        "2023-12-06T03:30:00",
+        "2023-12-06T17:50:00",
+        "2023-12-07T01:25:00",
+        "2023-12-07T05:35:00",
+        "2023-12-08T10:00:00",
+        "2023-12-08T10:25:00",
+        "2023-12-09T02:40:00",
+        "2023-12-09T09:10:00",
+        "2023-12-11T04:30:00",
+        "2023-12-11T08:40:00",
+        "2023-12-11T13:10:00",
+        "2023-12-12T15:30:00",
+        "2023-12-14T17:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-01",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-01",
+      "row_count": 3748083,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-01",
+      "row_count": 3881063,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8885,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 43,
+      "missing_examples": [
+        "2024-01-01T05:40:00",
+        "2024-01-01T10:20:00",
+        "2024-01-01T22:50:00",
+        "2024-01-03T18:00:00",
+        "2024-01-04T20:20:00",
+        "2024-01-05T00:00:00",
+        "2024-01-05T21:20:00",
+        "2024-01-06T12:35:00",
+        "2024-01-06T22:50:00",
+        "2024-01-07T02:10:00",
+        "2024-01-08T04:40:00",
+        "2024-01-09T04:55:00",
+        "2024-01-09T08:25:00",
+        "2024-01-09T18:00:00",
+        "2024-01-11T03:40:00",
+        "2024-01-12T15:20:00",
+        "2024-01-13T10:20:00",
+        "2024-01-15T14:30:00",
+        "2024-01-15T19:25:00",
+        "2024-01-16T03:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-02",
+      "row_count": 8352,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8352,
+      "expected_timestamp_count": 8352,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-02",
+      "row_count": 3524544,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8352,
+      "expected_timestamp_count": 8352,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-02",
+      "row_count": 3727994,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8320,
+      "expected_timestamp_count": 8352,
+      "missing_timestamp_count": 32,
+      "missing_examples": [
+        "2024-02-01T01:40:00",
+        "2024-02-01T03:00:00",
+        "2024-02-01T04:40:00",
+        "2024-02-01T11:50:00",
+        "2024-02-01T14:45:00",
+        "2024-02-02T01:40:00",
+        "2024-02-02T07:45:00",
+        "2024-02-02T09:15:00",
+        "2024-02-02T14:10:00",
+        "2024-02-02T18:30:00",
+        "2024-02-03T16:50:00",
+        "2024-02-04T03:45:00",
+        "2024-02-04T07:10:00",
+        "2024-02-04T17:00:00",
+        "2024-02-05T02:10:00",
+        "2024-02-05T02:20:00",
+        "2024-02-05T12:45:00",
+        "2024-02-06T03:55:00",
+        "2024-02-06T14:20:00",
+        "2024-02-06T19:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-03",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-03",
+      "row_count": 3767616,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-03",
+      "row_count": 4036968,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8853,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 75,
+      "missing_examples": [
+        "2024-03-01T01:45:00",
+        "2024-03-01T20:50:00",
+        "2024-03-02T02:00:00",
+        "2024-03-03T20:20:00",
+        "2024-03-04T01:40:00",
+        "2024-03-04T14:30:00",
+        "2024-03-04T15:15:00",
+        "2024-03-04T18:50:00",
+        "2024-03-04T20:15:00",
+        "2024-03-05T01:00:00",
+        "2024-03-05T03:45:00",
+        "2024-03-05T14:25:00",
+        "2024-03-05T15:55:00",
+        "2024-03-06T00:30:00",
+        "2024-03-06T12:45:00",
+        "2024-03-07T19:25:00",
+        "2024-03-08T18:45:00",
+        "2024-03-09T19:50:00",
+        "2024-03-09T23:00:00",
+        "2024-03-11T03:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-04",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-04",
+      "row_count": 3646080,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-04",
+      "row_count": 3921600,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8600,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 40,
+      "missing_examples": [
+        "2024-04-02T13:00:00",
+        "2024-04-03T04:00:00",
+        "2024-04-04T06:10:00",
+        "2024-04-08T07:20:00",
+        "2024-04-08T14:30:00",
+        "2024-04-09T06:50:00",
+        "2024-04-09T08:05:00",
+        "2024-04-09T09:00:00",
+        "2024-04-10T14:30:00",
+        "2024-04-12T09:20:00",
+        "2024-04-12T21:55:00",
+        "2024-04-14T09:10:00",
+        "2024-04-15T01:10:00",
+        "2024-04-15T02:20:00",
+        "2024-04-15T11:45:00",
+        "2024-04-16T03:45:00",
+        "2024-04-16T07:15:00",
+        "2024-04-17T02:15:00",
+        "2024-04-17T13:50:00",
+        "2024-04-17T14:25:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-05",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-05",
+      "row_count": 3768585,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-05",
+      "row_count": 4045225,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8869,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 59,
+      "missing_examples": [
+        "2024-05-01T03:40:00",
+        "2024-05-04T05:00:00",
+        "2024-05-05T03:15:00",
+        "2024-05-05T05:40:00",
+        "2024-05-05T19:30:00",
+        "2024-05-06T08:05:00",
+        "2024-05-07T19:45:00",
+        "2024-05-07T21:15:00",
+        "2024-05-09T15:35:00",
+        "2024-05-09T21:20:00",
+        "2024-05-10T07:05:00",
+        "2024-05-11T00:45:00",
+        "2024-05-11T04:15:00",
+        "2024-05-11T17:00:00",
+        "2024-05-12T07:20:00",
+        "2024-05-12T17:20:00",
+        "2024-05-12T18:40:00",
+        "2024-05-13T13:15:00",
+        "2024-05-13T19:30:00",
+        "2024-05-14T06:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-06",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-06",
+      "row_count": 3654720,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-06",
+      "row_count": 3917861,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8573,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 67,
+      "missing_examples": [
+        "2024-06-01T07:10:00",
+        "2024-06-01T23:05:00",
+        "2024-06-02T04:25:00",
+        "2024-06-02T22:20:00",
+        "2024-06-03T01:35:00",
+        "2024-06-03T11:50:00",
+        "2024-06-04T18:20:00",
+        "2024-06-05T07:10:00",
+        "2024-06-07T17:20:00",
+        "2024-06-10T00:30:00",
+        "2024-06-10T15:30:00",
+        "2024-06-10T16:30:00",
+        "2024-06-10T18:45:00",
+        "2024-06-11T03:00:00",
+        "2024-06-11T11:10:00",
+        "2024-06-11T11:40:00",
+        "2024-06-11T21:20:00",
+        "2024-06-12T07:20:00",
+        "2024-06-12T19:40:00",
+        "2024-06-13T04:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-07",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-07",
+      "row_count": 3776544,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-07",
+      "row_count": 4048563,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8859,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 69,
+      "missing_examples": [
+        "2024-07-03T09:50:00",
+        "2024-07-03T11:55:00",
+        "2024-07-04T08:10:00",
+        "2024-07-04T17:15:00",
+        "2024-07-04T22:25:00",
+        "2024-07-04T23:55:00",
+        "2024-07-06T20:00:00",
+        "2024-07-06T21:20:00",
+        "2024-07-07T14:35:00",
+        "2024-07-07T23:35:00",
+        "2024-07-08T11:50:00",
+        "2024-07-08T22:15:00",
+        "2024-07-09T07:55:00",
+        "2024-07-09T17:55:00",
+        "2024-07-10T02:20:00",
+        "2024-07-10T14:00:00",
+        "2024-07-10T15:05:00",
+        "2024-07-11T12:10:00",
+        "2024-07-11T21:25:00",
+        "2024-07-11T21:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-08",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-08",
+      "row_count": 3776544,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-08",
+      "row_count": 4083548,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8876,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2024-08-01T20:05:00",
+        "2024-08-02T04:10:00",
+        "2024-08-03T06:50:00",
+        "2024-08-03T20:05:00",
+        "2024-08-04T10:50:00",
+        "2024-08-04T18:30:00",
+        "2024-08-05T13:40:00",
+        "2024-08-07T02:40:00",
+        "2024-08-07T04:20:00",
+        "2024-08-07T19:35:00",
+        "2024-08-08T11:50:00",
+        "2024-08-08T19:40:00",
+        "2024-08-09T00:30:00",
+        "2024-08-09T03:00:00",
+        "2024-08-09T03:10:00",
+        "2024-08-09T21:55:00",
+        "2024-08-09T23:35:00",
+        "2024-08-10T05:50:00",
+        "2024-08-10T19:20:00",
+        "2024-08-11T16:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-09",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-09",
+      "row_count": 3665418,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-09",
+      "row_count": 4005636,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8573,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 67,
+      "missing_examples": [
+        "2024-09-01T09:50:00",
+        "2024-09-01T12:50:00",
+        "2024-09-01T22:30:00",
+        "2024-09-02T01:25:00",
+        "2024-09-02T08:40:00",
+        "2024-09-02T22:50:00",
+        "2024-09-03T14:15:00",
+        "2024-09-03T20:30:00",
+        "2024-09-04T08:45:00",
+        "2024-09-04T15:55:00",
+        "2024-09-04T20:40:00",
+        "2024-09-05T05:00:00",
+        "2024-09-06T08:30:00",
+        "2024-09-06T12:40:00",
+        "2024-09-06T14:15:00",
+        "2024-09-06T18:05:00",
+        "2024-09-07T02:15:00",
+        "2024-09-08T00:50:00",
+        "2024-09-09T01:45:00",
+        "2024-09-09T14:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-10",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-10",
+      "row_count": 3795373,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-10",
+      "row_count": 4161328,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8900,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 28,
+      "missing_examples": [
+        "2024-10-10T15:25:00",
+        "2024-10-10T20:50:00",
+        "2024-10-11T16:00:00",
+        "2024-10-11T17:40:00",
+        "2024-10-12T07:30:00",
+        "2024-10-14T08:00:00",
+        "2024-10-15T03:40:00",
+        "2024-10-15T08:40:00",
+        "2024-10-15T15:55:00",
+        "2024-10-16T09:55:00",
+        "2024-10-17T01:35:00",
+        "2024-10-17T21:05:00",
+        "2024-10-19T10:10:00",
+        "2024-10-19T18:55:00",
+        "2024-10-21T05:00:00",
+        "2024-10-24T17:35:00",
+        "2024-10-24T21:30:00",
+        "2024-10-25T16:30:00",
+        "2024-10-26T10:20:00",
+        "2024-10-26T17:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-11",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-11",
+      "row_count": 3673613,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-11",
+      "row_count": 3971829,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8575,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 65,
+      "missing_examples": [
+        "2024-11-01T01:40:00",
+        "2024-11-01T21:20:00",
+        "2024-11-02T08:10:00",
+        "2024-11-02T13:30:00",
+        "2024-11-04T07:30:00",
+        "2024-11-04T14:30:00",
+        "2024-11-05T00:40:00",
+        "2024-11-05T07:00:00",
+        "2024-11-06T11:30:00",
+        "2024-11-06T19:15:00",
+        "2024-11-07T23:15:00",
+        "2024-11-08T01:20:00",
+        "2024-11-08T03:30:00",
+        "2024-11-08T09:40:00",
+        "2024-11-09T17:50:00",
+        "2024-11-10T14:50:00",
+        "2024-11-11T22:50:00",
+        "2024-11-11T23:05:00",
+        "2024-11-12T21:55:00",
+        "2024-11-13T09:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2024-12",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2024-12",
+      "row_count": 3794400,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2024-12",
+      "row_count": 4118848,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8896,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 32,
+      "missing_examples": [
+        "2024-12-05T15:30:00",
+        "2024-12-06T16:20:00",
+        "2024-12-12T10:15:00",
+        "2024-12-12T23:35:00",
+        "2024-12-13T07:15:00",
+        "2024-12-13T11:10:00",
+        "2024-12-14T04:30:00",
+        "2024-12-15T03:10:00",
+        "2024-12-16T00:10:00",
+        "2024-12-17T02:00:00",
+        "2024-12-18T10:50:00",
+        "2024-12-18T22:00:00",
+        "2024-12-19T17:20:00",
+        "2024-12-20T12:55:00",
+        "2024-12-21T04:00:00",
+        "2024-12-21T17:35:00",
+        "2024-12-22T16:45:00",
+        "2024-12-23T16:25:00",
+        "2024-12-24T04:00:00",
+        "2024-12-24T18:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-01",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-01",
+      "row_count": 3816303,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-01",
+      "row_count": 4130445,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8874,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 54,
+      "missing_examples": [
+        "2025-01-01T01:10:00",
+        "2025-01-01T11:15:00",
+        "2025-01-01T18:05:00",
+        "2025-01-01T19:25:00",
+        "2025-01-01T20:30:00",
+        "2025-01-02T00:15:00",
+        "2025-01-02T02:40:00",
+        "2025-01-02T17:00:00",
+        "2025-01-02T17:55:00",
+        "2025-01-04T02:20:00",
+        "2025-01-05T11:25:00",
+        "2025-01-06T03:15:00",
+        "2025-01-06T04:00:00",
+        "2025-01-06T12:55:00",
+        "2025-01-06T15:35:00",
+        "2025-01-07T04:35:00",
+        "2025-01-09T11:30:00",
+        "2025-01-09T13:35:00",
+        "2025-01-09T23:10:00",
+        "2025-01-10T14:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-02",
+      "row_count": 8064,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8064,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-02",
+      "row_count": 3449852,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8064,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-02",
+      "row_count": 3740921,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7991,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 73,
+      "missing_examples": [
+        "2025-02-01T03:30:00",
+        "2025-02-01T05:10:00",
+        "2025-02-01T18:40:00",
+        "2025-02-02T13:40:00",
+        "2025-02-03T04:00:00",
+        "2025-02-03T11:55:00",
+        "2025-02-03T23:15:00",
+        "2025-02-04T02:25:00",
+        "2025-02-04T07:10:00",
+        "2025-02-04T17:30:00",
+        "2025-02-04T22:05:00",
+        "2025-02-06T02:50:00",
+        "2025-02-06T03:35:00",
+        "2025-02-06T16:40:00",
+        "2025-02-06T17:10:00",
+        "2025-02-07T09:00:00",
+        "2025-02-08T10:30:00",
+        "2025-02-09T08:00:00",
+        "2025-02-10T08:35:00",
+        "2025-02-10T19:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-03",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-03",
+      "row_count": 3785472,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-03",
+      "row_count": 4147836,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8844,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 84,
+      "missing_examples": [
+        "2025-03-01T01:30:00",
+        "2025-03-01T04:30:00",
+        "2025-03-01T08:55:00",
+        "2025-03-01T09:15:00",
+        "2025-03-01T10:50:00",
+        "2025-03-01T18:00:00",
+        "2025-03-01T18:30:00",
+        "2025-03-02T01:55:00",
+        "2025-03-02T15:55:00",
+        "2025-03-03T14:20:00",
+        "2025-03-03T16:20:00",
+        "2025-03-03T17:45:00",
+        "2025-03-04T06:00:00",
+        "2025-03-04T12:30:00",
+        "2025-03-04T17:00:00",
+        "2025-03-04T19:35:00",
+        "2025-03-05T02:30:00",
+        "2025-03-05T11:30:00",
+        "2025-03-05T14:00:00",
+        "2025-03-05T21:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-04",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-04",
+      "row_count": 3663360,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-04",
+      "row_count": 4027303,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8587,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 53,
+      "missing_examples": [
+        "2025-04-01T12:50:00",
+        "2025-04-02T14:30:00",
+        "2025-04-07T07:55:00",
+        "2025-04-08T14:30:00",
+        "2025-04-08T22:30:00",
+        "2025-04-09T02:40:00",
+        "2025-04-09T09:50:00",
+        "2025-04-09T14:10:00",
+        "2025-04-10T05:10:00",
+        "2025-04-10T18:20:00",
+        "2025-04-10T20:30:00",
+        "2025-04-11T06:40:00",
+        "2025-04-11T15:45:00",
+        "2025-04-12T03:20:00",
+        "2025-04-12T20:35:00",
+        "2025-04-13T02:05:00",
+        "2025-04-13T03:40:00",
+        "2025-04-13T08:55:00",
+        "2025-04-13T20:10:00",
+        "2025-04-14T08:30:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-05",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-05",
+      "row_count": 3795321,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-05",
+      "row_count": 4159495,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8848,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 80,
+      "missing_examples": [
+        "2025-05-02T10:50:00",
+        "2025-05-02T15:25:00",
+        "2025-05-04T05:20:00",
+        "2025-05-05T06:55:00",
+        "2025-05-05T13:50:00",
+        "2025-05-05T13:55:00",
+        "2025-05-05T14:10:00",
+        "2025-05-05T15:55:00",
+        "2025-05-05T16:40:00",
+        "2025-05-05T17:20:00",
+        "2025-05-06T02:40:00",
+        "2025-05-07T02:15:00",
+        "2025-05-07T06:45:00",
+        "2025-05-08T05:20:00",
+        "2025-05-08T17:20:00",
+        "2025-05-09T00:05:00",
+        "2025-05-09T15:40:00",
+        "2025-05-10T08:00:00",
+        "2025-05-10T09:15:00",
+        "2025-05-10T11:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-06",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-06",
+      "row_count": 3704462,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-06",
+      "row_count": 4053936,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8557,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 83,
+      "missing_examples": [
+        "2025-06-01T00:35:00",
+        "2025-06-01T00:55:00",
+        "2025-06-01T01:10:00",
+        "2025-06-01T15:00:00",
+        "2025-06-01T17:20:00",
+        "2025-06-02T07:45:00",
+        "2025-06-02T15:50:00",
+        "2025-06-02T19:30:00",
+        "2025-06-04T22:50:00",
+        "2025-06-05T11:25:00",
+        "2025-06-05T15:20:00",
+        "2025-06-05T17:20:00",
+        "2025-06-06T00:40:00",
+        "2025-06-06T06:45:00",
+        "2025-06-06T13:40:00",
+        "2025-06-06T18:40:00",
+        "2025-06-07T01:30:00",
+        "2025-06-07T05:20:00",
+        "2025-06-07T06:30:00",
+        "2025-06-08T12:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-07",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-07",
+      "row_count": 3881450,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-07",
+      "row_count": 4256666,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8872,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 56,
+      "missing_examples": [
+        "2025-07-01T00:15:00",
+        "2025-07-01T19:10:00",
+        "2025-07-02T14:05:00",
+        "2025-07-02T15:15:00",
+        "2025-07-02T16:20:00",
+        "2025-07-02T22:20:00",
+        "2025-07-03T12:45:00",
+        "2025-07-03T18:35:00",
+        "2025-07-04T07:55:00",
+        "2025-07-06T04:10:00",
+        "2025-07-06T05:35:00",
+        "2025-07-06T17:10:00",
+        "2025-07-06T21:50:00",
+        "2025-07-06T22:50:00",
+        "2025-07-07T03:50:00",
+        "2025-07-07T07:45:00",
+        "2025-07-07T10:10:00",
+        "2025-07-07T21:40:00",
+        "2025-07-07T23:05:00",
+        "2025-07-09T00:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-08",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-08",
+      "row_count": 4007349,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-08",
+      "row_count": 4377194,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8793,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 135,
+      "missing_examples": [
+        "2025-08-05T15:40:00",
+        "2025-08-06T07:20:00",
+        "2025-08-06T11:25:00",
+        "2025-08-06T16:50:00",
+        "2025-08-06T17:45:00",
+        "2025-08-07T03:10:00",
+        "2025-08-07T08:30:00",
+        "2025-08-07T13:30:00",
+        "2025-08-07T14:40:00",
+        "2025-08-08T00:20:00",
+        "2025-08-08T11:40:00",
+        "2025-08-08T12:55:00",
+        "2025-08-08T20:00:00",
+        "2025-08-08T20:05:00",
+        "2025-08-08T22:00:00",
+        "2025-08-08T22:55:00",
+        "2025-08-09T00:30:00",
+        "2025-08-09T04:50:00",
+        "2025-08-09T07:20:00",
+        "2025-08-09T09:05:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-09",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-09",
+      "row_count": 3890335,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-09",
+      "row_count": 4493285,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8587,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 53,
+      "missing_examples": [
+        "2025-09-02T21:50:00",
+        "2025-09-06T23:20:00",
+        "2025-09-11T10:30:00",
+        "2025-09-11T13:30:00",
+        "2025-09-11T20:10:00",
+        "2025-09-12T12:20:00",
+        "2025-09-12T13:00:00",
+        "2025-09-12T23:35:00",
+        "2025-09-13T01:10:00",
+        "2025-09-13T03:30:00",
+        "2025-09-13T14:20:00",
+        "2025-09-13T18:10:00",
+        "2025-09-14T23:30:00",
+        "2025-09-15T16:10:00",
+        "2025-09-15T18:40:00",
+        "2025-09-16T22:55:00",
+        "2025-09-17T02:20:00",
+        "2025-09-17T06:05:00",
+        "2025-09-17T09:40:00",
+        "2025-09-17T16:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-10",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-10",
+      "row_count": 4065212,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-10",
+      "row_count": 4659207,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8841,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 87,
+      "missing_examples": [
+        "2025-10-01T00:20:00",
+        "2025-10-01T08:05:00",
+        "2025-10-01T09:35:00",
+        "2025-10-01T14:20:00",
+        "2025-10-02T10:20:00",
+        "2025-10-02T15:00:00",
+        "2025-10-02T15:35:00",
+        "2025-10-02T18:20:00",
+        "2025-10-02T18:25:00",
+        "2025-10-02T19:20:00",
+        "2025-10-03T03:55:00",
+        "2025-10-03T05:50:00",
+        "2025-10-03T09:40:00",
+        "2025-10-03T12:30:00",
+        "2025-10-03T23:30:00",
+        "2025-10-04T10:25:00",
+        "2025-10-04T10:40:00",
+        "2025-10-04T10:50:00",
+        "2025-10-04T16:30:00",
+        "2025-10-04T17:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-11",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-11",
+      "row_count": 4027945,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-11",
+      "row_count": 4587008,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8578,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 62,
+      "missing_examples": [
+        "2025-11-05T14:55:00",
+        "2025-11-06T08:20:00",
+        "2025-11-06T13:05:00",
+        "2025-11-06T18:20:00",
+        "2025-11-07T00:25:00",
+        "2025-11-07T09:50:00",
+        "2025-11-07T13:40:00",
+        "2025-11-07T19:50:00",
+        "2025-11-09T02:00:00",
+        "2025-11-09T03:55:00",
+        "2025-11-09T12:35:00",
+        "2025-11-09T18:20:00",
+        "2025-11-10T02:15:00",
+        "2025-11-10T19:45:00",
+        "2025-11-11T07:15:00",
+        "2025-11-11T15:00:00",
+        "2025-11-11T16:35:00",
+        "2025-11-13T03:55:00",
+        "2025-11-13T21:30:00",
+        "2025-11-14T22:50:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2025-12",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2025-12",
+      "row_count": 4205490,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2025-12",
+      "row_count": 4783480,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8874,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 54,
+      "missing_examples": [
+        "2025-12-01T02:15:00",
+        "2025-12-02T07:35:00",
+        "2025-12-02T14:35:00",
+        "2025-12-02T14:40:00",
+        "2025-12-02T14:45:00",
+        "2025-12-02T19:15:00",
+        "2025-12-03T06:10:00",
+        "2025-12-03T19:40:00",
+        "2025-12-04T23:05:00",
+        "2025-12-05T07:10:00",
+        "2025-12-05T16:50:00",
+        "2025-12-05T18:30:00",
+        "2025-12-06T02:00:00",
+        "2025-12-06T05:20:00",
+        "2025-12-07T04:55:00",
+        "2025-12-07T06:00:00",
+        "2025-12-07T07:55:00",
+        "2025-12-07T14:40:00",
+        "2025-12-08T00:45:00",
+        "2025-12-08T01:55:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2026-01",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-01",
+      "row_count": 6702552,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-01",
+      "row_count": 7281830,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8880,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 48,
+      "missing_examples": [
+        "2026-01-01T05:30:00",
+        "2026-01-01T21:25:00",
+        "2026-01-02T10:00:00",
+        "2026-01-02T13:25:00",
+        "2026-01-02T20:40:00",
+        "2026-01-03T08:05:00",
+        "2026-01-03T11:20:00",
+        "2026-01-03T12:45:00",
+        "2026-01-04T06:00:00",
+        "2026-01-04T08:05:00",
+        "2026-01-04T11:50:00",
+        "2026-01-05T02:20:00",
+        "2026-01-05T03:35:00",
+        "2026-01-05T07:45:00",
+        "2026-01-06T13:40:00",
+        "2026-01-06T22:50:00",
+        "2026-01-07T02:25:00",
+        "2026-01-07T12:20:00",
+        "2026-01-07T16:10:00",
+        "2026-01-08T15:45:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2026-02",
+      "row_count": 8064,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8064,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-02",
+      "row_count": 8379285,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8062,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-02-28T20:25:00",
+        "2026-02-28T23:15:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-02",
+      "row_count": 11166802,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7934,
+      "expected_timestamp_count": 8064,
+      "missing_timestamp_count": 130,
+      "missing_examples": [
+        "2026-02-01T00:55:00",
+        "2026-02-01T05:00:00",
+        "2026-02-01T17:20:00",
+        "2026-02-01T21:25:00",
+        "2026-02-01T21:30:00",
+        "2026-02-01T21:35:00",
+        "2026-02-01T21:40:00",
+        "2026-02-02T01:15:00",
+        "2026-02-02T03:00:00",
+        "2026-02-02T10:20:00",
+        "2026-02-02T13:05:00",
+        "2026-02-02T19:20:00",
+        "2026-02-02T22:15:00",
+        "2026-02-02T23:35:00",
+        "2026-02-02T23:45:00",
+        "2026-02-03T02:35:00",
+        "2026-02-03T03:10:00",
+        "2026-02-03T13:40:00",
+        "2026-02-03T16:15:00",
+        "2026-02-03T23:10:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2026-03",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-03",
+      "row_count": 8697222,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-03",
+      "row_count": 25502876,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8832,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 96,
+      "missing_examples": [
+        "2026-03-01T11:25:00",
+        "2026-03-02T05:05:00",
+        "2026-03-02T11:25:00",
+        "2026-03-02T14:55:00",
+        "2026-03-04T06:50:00",
+        "2026-03-04T11:15:00",
+        "2026-03-04T11:30:00",
+        "2026-03-04T18:10:00",
+        "2026-03-04T20:10:00",
+        "2026-03-04T20:30:00",
+        "2026-03-04T23:25:00",
+        "2026-03-05T11:30:00",
+        "2026-03-05T18:35:00",
+        "2026-03-06T09:05:00",
+        "2026-03-06T18:20:00",
+        "2026-03-06T19:30:00",
+        "2026-03-07T03:45:00",
+        "2026-03-07T11:25:00",
+        "2026-03-07T15:30:00",
+        "2026-03-07T17:20:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2026-04",
+      "row_count": 8640,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-04",
+      "row_count": 4637425,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8640,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-04",
+      "row_count": 8617228,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8588,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 52,
+      "missing_examples": [
+        "2026-04-01T02:05:00",
+        "2026-04-01T16:00:00",
+        "2026-04-01T16:55:00",
+        "2026-04-01T17:30:00",
+        "2026-04-01T20:45:00",
+        "2026-04-01T22:00:00",
+        "2026-04-02T07:00:00",
+        "2026-04-02T08:30:00",
+        "2026-04-02T19:30:00",
+        "2026-04-03T03:50:00",
+        "2026-04-03T23:50:00",
+        "2026-04-04T14:45:00",
+        "2026-04-04T16:40:00",
+        "2026-04-05T14:15:00",
+        "2026-04-05T22:50:00",
+        "2026-04-07T13:30:00",
+        "2026-04-07T14:05:00",
+        "2026-04-07T15:55:00",
+        "2026-04-07T17:45:00",
+        "2026-04-07T18:00:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "demand",
+      "month": "2026-05",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "시간",
+          "수요예측MW"
+        ],
+        "physical_format": "cp949 comma-delimited text with optional preamble",
+        "encoding": "cp949",
+        "reader": "pandas.read_csv(decoded cp949 text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-05",
+      "row_count": 4071168,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-05",
+      "row_count": 4371664,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 7700,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 1228,
+      "missing_examples": [
+        "2026-05-04T17:00:00",
+        "2026-05-04T17:30:00",
+        "2026-05-06T08:45:00",
+        "2026-05-06T08:50:00",
+        "2026-05-08T10:00:00",
+        "2026-05-08T10:45:00",
+        "2026-05-10T08:35:00",
+        "2026-05-10T08:40:00",
+        "2026-05-10T08:45:00",
+        "2026-05-10T08:50:00",
+        "2026-05-10T08:55:00",
+        "2026-05-10T09:00:00",
+        "2026-05-10T09:05:00",
+        "2026-05-10T09:10:00",
+        "2026-05-10T09:15:00",
+        "2026-05-10T09:20:00",
+        "2026-05-10T09:25:00",
+        "2026-05-10T09:30:00",
+        "2026-05-10T09:35:00",
+        "2026-05-10T09:40:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 180240
+    },
+    {
+      "source": "demand",
+      "month": "2026-06",
+      "row_count": 8638,
+      "schema": {
+        "columns": [
+          "TIME",
+          "LF05_1"
+        ],
+        "physical_format": "utf-8-sig comma-delimited text with optional preamble",
+        "encoding": "utf-8-sig",
+        "reader": "pandas.read_csv(decoded utf-8-sig text)"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8638,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-06",
+      "row_count": 4277501,
+      "schema": {
+        "columns": [
+          "TIME",
+          "GEN_CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "ascii",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8638,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 2,
+      "missing_examples": [
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-06",
+      "row_count": 9208119,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8636,
+      "expected_timestamp_count": 8640,
+      "missing_timestamp_count": 4,
+      "missing_examples": [
+        "2026-06-02T15:50:00",
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00",
+        "2026-06-30T16:35:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 8464896
+    },
+    {
+      "source": "demand",
+      "month": "2026-07",
+      "row_count": 8928,
+      "schema": {
+        "columns": [
+          "TIME",
+          "LF05_1"
+        ],
+        "physical_format": "Excel 97-2003 OLE .xls binary despite .xlsx member filename",
+        "encoding": null,
+        "reader": "pandas.read_excel(engine='xlrd')"
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2026-07",
+      "row_count": 4679698,
+      "schema": {
+        "columns": [
+          "TIME",
+          "GEN_CODE",
+          "BASEPOINT"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "ascii",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8928,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 0,
+      "missing_examples": [],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    },
+    {
+      "source": "state_estimation",
+      "month": "2026-07",
+      "row_count": 5371818,
+      "schema": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "physical_format": "comma-delimited text",
+        "encoding": "cp949",
+        "reader": null
+      },
+      "timestamp_parse_failure_count": 0,
+      "unique_timestamp_count": 8927,
+      "expected_timestamp_count": 8928,
+      "missing_timestamp_count": 1,
+      "missing_examples": [
+        "2026-07-12T07:50:00"
+      ],
+      "outside_timestamp_count": 0,
+      "outside_examples": [],
+      "duplicate_candidate_key_row_count": 0
+    }
+  ]
+}

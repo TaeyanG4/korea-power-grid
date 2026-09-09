@@ -1,0 +1,93 @@
+{
+  "phase": "Phase 3",
+  "checkpoint": "Checkpoint 1",
+  "period": {
+    "start": "2023-08",
+    "end": "2026-07",
+    "months": 36
+  },
+  "status": "PASS_WITH_OBSERVATIONS",
+  "hard_checks": {
+    "download_records_108": true,
+    "download_problem_count_zero": true,
+    "download_part_files_zero": true,
+    "processed_summary_records_108": true,
+    "processed_manifest_records_108": true,
+    "processed_all_success": true,
+    "processed_timestamp_parse_failures_zero": true,
+    "processed_remaining_candidate_duplicates_zero": true,
+    "content_qa_records_108": true,
+    "extension_plan_records_72": true
+  },
+  "downloads": {
+    "records": 108,
+    "problem_count": 0,
+    "part_file_count": 0,
+    "total_bytes": 1502553848
+  },
+  "processed": {
+    "records": 108,
+    "status_counts": {
+      "success": 108
+    },
+    "input_rows": 340764255,
+    "exact_duplicate_rows_removed": 4322568,
+    "output_rows": 336441687,
+    "parquet_size_bytes": 728179740,
+    "timestamp_parse_failure_count": 0,
+    "remaining_candidate_key_duplicate_rows": 0
+  },
+  "source_level_missingness": {
+    "demand": {
+      "months": 36,
+      "months_with_missing": 1,
+      "missing_timestamps": 2,
+      "max_monthly_missing": 2
+    },
+    "dispatch": {
+      "months": 36,
+      "months_with_missing": 2,
+      "missing_timestamps": 4,
+      "max_monthly_missing": 2
+    },
+    "state_estimation": {
+      "months": 36,
+      "months_with_missing": 36,
+      "missing_timestamps": 3310,
+      "max_monthly_missing": 1228
+    }
+  },
+  "key_gap_observations": {
+    "state_estimation_2026_05": {
+      "missing_timestamp_count": 1228,
+      "longest_contiguous_gap": {
+        "start": "2026-05-10T08:35:00",
+        "end": "2026-05-14T14:15:00",
+        "timestamps": 1221
+      }
+    },
+    "shared_2026_06": {
+      "per_source_missing_counts": {
+        "demand": 2,
+        "dispatch": 2,
+        "state_estimation": 4
+      },
+      "shared_missing_timestamps": [
+        "2026-06-11T18:55:00",
+        "2026-06-11T19:35:00"
+      ]
+    }
+  },
+  "next_checkpoint": {
+    "target_window": "2021-08 through 2026-07",
+    "extension_only_start": "2021-08",
+    "extension_only_end": "2023-07",
+    "extension_records": 72,
+    "extension_per_source": {
+      "demand": 24,
+      "dispatch": 24,
+      "state_estimation": 24
+    },
+    "decision": "GO"
+  }
+}

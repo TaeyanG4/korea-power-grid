@@ -1,0 +1,28 @@
+{
+  "requested_start": "2023-08",
+  "requested_end": "2026-07",
+  "manifest_records": 108,
+  "status_counts": {
+    "success": 105,
+    "skipped_existing": 3
+  },
+  "per_source_records": {
+    "demand": 36,
+    "dispatch": 36,
+    "state_estimation": 36
+  },
+  "per_source_bytes": {
+    "demand": 2518863,
+    "dispatch": 623718369,
+    "state_estimation": 876316616
+  },
+  "total_bytes": 1502553848,
+  "month_dirs": {
+    "demand": 36,
+    "dispatch": 36,
+    "state_estimation": 36
+  },
+  "part_file_count": 0,
+  "problem_count": 0,
+  "problems": []
+}

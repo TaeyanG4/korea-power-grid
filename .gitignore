@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Large/local data artifacts
+data/raw/**
+data/working/**
+data/processed/**
+data/release/**
+
+# Keep small audit/provenance metadata in Git.
+!data/audits/
+!data/audits/**
+!data/manifests/
+!data/manifests/**
+
+*.part
+*.tmp
+

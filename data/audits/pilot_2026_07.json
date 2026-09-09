@@ -1,0 +1,358 @@
+{
+  "pilot_month": "2026-07",
+  "generated_at_utc": "2026-09-09T16:57:46.192617+00:00",
+  "expected_5_minute_timestamps": 8928,
+  "sources": {
+    "demand": {
+      "source": "demand",
+      "month": "2026-07",
+      "source_article_url": "https://www.kpx.or.kr/board.es?act=view&bid=0065&list_no=78033&mid=a10109020700&nPage=1&tag=",
+      "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0065&list_no=78033&seq=1",
+      "local_zip_path": "data/raw/demand/2026-07/demand_2026_07.zip",
+      "zip_size_bytes": 144414,
+      "sha256": "55820f83332a3e4cb65959af44fd8ef149474d657073e655ab2e18458d2c5c2d",
+      "downloaded_at_utc_from_mtime": "2026-09-09T16:44:08.860467+00:00",
+      "status": "success",
+      "retry_count": 0,
+      "physical": {
+        "zip_test_bad_member": null,
+        "raw_zip_member_name": "5분수요예측MW_202607 - 복사본.xlsx",
+        "recovered_member_name": "5분수요예측MW_202607 - 복사본.xlsx",
+        "member_size_bytes": 658944,
+        "member_compressed_size_bytes": 144110,
+        "member_magic_hex": "d0cf11e0a1b11ae1",
+        "physical_format": "Excel 97-2003 OLE .xls binary despite .xlsx member filename",
+        "reader": "pandas.read_excel(engine='xlrd')"
+      },
+      "schema": {
+        "original_columns": [
+          "TIME",
+          "LF05_1"
+        ],
+        "canonical_mapping_for_pilot": {
+          "TIME": "timestamp",
+          "LF05_1": "demand_forecast_mw"
+        },
+        "candidate_grain": [
+          "timestamp"
+        ],
+        "value_column": "demand_forecast_mw"
+      },
+      "row_count": 8928,
+      "timestamp": {
+        "parse_failure_count": 0,
+        "min": "2026-07-01T00:00:00",
+        "max": "2026-07-31T23:55:00",
+        "unique_timestamp_count": 8928,
+        "expected_timestamp_count": 8928,
+        "missing_expected_timestamp_count": 0,
+        "missing_expected_timestamp_examples": [],
+        "outside_expected_timestamp_count": 0,
+        "outside_expected_timestamp_examples": [],
+        "observed_delta_counts_top10": {
+          "0 days 00:05:00": 8927
+        },
+        "timezone": "unverified; source timestamps stored as naive values in pilot"
+      },
+      "duplicate_candidate_key_row_count": 0,
+      "generator_id_null_or_blank_count": null,
+      "unique_generator_count": null,
+      "numeric": {
+        "null_or_parse_failure_count": 0,
+        "nan_count": 0,
+        "pos_inf_count": 0,
+        "neg_inf_count": 0,
+        "negative_count": 0,
+        "zero_count": 2,
+        "quantiles": {
+          "0.0": 0.0,
+          "0.001": 47589.612316388,
+          "0.01": 49088.841171759996,
+          "0.5": 64452.5585935,
+          "0.99": 82475.20335924,
+          "0.999": 84124.44028175001,
+          "1.0": 84343.539062
+        }
+      },
+      "parquet": {
+        "path": "data/processed/pilot/2026-07/demand.parquet",
+        "compression": "zstd",
+        "size_bytes": 123758,
+        "row_count": 8928
+      },
+      "timing_seconds": {
+        "read_parse": 0.043509,
+        "parquet_write": 0.019001,
+        "total_source": 0.079546
+      }
+    },
+    "dispatch": {
+      "source": "dispatch",
+      "month": "2026-07",
+      "source_article_url": "https://www.kpx.or.kr/board.es?act=view&bid=0070&list_no=78025&mid=a10109020200&nPage=1&tag=",
+      "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0070&list_no=78025&seq=1",
+      "local_zip_path": "data/raw/dispatch/2026-07/dispatch_2026_07.zip",
+      "zip_size_bytes": 19821316,
+      "sha256": "31e2b76fba479fefab0f93212ebb32c445f4e63aec5a989dbb9d91ea228e414f",
+      "downloaded_at_utc_from_mtime": "2026-09-09T16:44:24.308924+00:00",
+      "status": "success",
+      "retry_count": 0,
+      "physical": {
+        "zip_test_bad_member": null,
+        "raw_zip_member_name": "발전기별_5분_경제급전자료(202607).txt",
+        "recovered_member_name": "발전기별_5분_경제급전자료(202607).txt",
+        "member_size_bytes": 146162747,
+        "member_compressed_size_bytes": 19820994,
+        "physical_format": "comma-delimited text",
+        "encoding_used_for_full_parse": "ascii"
+      },
+      "schema": {
+        "original_columns": [
+          "TIME",
+          "GEN_CODE",
+          "BASEPOINT"
+        ],
+        "canonical_mapping_for_pilot": {
+          "TIME": "timestamp",
+          "GEN_CODE": "generator_id",
+          "BASEPOINT": "dispatch_mw"
+        },
+        "candidate_grain": [
+          "timestamp",
+          "generator_id"
+        ],
+        "value_column": "dispatch_mw"
+      },
+      "row_count": 4679698,
+      "timestamp": {
+        "parse_failure_count": 0,
+        "min": "2026-07-01T00:00:00",
+        "max": "2026-07-31T23:55:00",
+        "unique_timestamp_count": 8928,
+        "expected_timestamp_count": 8928,
+        "missing_expected_timestamp_count": 0,
+        "missing_expected_timestamp_examples": [],
+        "outside_expected_timestamp_count": 0,
+        "outside_expected_timestamp_examples": [],
+        "observed_delta_counts_top10": {
+          "0 days 00:05:00": 8927
+        },
+        "timezone": "unverified; source timestamps stored as naive values in pilot"
+      },
+      "duplicate_candidate_key_row_count": 0,
+      "generator_id_null_or_blank_count": 0,
+      "unique_generator_count": 647,
+      "numeric": {
+        "null_or_parse_failure_count": 0,
+        "nan_count": 0,
+        "pos_inf_count": 0,
+        "neg_inf_count": 0,
+        "negative_count": 111,
+        "zero_count": 1572103,
+        "quantiles": {
+          "0.0": -14.550781,
+          "0.001": 0.0,
+          "0.01": 0.0,
+          "0.5": 8.836914,
+          "0.99": 1000.0,
+          "0.999": 1424.138306,
+          "1.0": 1435.386719
+        }
+      },
+      "parquet": {
+        "path": "data/processed/pilot/2026-07/dispatch.parquet",
+        "compression": "zstd",
+        "size_bytes": 5256132,
+        "row_count": 4679698
+      },
+      "timing_seconds": {
+        "read_parse": 1.66809,
+        "parquet_write": 0.579025,
+        "total_source": 5.333453
+      }
+    },
+    "state_estimation": {
+      "source": "state_estimation",
+      "month": "2026-07",
+      "source_article_url": "https://www.kpx.or.kr/board.es?act=view&bid=0068&list_no=78031&mid=a10109020400&nPage=1&tag=",
+      "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0068&list_no=78031&seq=1",
+      "local_zip_path": "data/raw/state_estimation/2026-07/state_estimation_2026_07.zip",
+      "zip_size_bytes": 25560291,
+      "sha256": "1d8f12476bfec5473c26a290eacbef18ed41c87d336fccb2ba2b4b07e5263ac7",
+      "downloaded_at_utc_from_mtime": "2026-09-09T16:44:43.654686+00:00",
+      "status": "success",
+      "retry_count": 0,
+      "physical": {
+        "zip_test_bad_member": null,
+        "raw_zip_member_name": "라_발전기별 5분 상태추정MW_2026년_7월__.txt",
+        "recovered_member_name": "라_발전기별 5분 상태추정MW_2026년_7월__.txt",
+        "member_size_bytes": 195049183,
+        "member_compressed_size_bytes": 25559943,
+        "physical_format": "comma-delimited text",
+        "encoding_used_for_full_parse": "cp949"
+      },
+      "schema": {
+        "original_columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "canonical_mapping_for_pilot": {
+          "시간": "timestamp",
+          "발전기CODE": "generator_id",
+          "상태추정MW": "estimated_generation_mw"
+        },
+        "candidate_grain": [
+          "timestamp",
+          "generator_id"
+        ],
+        "value_column": "estimated_generation_mw"
+      },
+      "row_count": 5371818,
+      "timestamp": {
+        "parse_failure_count": 0,
+        "min": "2026-07-01T00:00:00",
+        "max": "2026-07-31T23:55:00",
+        "unique_timestamp_count": 8927,
+        "expected_timestamp_count": 8928,
+        "missing_expected_timestamp_count": 1,
+        "missing_expected_timestamp_examples": [
+          "2026-07-12T07:50:00"
+        ],
+        "outside_expected_timestamp_count": 0,
+        "outside_expected_timestamp_examples": [],
+        "observed_delta_counts_top10": {
+          "0 days 00:05:00": 8925,
+          "0 days 00:10:00": 1
+        },
+        "timezone": "unverified; source timestamps stored as naive values in pilot"
+      },
+      "duplicate_candidate_key_row_count": 0,
+      "generator_id_null_or_blank_count": 0,
+      "unique_generator_count": 725,
+      "numeric": {
+        "null_or_parse_failure_count": 0,
+        "nan_count": 0,
+        "pos_inf_count": 0,
+        "neg_inf_count": 0,
+        "negative_count": 11489,
+        "zero_count": 3307972,
+        "quantiles": {
+          "0.0": -442.98175,
+          "0.001": -369.825726737,
+          "0.01": 0.0,
+          "0.5": 0.0,
+          "0.99": 998.607727,
+          "0.999": 1425.2409789560002,
+          "1.0": 1450.155884
+        }
+      },
+      "parquet": {
+        "path": "data/processed/pilot/2026-07/state_estimation.parquet",
+        "compression": "zstd",
+        "size_bytes": 17391879,
+        "row_count": 5371818
+      },
+      "timing_seconds": {
+        "read_parse": 3.380835,
+        "parquet_write": 0.698121,
+        "total_source": 9.982199
+      }
+    }
+  },
+  "cross_source": {
+    "generator_id_overlap": {
+      "dispatch_unique": 647,
+      "state_estimation_unique": 725,
+      "overlap": 0,
+      "dispatch_only": 647,
+      "state_only": 725,
+      "jaccard": 0.0
+    },
+    "aggregate_comparisons": {
+      "dispatch_sum_minus_demand_forecast": {
+        "matched_timestamp_count": 8928,
+        "mean_difference_mw": 1921.8117854586696,
+        "median_difference_mw": 1890.732157999999,
+        "mean_absolute_difference_mw": 1929.4322213244848,
+        "difference_quantiles_mw": {
+          "0.01": -33.51029552000274,
+          "0.5": 1890.732157999999,
+          "0.99": 3999.00318971
+        }
+      },
+      "state_sum_minus_demand_forecast": {
+        "matched_timestamp_count": 8927,
+        "mean_difference_mw": -242.86861409712108,
+        "median_difference_mw": -72.76068999999552,
+        "mean_absolute_difference_mw": 592.0702311510025,
+        "difference_quantiles_mw": {
+          "0.01": -2683.684335339999,
+          "0.5": -72.76068999999552,
+          "0.99": 1080.2743643799956
+        }
+      },
+      "state_sum_minus_dispatch_sum": {
+        "matched_timestamp_count": 8927,
+        "mean_difference_mw": -2164.505411488294,
+        "median_difference_mw": -2063.707269999999,
+        "mean_absolute_difference_mw": 2177.715559249916,
+        "difference_quantiles_mw": {
+          "0.01": -4904.445332739999,
+          "0.5": -2063.707269999999,
+          "0.99": 324.5458652800051
+        }
+      }
+    }
+  },
+  "projection": {
+    "3_years": {
+      "months": 36,
+      "raw_zip_linear_bytes": 1638936756,
+      "raw_zip_linear_gb_decimal": 1.639,
+      "parquet_linear_bytes": 819783684,
+      "parquet_linear_gb_decimal": 0.82
+    },
+    "5_years": {
+      "months": 60,
+      "raw_zip_linear_bytes": 2731561260,
+      "raw_zip_linear_gb_decimal": 2.732,
+      "parquet_linear_bytes": 1366306140,
+      "parquet_linear_gb_decimal": 1.366
+    },
+    "8_years": {
+      "months": 96,
+      "raw_zip_linear_bytes": 4370498016,
+      "raw_zip_linear_gb_decimal": 4.37,
+      "parquet_linear_bytes": 2186089824,
+      "parquet_linear_gb_decimal": 2.186
+    },
+    "10_years": {
+      "months": 120,
+      "raw_zip_linear_bytes": 5463122520,
+      "raw_zip_linear_gb_decimal": 5.463,
+      "parquet_linear_bytes": 2732612280,
+      "parquet_linear_gb_decimal": 2.733
+    },
+    "full_132_month_board_history": {
+      "months": 132,
+      "raw_zip_linear_bytes": 6009434772,
+      "raw_zip_linear_gb_decimal": 6.009,
+      "parquet_linear_bytes": 3005873508,
+      "parquet_linear_gb_decimal": 3.006
+    }
+  },
+  "notes": [
+    "Timezone is not asserted by this pilot because no explicit timezone metadata has yet been verified from the source files.",
+    "Linear size projections use only the 2026-07 pilot and must be replaced by measured checkpoint sizes during historical backfill.",
+    "Cross-source aggregate differences are descriptive metrics, not hard QA equality rules."
+  ],
+  "pilot_totals": {
+    "zip_size_bytes": 45526021,
+    "extracted_member_size_bytes": 341870874,
+    "parquet_size_bytes": 22771769,
+    "parquet_vs_zip_ratio": 0.500192,
+    "parquet_vs_extracted_ratio": 0.066609
+  },
+  "timing_seconds_total": 15.49017
+}
