@@ -1,0 +1,2783 @@
+{
+  "generated_at_utc": "2026-09-09T21:58:41.367390+00:00",
+  "sources": {
+    "demand": {
+      "2015-08": {
+        "source": "demand",
+        "month": "2015-08",
+        "title": "5분수요예측_201508",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60849&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-09": {
+        "source": "demand",
+        "month": "2015-09",
+        "title": "5분수요예측_201509",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60850&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-10": {
+        "source": "demand",
+        "month": "2015-10",
+        "title": "5분수요예측_201510",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60851&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-11": {
+        "source": "demand",
+        "month": "2015-11",
+        "title": "5분수요예측_201511",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60852&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-12": {
+        "source": "demand",
+        "month": "2015-12",
+        "title": "5분수요예측_201512",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60853&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-01": {
+        "source": "demand",
+        "month": "2016-01",
+        "title": "5분수요예측_201601",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60854&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-02": {
+        "source": "demand",
+        "month": "2016-02",
+        "title": "5분수요예측_201602",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60855&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-03": {
+        "source": "demand",
+        "month": "2016-03",
+        "title": "5분수요예측_201603",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60856&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-04": {
+        "source": "demand",
+        "month": "2016-04",
+        "title": "5분수요예측_201604",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60857&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-05": {
+        "source": "demand",
+        "month": "2016-05",
+        "title": "5분수요예측_201605",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60858&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-06": {
+        "source": "demand",
+        "month": "2016-06",
+        "title": "5분수요예측_201606",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60859&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-07": {
+        "source": "demand",
+        "month": "2016-07",
+        "title": "5분수요예측_201607",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60860&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-08": {
+        "source": "demand",
+        "month": "2016-08",
+        "title": "5분수요예측_201608",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60861&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-09": {
+        "source": "demand",
+        "month": "2016-09",
+        "title": "2016년도 9월  5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60862&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-10": {
+        "source": "demand",
+        "month": "2016-10",
+        "title": "2016년도 10월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60863&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-11": {
+        "source": "demand",
+        "month": "2016-11",
+        "title": "2016년도 11월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60864&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-12": {
+        "source": "demand",
+        "month": "2016-12",
+        "title": "2016년도 12월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60865&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-01": {
+        "source": "demand",
+        "month": "2017-01",
+        "title": "2017년도 1월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60866&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-02": {
+        "source": "demand",
+        "month": "2017-02",
+        "title": "2017년도 2월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60867&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-03": {
+        "source": "demand",
+        "month": "2017-03",
+        "title": "2017년도 3월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60868&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-04": {
+        "source": "demand",
+        "month": "2017-04",
+        "title": "2017년도 4월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60869&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-05": {
+        "source": "demand",
+        "month": "2017-05",
+        "title": "2017년도 5월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60870&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-06": {
+        "source": "demand",
+        "month": "2017-06",
+        "title": "2017년도 6월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60871&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-07": {
+        "source": "demand",
+        "month": "2017-07",
+        "title": "2017년도 7월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60872&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-08": {
+        "source": "demand",
+        "month": "2017-08",
+        "title": "2017년도 8월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60873&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-09": {
+        "source": "demand",
+        "month": "2017-09",
+        "title": "2017년도 9월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60874&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-10": {
+        "source": "demand",
+        "month": "2017-10",
+        "title": "2017년도 10월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60875&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-11": {
+        "source": "demand",
+        "month": "2017-11",
+        "title": "2017년도 11월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60876&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-12": {
+        "source": "demand",
+        "month": "2017-12",
+        "title": "2017년도 12월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60877&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-01": {
+        "source": "demand",
+        "month": "2018-01",
+        "title": "2018년도 1월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60878&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-02": {
+        "source": "demand",
+        "month": "2018-02",
+        "title": "2018년도 2월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60879&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-03": {
+        "source": "demand",
+        "month": "2018-03",
+        "title": "2018년도 3월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60880&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-04": {
+        "source": "demand",
+        "month": "2018-04",
+        "title": "2018년도 4월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60881&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-05": {
+        "source": "demand",
+        "month": "2018-05",
+        "title": "2018년도 5월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60882&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-06": {
+        "source": "demand",
+        "month": "2018-06",
+        "title": "2018년도 6월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60883&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-07": {
+        "source": "demand",
+        "month": "2018-07",
+        "title": "2018년도 7월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60884&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-08": {
+        "source": "demand",
+        "month": "2018-08",
+        "title": "2018년도 8월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60885&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-09": {
+        "source": "demand",
+        "month": "2018-09",
+        "title": "2018년도 9월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60886&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-10": {
+        "source": "demand",
+        "month": "2018-10",
+        "title": "2018년도 10월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60887&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-11": {
+        "source": "demand",
+        "month": "2018-11",
+        "title": "2018년도 11월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60888&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-12": {
+        "source": "demand",
+        "month": "2018-12",
+        "title": "2018년도 12월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60889&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-01": {
+        "source": "demand",
+        "month": "2019-01",
+        "title": "2019년도 1월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60890&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-02": {
+        "source": "demand",
+        "month": "2019-02",
+        "title": "2019년도 2월 5분 수요예측 자료입니다.",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60891&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-03": {
+        "source": "demand",
+        "month": "2019-03",
+        "title": "2019년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60892&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-04": {
+        "source": "demand",
+        "month": "2019-04",
+        "title": "2019년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60893&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-05": {
+        "source": "demand",
+        "month": "2019-05",
+        "title": "2019년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60894&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-06": {
+        "source": "demand",
+        "month": "2019-06",
+        "title": "2019년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60895&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-07": {
+        "source": "demand",
+        "month": "2019-07",
+        "title": "2019년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60896&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-08": {
+        "source": "demand",
+        "month": "2019-08",
+        "title": "2019년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60897&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-09": {
+        "source": "demand",
+        "month": "2019-09",
+        "title": "2019년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60898&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-10": {
+        "source": "demand",
+        "month": "2019-10",
+        "title": "2019년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60899&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-11": {
+        "source": "demand",
+        "month": "2019-11",
+        "title": "2019년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60900&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-12": {
+        "source": "demand",
+        "month": "2019-12",
+        "title": "2019년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60901&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-01": {
+        "source": "demand",
+        "month": "2020-01",
+        "title": "2020년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60902&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-02": {
+        "source": "demand",
+        "month": "2020-02",
+        "title": "2020년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60903&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-03": {
+        "source": "demand",
+        "month": "2020-03",
+        "title": "2020년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60904&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-04": {
+        "source": "demand",
+        "month": "2020-04",
+        "title": "2020년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60905&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-05": {
+        "source": "demand",
+        "month": "2020-05",
+        "title": "2020년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60906&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-06": {
+        "source": "demand",
+        "month": "2020-06",
+        "title": "2020년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60907&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-07": {
+        "source": "demand",
+        "month": "2020-07",
+        "title": "2020년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60908&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-08": {
+        "source": "demand",
+        "month": "2020-08",
+        "title": "2020년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60909&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-09": {
+        "source": "demand",
+        "month": "2020-09",
+        "title": "2020년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60910&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-10": {
+        "source": "demand",
+        "month": "2020-10",
+        "title": "2020년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60911&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-11": {
+        "source": "demand",
+        "month": "2020-11",
+        "title": "2020년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60912&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-12": {
+        "source": "demand",
+        "month": "2020-12",
+        "title": "2020년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60913&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-01": {
+        "source": "demand",
+        "month": "2021-01",
+        "title": "2021년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60914&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-02": {
+        "source": "demand",
+        "month": "2021-02",
+        "title": "2021년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60915&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-03": {
+        "source": "demand",
+        "month": "2021-03",
+        "title": "2021년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60916&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-04": {
+        "source": "demand",
+        "month": "2021-04",
+        "title": "2021년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60917&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-05": {
+        "source": "demand",
+        "month": "2021-05",
+        "title": "2021년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60918&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-06": {
+        "source": "demand",
+        "month": "2021-06",
+        "title": "2021년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60919&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-07": {
+        "source": "demand",
+        "month": "2021-07",
+        "title": "2021년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60920&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-08": {
+        "source": "demand",
+        "month": "2021-08",
+        "title": "2021년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60921&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-09": {
+        "source": "demand",
+        "month": "2021-09",
+        "title": "2021년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60922&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-10": {
+        "source": "demand",
+        "month": "2021-10",
+        "title": "2021년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60923&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-11": {
+        "source": "demand",
+        "month": "2021-11",
+        "title": "2021년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=65708&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-12": {
+        "source": "demand",
+        "month": "2021-12",
+        "title": "2021년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=66127&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-01": {
+        "source": "demand",
+        "month": "2022-01",
+        "title": "2022년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=66683&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-02": {
+        "source": "demand",
+        "month": "2022-02",
+        "title": "2022년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=66879&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-03": {
+        "source": "demand",
+        "month": "2022-03",
+        "title": "2022년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67098&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-04": {
+        "source": "demand",
+        "month": "2022-04",
+        "title": "2022년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67281&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-05": {
+        "source": "demand",
+        "month": "2022-05",
+        "title": "2022년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67412&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-06": {
+        "source": "demand",
+        "month": "2022-06",
+        "title": "2022년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67583&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-07": {
+        "source": "demand",
+        "month": "2022-07",
+        "title": "2022년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67768&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-08": {
+        "source": "demand",
+        "month": "2022-08",
+        "title": "2022년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=67935&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-09": {
+        "source": "demand",
+        "month": "2022-09",
+        "title": "2022년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=68075&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-10": {
+        "source": "demand",
+        "month": "2022-10",
+        "title": "2022년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=68242&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-11": {
+        "source": "demand",
+        "month": "2022-11",
+        "title": "2022년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=68518&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-12": {
+        "source": "demand",
+        "month": "2022-12",
+        "title": "2022년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=68722&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-01": {
+        "source": "demand",
+        "month": "2023-01",
+        "title": "2023년도 01월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=68923&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-02": {
+        "source": "demand",
+        "month": "2023-02",
+        "title": "2023년도 02월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=69177&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-03": {
+        "source": "demand",
+        "month": "2023-03",
+        "title": "2023년도 03월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=69331&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-04": {
+        "source": "demand",
+        "month": "2023-04",
+        "title": "2023년도 04월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=69557&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-05": {
+        "source": "demand",
+        "month": "2023-05",
+        "title": "2023년도 05월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=69888&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-06": {
+        "source": "demand",
+        "month": "2023-06",
+        "title": "2023년도 06월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=70110&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-07": {
+        "source": "demand",
+        "month": "2023-07",
+        "title": "2023년도 07월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=70325&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-08": {
+        "source": "demand",
+        "month": "2023-08",
+        "title": "2023년도 08월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=70606&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-09": {
+        "source": "demand",
+        "month": "2023-09",
+        "title": "2023년도 09월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=70952&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-10": {
+        "source": "demand",
+        "month": "2023-10",
+        "title": "2023년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=71130&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-11": {
+        "source": "demand",
+        "month": "2023-11",
+        "title": "2023년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=71399&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-12": {
+        "source": "demand",
+        "month": "2023-12",
+        "title": "2023년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=71674&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-01": {
+        "source": "demand",
+        "month": "2024-01",
+        "title": "2024년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=71864&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-02": {
+        "source": "demand",
+        "month": "2024-02",
+        "title": "2024년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=72075&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-03": {
+        "source": "demand",
+        "month": "2024-03",
+        "title": "2024년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=72340&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-04": {
+        "source": "demand",
+        "month": "2024-04",
+        "title": "2024년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=72647&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-05": {
+        "source": "demand",
+        "month": "2024-05",
+        "title": "2024년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=72857&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-06": {
+        "source": "demand",
+        "month": "2024-06",
+        "title": "2024년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73084&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-07": {
+        "source": "demand",
+        "month": "2024-07",
+        "title": "2024년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73302&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-08": {
+        "source": "demand",
+        "month": "2024-08",
+        "title": "2024년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73412&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-09": {
+        "source": "demand",
+        "month": "2024-09",
+        "title": "2024년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73693&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-10": {
+        "source": "demand",
+        "month": "2024-10",
+        "title": "2024년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73838&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-11": {
+        "source": "demand",
+        "month": "2024-11",
+        "title": "2024년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=73975&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-12": {
+        "source": "demand",
+        "month": "2024-12",
+        "title": "2024년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=74190&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-01": {
+        "source": "demand",
+        "month": "2025-01",
+        "title": "2025년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=74376&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-02": {
+        "source": "demand",
+        "month": "2025-02",
+        "title": "2025년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=74694&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-03": {
+        "source": "demand",
+        "month": "2025-03",
+        "title": "2025년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=75017&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-04": {
+        "source": "demand",
+        "month": "2025-04",
+        "title": "2025년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=75250&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-05": {
+        "source": "demand",
+        "month": "2025-05",
+        "title": "2025년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=75447&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-06": {
+        "source": "demand",
+        "month": "2025-06",
+        "title": "2025년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=75655&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-07": {
+        "source": "demand",
+        "month": "2025-07",
+        "title": "2025년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=75853&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-08": {
+        "source": "demand",
+        "month": "2025-08",
+        "title": "2025년도 8월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76037&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-09": {
+        "source": "demand",
+        "month": "2025-09",
+        "title": "2025년도 9월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76186&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-10": {
+        "source": "demand",
+        "month": "2025-10",
+        "title": "2025년도 10월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76384&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-11": {
+        "source": "demand",
+        "month": "2025-11",
+        "title": "2025년도 11월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76553&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-12": {
+        "source": "demand",
+        "month": "2025-12",
+        "title": "2025년도 12월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76709&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-01": {
+        "source": "demand",
+        "month": "2026-01",
+        "title": "2026년도 1월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=76829&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-02": {
+        "source": "demand",
+        "month": "2026-02",
+        "title": "2026년도 2월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=77086&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-03": {
+        "source": "demand",
+        "month": "2026-03",
+        "title": "2026년도 3월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=77264&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-04": {
+        "source": "demand",
+        "month": "2026-04",
+        "title": "2026년도 4월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=77418&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-05": {
+        "source": "demand",
+        "month": "2026-05",
+        "title": "2026년도 5월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=77689&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-06": {
+        "source": "demand",
+        "month": "2026-06",
+        "title": "2026년도 6월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=77841&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-07": {
+        "source": "demand",
+        "month": "2026-07",
+        "title": "2026년도 7월 5분 수요예측 자료",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=78033&tag=&nPage=1",
+        "attachment_url": null
+      }
+    },
+    "dispatch": {
+      "2015-08": {
+        "source": "dispatch",
+        "month": "2015-08",
+        "title": "2015년 8월 발전기별 5분단위 경제급전(201508)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60624&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-09": {
+        "source": "dispatch",
+        "month": "2015-09",
+        "title": "2015년 9월 발전기별 5분단위 경제급전(201509)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60625&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-10": {
+        "source": "dispatch",
+        "month": "2015-10",
+        "title": "2015년 10월 발전기별 5분단위 경제급전(201510)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60626&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-11": {
+        "source": "dispatch",
+        "month": "2015-11",
+        "title": "2015년 11월 발전기별 5분단위 경제급전(201511)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60627&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-12": {
+        "source": "dispatch",
+        "month": "2015-12",
+        "title": "2015년 12월 발전기별 5분단위 경제급전(201512)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60628&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-01": {
+        "source": "dispatch",
+        "month": "2016-01",
+        "title": "2016년 1월 발전기별 5분단위 경제급전(201601)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60629&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-02": {
+        "source": "dispatch",
+        "month": "2016-02",
+        "title": "2016년 2월 발전기별 5분단위 경제급전(201602)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60630&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-03": {
+        "source": "dispatch",
+        "month": "2016-03",
+        "title": "2016년 3월 발전기별 5분단위 경제급전(201603)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60631&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-04": {
+        "source": "dispatch",
+        "month": "2016-04",
+        "title": "2016년 4월 발전기별 5분단위 경제급전(201604)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60632&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-05": {
+        "source": "dispatch",
+        "month": "2016-05",
+        "title": "2016년 5월 발전기별 5분단위 경제급전(201605)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60633&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-06": {
+        "source": "dispatch",
+        "month": "2016-06",
+        "title": "2016년 6월 발전기별 5분단위 경제급전(201606)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60634&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-07": {
+        "source": "dispatch",
+        "month": "2016-07",
+        "title": "2016년 7월 발전기별 5분단위 경제급전(201607)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60635&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-08": {
+        "source": "dispatch",
+        "month": "2016-08",
+        "title": "2016년 8월 발전기별 5분단위 경제급전(201608)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60636&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-09": {
+        "source": "dispatch",
+        "month": "2016-09",
+        "title": "2016년 9월 발전기별 5분단위 경제급전(201609)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60637&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-10": {
+        "source": "dispatch",
+        "month": "2016-10",
+        "title": "2016년 10월 발전기별 5분단위 경제급전(201610)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60638&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-11": {
+        "source": "dispatch",
+        "month": "2016-11",
+        "title": "2016년 11월 발전기별 5분단위 경제급전(201611)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60639&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-12": {
+        "source": "dispatch",
+        "month": "2016-12",
+        "title": "2016년 12월 발전기별 5분단위 경제급전(201612)",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60640&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-01": {
+        "source": "dispatch",
+        "month": "2017-01",
+        "title": "2017년 1월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60641&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-02": {
+        "source": "dispatch",
+        "month": "2017-02",
+        "title": "2017년 2월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60642&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-03": {
+        "source": "dispatch",
+        "month": "2017-03",
+        "title": "2017년 3월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60643&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-04": {
+        "source": "dispatch",
+        "month": "2017-04",
+        "title": "2017년 4월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60644&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-05": {
+        "source": "dispatch",
+        "month": "2017-05",
+        "title": "2017년 5월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60645&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-06": {
+        "source": "dispatch",
+        "month": "2017-06",
+        "title": "2017년 6월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60646&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-07": {
+        "source": "dispatch",
+        "month": "2017-07",
+        "title": "2017년 7월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60647&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-08": {
+        "source": "dispatch",
+        "month": "2017-08",
+        "title": "2017년 8월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60648&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-09": {
+        "source": "dispatch",
+        "month": "2017-09",
+        "title": "2017년 9월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60649&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-10": {
+        "source": "dispatch",
+        "month": "2017-10",
+        "title": "2017년 10월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60650&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-11": {
+        "source": "dispatch",
+        "month": "2017-11",
+        "title": "2017년 11월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60651&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-12": {
+        "source": "dispatch",
+        "month": "2017-12",
+        "title": "2017년 12월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60652&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-01": {
+        "source": "dispatch",
+        "month": "2018-01",
+        "title": "2018년 1월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60653&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-02": {
+        "source": "dispatch",
+        "month": "2018-02",
+        "title": "2018년 2월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60654&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-03": {
+        "source": "dispatch",
+        "month": "2018-03",
+        "title": "2018년 3월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60655&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-04": {
+        "source": "dispatch",
+        "month": "2018-04",
+        "title": "2018년 4월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60656&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-05": {
+        "source": "dispatch",
+        "month": "2018-05",
+        "title": "2018년 5월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60657&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-06": {
+        "source": "dispatch",
+        "month": "2018-06",
+        "title": "2018년 6월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60658&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-07": {
+        "source": "dispatch",
+        "month": "2018-07",
+        "title": "2018년 7월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60659&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-08": {
+        "source": "dispatch",
+        "month": "2018-08",
+        "title": "2018년 8월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60660&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-09": {
+        "source": "dispatch",
+        "month": "2018-09",
+        "title": "2018년 9월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60661&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-10": {
+        "source": "dispatch",
+        "month": "2018-10",
+        "title": "2018년10월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60662&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-11": {
+        "source": "dispatch",
+        "month": "2018-11",
+        "title": "2018년11월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60663&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-12": {
+        "source": "dispatch",
+        "month": "2018-12",
+        "title": "2018년12월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60664&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-01": {
+        "source": "dispatch",
+        "month": "2019-01",
+        "title": "2019년 1월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60665&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-02": {
+        "source": "dispatch",
+        "month": "2019-02",
+        "title": "2019년 2월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60666&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-03": {
+        "source": "dispatch",
+        "month": "2019-03",
+        "title": "2019년3월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60667&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-04": {
+        "source": "dispatch",
+        "month": "2019-04",
+        "title": "2019년4월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60668&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-05": {
+        "source": "dispatch",
+        "month": "2019-05",
+        "title": "2019년5월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60669&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-06": {
+        "source": "dispatch",
+        "month": "2019-06",
+        "title": "2019년6월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60670&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-07": {
+        "source": "dispatch",
+        "month": "2019-07",
+        "title": "2019년7월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60671&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-08": {
+        "source": "dispatch",
+        "month": "2019-08",
+        "title": "2019년8월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60672&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-09": {
+        "source": "dispatch",
+        "month": "2019-09",
+        "title": "2019년9월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60673&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-10": {
+        "source": "dispatch",
+        "month": "2019-10",
+        "title": "2019년10월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60674&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-11": {
+        "source": "dispatch",
+        "month": "2019-11",
+        "title": "2019년11월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60675&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-12": {
+        "source": "dispatch",
+        "month": "2019-12",
+        "title": "2019년12월 5분단위 경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60676&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-01": {
+        "source": "dispatch",
+        "month": "2020-01",
+        "title": "2020년01월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60677&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-02": {
+        "source": "dispatch",
+        "month": "2020-02",
+        "title": "2020년02월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60678&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-03": {
+        "source": "dispatch",
+        "month": "2020-03",
+        "title": "2020년03월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60679&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-04": {
+        "source": "dispatch",
+        "month": "2020-04",
+        "title": "2020년04월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60680&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-05": {
+        "source": "dispatch",
+        "month": "2020-05",
+        "title": "2020년 05월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60681&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-06": {
+        "source": "dispatch",
+        "month": "2020-06",
+        "title": "2020년 06월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60682&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-07": {
+        "source": "dispatch",
+        "month": "2020-07",
+        "title": "2020년 07월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60683&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-08": {
+        "source": "dispatch",
+        "month": "2020-08",
+        "title": "2020년 08월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60684&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-09": {
+        "source": "dispatch",
+        "month": "2020-09",
+        "title": "2020년 09월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60685&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-10": {
+        "source": "dispatch",
+        "month": "2020-10",
+        "title": "2020년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60686&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-11": {
+        "source": "dispatch",
+        "month": "2020-11",
+        "title": "2020년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60687&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-12": {
+        "source": "dispatch",
+        "month": "2020-12",
+        "title": "2020년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60688&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-01": {
+        "source": "dispatch",
+        "month": "2021-01",
+        "title": "2021년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60689&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-02": {
+        "source": "dispatch",
+        "month": "2021-02",
+        "title": "2021년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60690&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-03": {
+        "source": "dispatch",
+        "month": "2021-03",
+        "title": "2021년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60691&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-04": {
+        "source": "dispatch",
+        "month": "2021-04",
+        "title": "2021년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60692&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-05": {
+        "source": "dispatch",
+        "month": "2021-05",
+        "title": "2021년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60693&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-06": {
+        "source": "dispatch",
+        "month": "2021-06",
+        "title": "2021년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60694&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-07": {
+        "source": "dispatch",
+        "month": "2021-07",
+        "title": "2021년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60695&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-08": {
+        "source": "dispatch",
+        "month": "2021-08",
+        "title": "2021년 8월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60696&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-09": {
+        "source": "dispatch",
+        "month": "2021-09",
+        "title": "2021년 9월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60697&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-10": {
+        "source": "dispatch",
+        "month": "2021-10",
+        "title": "2021년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60698&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-11": {
+        "source": "dispatch",
+        "month": "2021-11",
+        "title": "2021년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=65711&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-12": {
+        "source": "dispatch",
+        "month": "2021-12",
+        "title": "2021년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=66111&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-01": {
+        "source": "dispatch",
+        "month": "2022-01",
+        "title": "2022년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=66666&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-02": {
+        "source": "dispatch",
+        "month": "2022-02",
+        "title": "2022년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=66868&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-03": {
+        "source": "dispatch",
+        "month": "2022-03",
+        "title": "2022년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67092&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-04": {
+        "source": "dispatch",
+        "month": "2022-04",
+        "title": "2022년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67283&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-05": {
+        "source": "dispatch",
+        "month": "2022-05",
+        "title": "2022년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67421&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-06": {
+        "source": "dispatch",
+        "month": "2022-06",
+        "title": "2022년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67617&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-07": {
+        "source": "dispatch",
+        "month": "2022-07",
+        "title": "2022년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67762&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-08": {
+        "source": "dispatch",
+        "month": "2022-08",
+        "title": "2022년 8월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=67930&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-09": {
+        "source": "dispatch",
+        "month": "2022-09",
+        "title": "2022년 9월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=68077&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-10": {
+        "source": "dispatch",
+        "month": "2022-10",
+        "title": "2022년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=68322&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-11": {
+        "source": "dispatch",
+        "month": "2022-11",
+        "title": "2022년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=68520&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-12": {
+        "source": "dispatch",
+        "month": "2022-12",
+        "title": "2022년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=68710&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-01": {
+        "source": "dispatch",
+        "month": "2023-01",
+        "title": "2023년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=68935&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-02": {
+        "source": "dispatch",
+        "month": "2023-02",
+        "title": "2023년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=69176&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-03": {
+        "source": "dispatch",
+        "month": "2023-03",
+        "title": "2023년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=69335&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-04": {
+        "source": "dispatch",
+        "month": "2023-04",
+        "title": "2023년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=69561&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-05": {
+        "source": "dispatch",
+        "month": "2023-05",
+        "title": "2023년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=69896&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-06": {
+        "source": "dispatch",
+        "month": "2023-06",
+        "title": "2023년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=70138&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-07": {
+        "source": "dispatch",
+        "month": "2023-07",
+        "title": "2023년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=70378&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-08": {
+        "source": "dispatch",
+        "month": "2023-08",
+        "title": "2023년 8월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=70670&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-09": {
+        "source": "dispatch",
+        "month": "2023-09",
+        "title": "2023년 9월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=70955&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-10": {
+        "source": "dispatch",
+        "month": "2023-10",
+        "title": "2023년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=71192&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-11": {
+        "source": "dispatch",
+        "month": "2023-11",
+        "title": "2023년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=71412&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-12": {
+        "source": "dispatch",
+        "month": "2023-12",
+        "title": "2023년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=71677&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-01": {
+        "source": "dispatch",
+        "month": "2024-01",
+        "title": "2024년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=71882&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-02": {
+        "source": "dispatch",
+        "month": "2024-02",
+        "title": "2024년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=72132&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-03": {
+        "source": "dispatch",
+        "month": "2024-03",
+        "title": "2024년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=72370&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-04": {
+        "source": "dispatch",
+        "month": "2024-04",
+        "title": "2024년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=72673&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-05": {
+        "source": "dispatch",
+        "month": "2024-05",
+        "title": "2024년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=72870&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-06": {
+        "source": "dispatch",
+        "month": "2024-06",
+        "title": "2024년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73091&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-07": {
+        "source": "dispatch",
+        "month": "2024-07",
+        "title": "2024년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73284&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-08": {
+        "source": "dispatch",
+        "month": "2024-08",
+        "title": "2024년 8월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73416&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-09": {
+        "source": "dispatch",
+        "month": "2024-09",
+        "title": "2024년 9월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73682&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-10": {
+        "source": "dispatch",
+        "month": "2024-10",
+        "title": "2024년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73841&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-11": {
+        "source": "dispatch",
+        "month": "2024-11",
+        "title": "2024년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=73984&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-12": {
+        "source": "dispatch",
+        "month": "2024-12",
+        "title": "2024년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=74201&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-01": {
+        "source": "dispatch",
+        "month": "2025-01",
+        "title": "2025년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=74386&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-02": {
+        "source": "dispatch",
+        "month": "2025-02",
+        "title": "2025년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=74682&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-03": {
+        "source": "dispatch",
+        "month": "2025-03",
+        "title": "2025년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=74986&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-04": {
+        "source": "dispatch",
+        "month": "2025-04",
+        "title": "2025년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=75239&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-05": {
+        "source": "dispatch",
+        "month": "2025-05",
+        "title": "2025년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=75426&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-06": {
+        "source": "dispatch",
+        "month": "2025-06",
+        "title": "2025년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=75634&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-07": {
+        "source": "dispatch",
+        "month": "2025-07",
+        "title": "2025년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=75804&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-08": {
+        "source": "dispatch",
+        "month": "2025-08",
+        "title": "2025년 8월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76025&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-09": {
+        "source": "dispatch",
+        "month": "2025-09",
+        "title": "2025년 9월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76184&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-10": {
+        "source": "dispatch",
+        "month": "2025-10",
+        "title": "2025년 10월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76370&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-11": {
+        "source": "dispatch",
+        "month": "2025-11",
+        "title": "2025년 11월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76558&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-12": {
+        "source": "dispatch",
+        "month": "2025-12",
+        "title": "2025년 12월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76703&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-01": {
+        "source": "dispatch",
+        "month": "2026-01",
+        "title": "2026년 1월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=76832&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-02": {
+        "source": "dispatch",
+        "month": "2026-02",
+        "title": "2026년 2월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=77066&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-03": {
+        "source": "dispatch",
+        "month": "2026-03",
+        "title": "2026년 3월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=77271&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-04": {
+        "source": "dispatch",
+        "month": "2026-04",
+        "title": "2026년 4월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=77422&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-05": {
+        "source": "dispatch",
+        "month": "2026-05",
+        "title": "2026년 5월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=77683&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-06": {
+        "source": "dispatch",
+        "month": "2026-06",
+        "title": "2026년 6월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=77837&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-07": {
+        "source": "dispatch",
+        "month": "2026-07",
+        "title": "2026년 7월 5분단위경제급전",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=78025&tag=&nPage=1",
+        "attachment_url": null
+      }
+    },
+    "state_estimation": {
+      "2015-08": {
+        "source": "state_estimation",
+        "month": "2015-08",
+        "title": "8월분 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61111&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-09": {
+        "source": "state_estimation",
+        "month": "2015-09",
+        "title": "9월실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61112&tag=&nPage=14",
+        "attachment_url": null
+      },
+      "2015-10": {
+        "source": "state_estimation",
+        "month": "2015-10",
+        "title": "10월분 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61113&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-11": {
+        "source": "state_estimation",
+        "month": "2015-11",
+        "title": "11월 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61114&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2015-12": {
+        "source": "state_estimation",
+        "month": "2015-12",
+        "title": "12월 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61115&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-01": {
+        "source": "state_estimation",
+        "month": "2016-01",
+        "title": "2016년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61116&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-02": {
+        "source": "state_estimation",
+        "month": "2016-02",
+        "title": "2016년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61117&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-03": {
+        "source": "state_estimation",
+        "month": "2016-03",
+        "title": "2016년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61118&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-04": {
+        "source": "state_estimation",
+        "month": "2016-04",
+        "title": "2016년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61119&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-05": {
+        "source": "state_estimation",
+        "month": "2016-05",
+        "title": "2016년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61120&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-06": {
+        "source": "state_estimation",
+        "month": "2016-06",
+        "title": "2016년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61121&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-07": {
+        "source": "state_estimation",
+        "month": "2016-07",
+        "title": "2016년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61122&tag=&nPage=13",
+        "attachment_url": null
+      },
+      "2016-08": {
+        "source": "state_estimation",
+        "month": "2016-08",
+        "title": "2016년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61123&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-09": {
+        "source": "state_estimation",
+        "month": "2016-09",
+        "title": "2016년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61124&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-10": {
+        "source": "state_estimation",
+        "month": "2016-10",
+        "title": "2016년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61125&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-11": {
+        "source": "state_estimation",
+        "month": "2016-11",
+        "title": "2016년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61126&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2016-12": {
+        "source": "state_estimation",
+        "month": "2016-12",
+        "title": "2016년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61127&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-01": {
+        "source": "state_estimation",
+        "month": "2017-01",
+        "title": "2017년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61128&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-02": {
+        "source": "state_estimation",
+        "month": "2017-02",
+        "title": "2017년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61129&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-03": {
+        "source": "state_estimation",
+        "month": "2017-03",
+        "title": "2017년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61130&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-04": {
+        "source": "state_estimation",
+        "month": "2017-04",
+        "title": "2017년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61131&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-05": {
+        "source": "state_estimation",
+        "month": "2017-05",
+        "title": "2017년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61132&tag=&nPage=12",
+        "attachment_url": null
+      },
+      "2017-06": {
+        "source": "state_estimation",
+        "month": "2017-06",
+        "title": "2017년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61133&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-07": {
+        "source": "state_estimation",
+        "month": "2017-07",
+        "title": "2017년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61134&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-08": {
+        "source": "state_estimation",
+        "month": "2017-08",
+        "title": "2017년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61135&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-09": {
+        "source": "state_estimation",
+        "month": "2017-09",
+        "title": "2017년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61136&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-10": {
+        "source": "state_estimation",
+        "month": "2017-10",
+        "title": "2017년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61137&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-11": {
+        "source": "state_estimation",
+        "month": "2017-11",
+        "title": "2017년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61138&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2017-12": {
+        "source": "state_estimation",
+        "month": "2017-12",
+        "title": "2017년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61139&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-01": {
+        "source": "state_estimation",
+        "month": "2018-01",
+        "title": "2018년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61140&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-02": {
+        "source": "state_estimation",
+        "month": "2018-02",
+        "title": "2018년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61141&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-03": {
+        "source": "state_estimation",
+        "month": "2018-03",
+        "title": "2018년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61142&tag=&nPage=11",
+        "attachment_url": null
+      },
+      "2018-04": {
+        "source": "state_estimation",
+        "month": "2018-04",
+        "title": "2018년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61143&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-05": {
+        "source": "state_estimation",
+        "month": "2018-05",
+        "title": "2018년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61144&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-06": {
+        "source": "state_estimation",
+        "month": "2018-06",
+        "title": "2018년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61145&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-07": {
+        "source": "state_estimation",
+        "month": "2018-07",
+        "title": "2018년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61146&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-08": {
+        "source": "state_estimation",
+        "month": "2018-08",
+        "title": "2018년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61147&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-09": {
+        "source": "state_estimation",
+        "month": "2018-09",
+        "title": "2018년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61148&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-10": {
+        "source": "state_estimation",
+        "month": "2018-10",
+        "title": "2018년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61149&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-11": {
+        "source": "state_estimation",
+        "month": "2018-11",
+        "title": "2018년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61150&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2018-12": {
+        "source": "state_estimation",
+        "month": "2018-12",
+        "title": "2018년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61151&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-01": {
+        "source": "state_estimation",
+        "month": "2019-01",
+        "title": "2019년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61152&tag=&nPage=10",
+        "attachment_url": null
+      },
+      "2019-02": {
+        "source": "state_estimation",
+        "month": "2019-02",
+        "title": "2019년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61153&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-03": {
+        "source": "state_estimation",
+        "month": "2019-03",
+        "title": "2019년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61154&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-04": {
+        "source": "state_estimation",
+        "month": "2019-04",
+        "title": "2019년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61155&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-05": {
+        "source": "state_estimation",
+        "month": "2019-05",
+        "title": "2019년5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61156&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-06": {
+        "source": "state_estimation",
+        "month": "2019-06",
+        "title": "2019년6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61157&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-07": {
+        "source": "state_estimation",
+        "month": "2019-07",
+        "title": "2019년7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61158&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-08": {
+        "source": "state_estimation",
+        "month": "2019-08",
+        "title": "2019년8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61159&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-09": {
+        "source": "state_estimation",
+        "month": "2019-09",
+        "title": "2019년9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61160&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-10": {
+        "source": "state_estimation",
+        "month": "2019-10",
+        "title": "2019년10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61161&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-11": {
+        "source": "state_estimation",
+        "month": "2019-11",
+        "title": "2019년11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61162&tag=&nPage=9",
+        "attachment_url": null
+      },
+      "2019-12": {
+        "source": "state_estimation",
+        "month": "2019-12",
+        "title": "2019년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61163&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-01": {
+        "source": "state_estimation",
+        "month": "2020-01",
+        "title": "2020년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61164&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-02": {
+        "source": "state_estimation",
+        "month": "2020-02",
+        "title": "2020년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61165&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-03": {
+        "source": "state_estimation",
+        "month": "2020-03",
+        "title": "2020년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61166&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-04": {
+        "source": "state_estimation",
+        "month": "2020-04",
+        "title": "2020년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61167&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-05": {
+        "source": "state_estimation",
+        "month": "2020-05",
+        "title": "2020년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61168&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-06": {
+        "source": "state_estimation",
+        "month": "2020-06",
+        "title": "2020년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61169&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-07": {
+        "source": "state_estimation",
+        "month": "2020-07",
+        "title": "2020년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61170&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-08": {
+        "source": "state_estimation",
+        "month": "2020-08",
+        "title": "2020년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61171&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-09": {
+        "source": "state_estimation",
+        "month": "2020-09",
+        "title": "2020년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61172&tag=&nPage=8",
+        "attachment_url": null
+      },
+      "2020-10": {
+        "source": "state_estimation",
+        "month": "2020-10",
+        "title": "2020년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61173&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-11": {
+        "source": "state_estimation",
+        "month": "2020-11",
+        "title": "2020년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61174&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2020-12": {
+        "source": "state_estimation",
+        "month": "2020-12",
+        "title": "2020년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61175&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-01": {
+        "source": "state_estimation",
+        "month": "2021-01",
+        "title": "2021년 01월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61176&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-02": {
+        "source": "state_estimation",
+        "month": "2021-02",
+        "title": "2021년 02월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61177&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-03": {
+        "source": "state_estimation",
+        "month": "2021-03",
+        "title": "2021년 03월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61178&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-04": {
+        "source": "state_estimation",
+        "month": "2021-04",
+        "title": "2021년 04월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61179&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-05": {
+        "source": "state_estimation",
+        "month": "2021-05",
+        "title": "2021년 05월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61180&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-06": {
+        "source": "state_estimation",
+        "month": "2021-06",
+        "title": "2021년 06월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61181&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-07": {
+        "source": "state_estimation",
+        "month": "2021-07",
+        "title": "2021년 07월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61182&tag=&nPage=7",
+        "attachment_url": null
+      },
+      "2021-08": {
+        "source": "state_estimation",
+        "month": "2021-08",
+        "title": "2021년 08월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61183&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-09": {
+        "source": "state_estimation",
+        "month": "2021-09",
+        "title": "2021년 09월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61184&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-10": {
+        "source": "state_estimation",
+        "month": "2021-10",
+        "title": "2021년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61185&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-11": {
+        "source": "state_estimation",
+        "month": "2021-11",
+        "title": "2021년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=65707&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2021-12": {
+        "source": "state_estimation",
+        "month": "2021-12",
+        "title": "2021년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=66125&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-01": {
+        "source": "state_estimation",
+        "month": "2022-01",
+        "title": "2022년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=66681&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-02": {
+        "source": "state_estimation",
+        "month": "2022-02",
+        "title": "2022년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=66881&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-03": {
+        "source": "state_estimation",
+        "month": "2022-03",
+        "title": "2022년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67096&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-04": {
+        "source": "state_estimation",
+        "month": "2022-04",
+        "title": "2022년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67279&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-05": {
+        "source": "state_estimation",
+        "month": "2022-05",
+        "title": "2022년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67410&tag=&nPage=6",
+        "attachment_url": null
+      },
+      "2022-06": {
+        "source": "state_estimation",
+        "month": "2022-06",
+        "title": "2022년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67581&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-07": {
+        "source": "state_estimation",
+        "month": "2022-07",
+        "title": "2022년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67766&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-08": {
+        "source": "state_estimation",
+        "month": "2022-08",
+        "title": "2022년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=67933&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-09": {
+        "source": "state_estimation",
+        "month": "2022-09",
+        "title": "2022년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=68073&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-10": {
+        "source": "state_estimation",
+        "month": "2022-10",
+        "title": "2022년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=68240&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-11": {
+        "source": "state_estimation",
+        "month": "2022-11",
+        "title": "2022년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=68515&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2022-12": {
+        "source": "state_estimation",
+        "month": "2022-12",
+        "title": "2022년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=68719&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-01": {
+        "source": "state_estimation",
+        "month": "2023-01",
+        "title": "2023년 01월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=68922&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-02": {
+        "source": "state_estimation",
+        "month": "2023-02",
+        "title": "2023년 02월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=69175&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-03": {
+        "source": "state_estimation",
+        "month": "2023-03",
+        "title": "2023년 03월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=69330&tag=&nPage=5",
+        "attachment_url": null
+      },
+      "2023-04": {
+        "source": "state_estimation",
+        "month": "2023-04",
+        "title": "2023년 04월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=69556&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-05": {
+        "source": "state_estimation",
+        "month": "2023-05",
+        "title": "2023년 05월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=69887&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-06": {
+        "source": "state_estimation",
+        "month": "2023-06",
+        "title": "2023년 06월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=70109&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-07": {
+        "source": "state_estimation",
+        "month": "2023-07",
+        "title": "2023년 07월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=70324&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-08": {
+        "source": "state_estimation",
+        "month": "2023-08",
+        "title": "2023년 08월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=70605&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-09": {
+        "source": "state_estimation",
+        "month": "2023-09",
+        "title": "2023년 09월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=70951&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-10": {
+        "source": "state_estimation",
+        "month": "2023-10",
+        "title": "2023년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=71129&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-11": {
+        "source": "state_estimation",
+        "month": "2023-11",
+        "title": "2023년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=71398&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2023-12": {
+        "source": "state_estimation",
+        "month": "2023-12",
+        "title": "2023년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=71673&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-01": {
+        "source": "state_estimation",
+        "month": "2024-01",
+        "title": "2024년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=71863&tag=&nPage=4",
+        "attachment_url": null
+      },
+      "2024-02": {
+        "source": "state_estimation",
+        "month": "2024-02",
+        "title": "2024년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=72074&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-03": {
+        "source": "state_estimation",
+        "month": "2024-03",
+        "title": "2024년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=72339&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-04": {
+        "source": "state_estimation",
+        "month": "2024-04",
+        "title": "2024년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=72646&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-05": {
+        "source": "state_estimation",
+        "month": "2024-05",
+        "title": "2024년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=72859&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-06": {
+        "source": "state_estimation",
+        "month": "2024-06",
+        "title": "2024년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73080&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-07": {
+        "source": "state_estimation",
+        "month": "2024-07",
+        "title": "2024년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73301&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-08": {
+        "source": "state_estimation",
+        "month": "2024-08",
+        "title": "2024년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73411&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-09": {
+        "source": "state_estimation",
+        "month": "2024-09",
+        "title": "2024년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73692&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-10": {
+        "source": "state_estimation",
+        "month": "2024-10",
+        "title": "2024년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73837&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-11": {
+        "source": "state_estimation",
+        "month": "2024-11",
+        "title": "2024년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=73974&tag=&nPage=3",
+        "attachment_url": null
+      },
+      "2024-12": {
+        "source": "state_estimation",
+        "month": "2024-12",
+        "title": "2024년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=74189&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-01": {
+        "source": "state_estimation",
+        "month": "2025-01",
+        "title": "2025년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=74374&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-02": {
+        "source": "state_estimation",
+        "month": "2025-02",
+        "title": "2025년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=74692&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-03": {
+        "source": "state_estimation",
+        "month": "2025-03",
+        "title": "2025년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=75015&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-04": {
+        "source": "state_estimation",
+        "month": "2025-04",
+        "title": "2025년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=75248&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-05": {
+        "source": "state_estimation",
+        "month": "2025-05",
+        "title": "2025년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=75445&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-06": {
+        "source": "state_estimation",
+        "month": "2025-06",
+        "title": "2025년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=75653&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-07": {
+        "source": "state_estimation",
+        "month": "2025-07",
+        "title": "2025년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=75851&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-08": {
+        "source": "state_estimation",
+        "month": "2025-08",
+        "title": "2025년 8월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76035&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-09": {
+        "source": "state_estimation",
+        "month": "2025-09",
+        "title": "2025년 9월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76182&tag=&nPage=2",
+        "attachment_url": null
+      },
+      "2025-10": {
+        "source": "state_estimation",
+        "month": "2025-10",
+        "title": "2025년 10월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76385&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-11": {
+        "source": "state_estimation",
+        "month": "2025-11",
+        "title": "2025년 11월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76551&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2025-12": {
+        "source": "state_estimation",
+        "month": "2025-12",
+        "title": "2025년 12월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76706&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-01": {
+        "source": "state_estimation",
+        "month": "2026-01",
+        "title": "2026년 1월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=76827&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-02": {
+        "source": "state_estimation",
+        "month": "2026-02",
+        "title": "2026년 2월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=77088&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-03": {
+        "source": "state_estimation",
+        "month": "2026-03",
+        "title": "2026년 3월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=77262&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-04": {
+        "source": "state_estimation",
+        "month": "2026-04",
+        "title": "2026년 4월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=77416&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-05": {
+        "source": "state_estimation",
+        "month": "2026-05",
+        "title": "2026년 5월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=77687&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-06": {
+        "source": "state_estimation",
+        "month": "2026-06",
+        "title": "2026년 6월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=77839&tag=&nPage=1",
+        "attachment_url": null
+      },
+      "2026-07": {
+        "source": "state_estimation",
+        "month": "2026-07",
+        "title": "2026년 7월 발전기별 5분 상태추정 실적",
+        "article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=78031&tag=&nPage=1",
+        "attachment_url": null
+      }
+    }
+  }
+}

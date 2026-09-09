@@ -1,0 +1,27 @@
+{
+  "requested_start": "2021-08",
+  "requested_end": "2023-07",
+  "manifest_records": 72,
+  "status_counts": {
+    "success": 72
+  },
+  "per_source_records": {
+    "demand": 24,
+    "dispatch": 24,
+    "state_estimation": 24
+  },
+  "per_source_bytes": {
+    "demand": 1617871,
+    "dispatch": 841967430,
+    "state_estimation": 508567929
+  },
+  "total_bytes": 1352153230,
+  "month_dirs": {
+    "demand": 60,
+    "dispatch": 60,
+    "state_estimation": 60
+  },
+  "part_file_count": 0,
+  "problem_count": 0,
+  "problems": []
+}

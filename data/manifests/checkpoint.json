@@ -1,0 +1,23 @@
+{
+  "updated_at_utc": "2026-09-09T22:03:29.637609+00:00",
+  "requested_start": "2021-08",
+  "requested_end": "2023-07",
+  "sources": [
+    "demand",
+    "dispatch",
+    "state_estimation"
+  ],
+  "completed_records": 72,
+  "planned_records": 72,
+  "last_result": {
+    "source": "state_estimation",
+    "month": "2021-08",
+    "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61183&tag=&nPage=6",
+    "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0068&list_no=61183&seq=2608",
+    "downloaded_at": "2026-09-09T22:03:29.621609+00:00",
+    "file_size": 22312510,
+    "sha256": "e9dc9181fabe7952d0c017f39f6243263f25d5d57454589686bcfd67e9162bfd",
+    "status": "success",
+    "retry_count": 0
+  }
+}
