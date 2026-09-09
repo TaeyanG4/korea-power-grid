@@ -15,9 +15,11 @@ SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 from pilot_audit import (  # noqa: E402
+    _dispatch_text_projection,
     detect_text_encoding,
     inspect_three_column_text_header,
     read_dispatch_xlsx,
+    read_source,
     select_source_zip_member,
 )
 
@@ -58,6 +60,65 @@ def test_ascii_dispatch_header_without_preamble() -> None:
     assert encoding == "ascii"
     assert columns == ["TIME", "GEN_CODE", "BASEPOINT"]
     assert preamble_rows == 0
+
+
+def test_dispatch_extended_header_projects_canonical_columns() -> None:
+    columns = [
+        "\uc2dc\uac04",
+        "\ubc1c\uc804\uae30Name",
+        "\ubc1c\uc804\uae30CODE",
+        "BASEPOINT",
+        "LFC_MIN",
+        "LFC_MAX",
+    ]
+    text = (
+        "\uc124\uba85\n"
+        + ",".join(columns)
+        + "\n"
+        + "2018-05-01,plant#1,1,0\n"
+    )
+    stream = io.BytesIO(text.encode("cp949"))
+
+    encoding, detected, preamble_rows = inspect_three_column_text_header(
+        "dispatch", stream, label="dispatch_2018_05.txt"
+    )
+
+    assert encoding == "cp949"
+    assert detected == columns
+    assert preamble_rows == 1
+    assert _dispatch_text_projection(detected) == (0, 2, 3)
+
+
+def test_read_source_dispatch_extended_header_keeps_provenance() -> None:
+    project_root = Path(__file__).resolve().parents[1]
+    with tempfile.TemporaryDirectory(dir=project_root) as temp_dir:
+        path = Path(temp_dir) / "dispatch.zip"
+        payload = (
+            "\uc124\uba85\n"
+            "\uc2dc\uac04,\ubc1c\uc804\uae30Name,\ubc1c\uc804\uae30CODE,BASEPOINT,LFC_MIN,LFC_MAX\n"
+            "2018-05-01,plant#1,1,0\n"
+            "2018-05-01 00:05:00,plant#1,1,1.5,0,2\n"
+        ).encode("cp949")
+        with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr("dispatch.txt", payload)
+
+        frame, physical = read_source("dispatch", path)
+
+    assert list(frame.columns) == ["\uc2dc\uac04", "\ubc1c\uc804\uae30CODE", "BASEPOINT"]
+    assert frame.iloc[0].tolist() == ["2018-05-01", "1", "0"]
+    assert physical["source_header_columns"] == [
+        "\uc2dc\uac04",
+        "\ubc1c\uc804\uae30Name",
+        "\ubc1c\uc804\uae30CODE",
+        "BASEPOINT",
+        "LFC_MIN",
+        "LFC_MAX",
+    ]
+    assert physical["ignored_source_header_columns"] == [
+        "\ubc1c\uc804\uae30Name",
+        "LFC_MIN",
+        "LFC_MAX",
+    ]
 
 
 def test_header_scan_is_bounded() -> None:

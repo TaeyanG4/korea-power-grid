@@ -91,7 +91,31 @@ def _normalize_header_token(value: str) -> str:
     return "".join(value.strip().lstrip("\ufeff").upper().split())
 
 
+def _dispatch_text_projection(columns: list[str]) -> tuple[int, int, int] | None:
+    normalized = [_normalize_header_token(value) for value in columns]
+    time_indexes = [
+        index
+        for index, value in enumerate(normalized)
+        if value in {"TIME", "\uc2dc\uac04"}
+    ]
+    code_indexes = [
+        index
+        for index, value in enumerate(normalized)
+        if ("GEN" in value or "\ubc1c\uc804\uae30" in value)
+        and ("CODE" in value or "\ucf54\ub4dc" in value)
+    ]
+    basepoint_indexes = [
+        index for index, value in enumerate(normalized) if value == "BASEPOINT"
+    ]
+    if len(time_indexes) != 1 or len(code_indexes) != 1 or len(basepoint_indexes) != 1:
+        return None
+    return time_indexes[0], code_indexes[0], basepoint_indexes[0]
+
+
 def _is_three_column_header(source: str, columns: list[str]) -> bool:
+    if source == "dispatch":
+        return _dispatch_text_projection(columns) is not None
+
     if len(columns) != 3:
         return False
 
@@ -104,8 +128,6 @@ def _is_three_column_header(source: str, columns: list[str]) -> bool:
     if not (first_ok and second_ok):
         return False
 
-    if source == "dispatch":
-        return third == "BASEPOINT"
     if source == "state_estimation":
         return "MW" in third and ("\uc0c1\ud0dc\ucd94\uc815" in third or "EST" in third)
     return False
@@ -132,7 +154,7 @@ def inspect_three_column_text_header(
             return encoding, columns, index
 
     raise RuntimeError(
-        f"{source}: could not locate expected 3-column CSV header in first "
+        f"{source}: could not locate expected source CSV header in first "
         f"{max_lines} lines of {label}"
     )
 
@@ -477,6 +499,22 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
                         header=None,
                         low_memory=False,
                     )
+                source_header_columns = list(columns)
+                ignored_source_header_columns: list[str] = []
+                if source == "dispatch":
+                    projection = _dispatch_text_projection(columns)
+                    if projection is None:
+                        raise RuntimeError(
+                            f"dispatch: could not project TIME/GEN_CODE/BASEPOINT from {columns}"
+                        )
+                    keep = list(projection)
+                    ignored_source_header_columns = [
+                        column
+                        for index, column in enumerate(columns)
+                        if index not in keep
+                    ]
+                    df = df.iloc[:, keep].copy()
+                    df.columns = [columns[index] for index in keep]
                 physical = {
                     "zip_test_bad_member": bad,
                     "outer_zip_member_count": len(infos),
@@ -488,6 +526,9 @@ def read_source(source: str, path: Path) -> tuple[pd.DataFrame, dict]:
                     "physical_format": "comma-delimited text",
                     "encoding_used_for_full_parse": encoding,
                     "preamble_rows_skipped": preamble_rows,
+                    "source_header_columns": source_header_columns,
+                    "canonical_source_columns": [str(column) for column in df.columns],
+                    "ignored_source_header_columns": ignored_source_header_columns,
                 }
     return df, physical
 
