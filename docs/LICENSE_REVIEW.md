@@ -10,7 +10,7 @@ This is a project-level source and redistribution review, not legal advice.
 
 **Historical collection: GO only after the Phase 1 pilot validates the physical files and the project records source provenance/checksums.**
 
-**Kaggle redistribution: provisionally GO, with final re-verification immediately before release.**
+**Kaggle redistribution: GO for release packaging and private Kaggle draft upload. Public release remains gated on package QA.**
 
 The current official data.go.kr records for all three V1 datasets state:
 
@@ -19,6 +19,25 @@ The current official data.go.kr records for all three V1 datasets state:
 - permitted-use scope: `이용허락범위 제한 없음`
 
 No dataset-specific restriction is currently displayed on those records.
+
+## Final release re-verification
+
+The release gate was re-run on `2026-09-10T09:28:09+09:00` immediately after
+the full-history checkpoint completed. The machine-readable result is:
+
+`data/audits/release_license_check_2026-09-10.json`
+
+Status: **PASS**
+
+All three official data.go.kr records still report:
+
+- provider: Korea Power Exchange (`한국전력거래소`)
+- `비용부과유무 = 무료`
+- `이용허락범위 = 이용허락범위 제한 없음`
+
+The release metadata will use Kaggle's `other` license category and explain the
+official Korean public-data permission field in the dataset description rather
+than asserting a Creative Commons license that the source does not state.
 
 ## Official license evidence
 
@@ -54,7 +73,7 @@ Release documentation must include at minimum:
 - date on which license metadata was re-checked
 - statement that the Kaggle package is a cleaned/normalized derivative and is not an official KPX distribution channel
 
-## Why this is still marked provisional for final Kaggle release
+## Why public release still has a package gate
 
 The portal metadata can change. Therefore the project must re-check the three official data.go.kr records immediately before a public Kaggle release and record that verification date in the release manifest or release notes.
 
@@ -69,15 +88,14 @@ If any source stops showing `이용허락범위 제한 없음`, or displays a ne
 
 ## Release gate
 
-Before Kaggle upload, all items below must be true:
+Before a public Kaggle release, all items below must be true:
 
-- [ ] data.go.kr license field re-checked for demand
-- [ ] data.go.kr license field re-checked for dispatch
-- [ ] data.go.kr license field re-checked for state estimation
+- [x] data.go.kr license field re-checked for demand
+- [x] data.go.kr license field re-checked for dispatch
+- [x] data.go.kr license field re-checked for state estimation
 - [ ] official KPX/data.go.kr source URLs included in package documentation
 - [ ] release files contain no unrelated copyrighted website assets
 - [ ] package describes transformations and does not imply KPX endorsement
 - [ ] release manifest records the license-review date
 
 If any item fails, public redistribution pauses even if collection/analysis can continue locally.
-

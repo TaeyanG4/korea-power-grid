@@ -1,0 +1,61 @@
+{
+  "checked_at_asia_seoul": "2026-09-10T09:28:09.056949+09:00",
+  "purpose": "Final redistribution gate immediately before release packaging",
+  "status": "PASS",
+  "expected": {
+    "provider": "Korea Power Exchange (한국전력거래소)",
+    "cost": "무료",
+    "permission_scope": "이용허락범위 제한 없음"
+  },
+  "sources": [
+    {
+      "source": "demand",
+      "dataset_name": "한국전력거래소_5분 단위 전력수요 예측자료",
+      "url": "https://www.data.go.kr/data/15051432/fileData.do",
+      "http_status": 200,
+      "page_title": "한국전력거래소_5분 단위 전력수요 예측자료_20250630 | 공공데이터포털",
+      "provider": "Korea Power Exchange (한국전력거래소)",
+      "cost": "무료",
+      "permission_scope": "이용허락범위 제한 없음",
+      "checks": {
+        "provider_kpx": true,
+        "cost_free": true,
+        "permission_scope_unrestricted": true
+      },
+      "pass": true
+    },
+    {
+      "source": "dispatch",
+      "dataset_name": "한국전력거래소_발전기별 5분 단위 경제급전",
+      "url": "https://www.data.go.kr/data/15051425/fileData.do",
+      "http_status": 200,
+      "page_title": "한국전력거래소_발전기별 5분 단위 경제급전_20250627 | 공공데이터포털",
+      "provider": "Korea Power Exchange (한국전력거래소)",
+      "cost": "무료",
+      "permission_scope": "이용허락범위 제한 없음",
+      "checks": {
+        "provider_kpx": true,
+        "cost_free": true,
+        "permission_scope_unrestricted": true
+      },
+      "pass": true
+    },
+    {
+      "source": "state_estimation",
+      "dataset_name": "한국전력거래소_발전기별 5분 단위 상태추정",
+      "url": "https://www.data.go.kr/data/15051426/fileData.do",
+      "http_status": 200,
+      "page_title": "한국전력거래소_발전기별 5분 단위 상태추정_20250530 | 공공데이터포털",
+      "provider": "Korea Power Exchange (한국전력거래소)",
+      "cost": "무료",
+      "permission_scope": "이용허락범위 제한 없음",
+      "checks": {
+        "provider_kpx": true,
+        "cost_free": true,
+        "permission_scope_unrestricted": true
+      },
+      "pass": true
+    }
+  ],
+  "note": "This is a project-level metadata verification, not legal advice. Public release remains gated on package QA and accurate attribution."
+}
