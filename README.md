@@ -8,7 +8,7 @@ Generator Dispatch, State Estimation and Demand Forecasts from official Korea Po
 - Phase 1 — 2026-07 one-month pilot: complete (`PASS WITH OBSERVATIONS`)
 - Phase 2 — repository/pipeline structure: complete
 - Phase 3 — historical backfill: **complete through the full observed board history** (`2015-08` through `2026-07`, `PASS WITH OBSERVATIONS`)
-- Next — release packaging, final license re-verification, and Kaggle publication preparation
+- V1 release package — built and full SHA-256 QA complete (`PASS`); private Kaggle draft upload next
 
 See:
 
@@ -25,6 +25,8 @@ See:
 - `docs/PHASE3_CHECKPOINT4.md`
 - `docs/PHASE3_CHECKPOINT5_PLAN.md`
 - `docs/PHASE3_CHECKPOINT5.md`
+- `docs/RELEASE_V1_PLAN.md`
+- `docs/RELEASE_V1.md`
 - `data/audits/pilot_2026_07.json`
 - `data/audits/phase3_checkpoint1_summary.json`
 - `data/audits/phase3_checkpoint2_summary.json`

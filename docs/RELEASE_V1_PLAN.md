@@ -1,6 +1,6 @@
 # V1 Release / Kaggle Plan
 
-Status: **READY FOR PACKAGE BUILD**
+Status: **PACKAGE QA PASS — READY FOR PRIVATE KAGGLE DRAFT UPLOAD**
 
 Phase 3 completed the full observed KPX board history from `2015-08` through
 `2026-07`. The measured normalized footprint is 2.661 GB, within the V1 target.

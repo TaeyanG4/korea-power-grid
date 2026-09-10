@@ -1,0 +1,52 @@
+{
+  "release": "v1",
+  "status": "PASS",
+  "hash_validation_performed": true,
+  "checks": {
+    "full_history_checkpoint_passed": true,
+    "release_license_gate_passed": true,
+    "logical_records_396": true,
+    "available_parquet_files_388": true,
+    "source_unavailable_records_8": true,
+    "output_rows_match_final_audit": true,
+    "parquet_bytes_match_final_measurement": true,
+    "normalization_exception_rows_814": true,
+    "metadata_id_expected": true,
+    "metadata_license_other": true,
+    "metadata_title_length_valid": true,
+    "metadata_subtitle_length_valid": true,
+    "license_timestamp_matches": true,
+    "parquet_filename_set_exact": true,
+    "required_auxiliary_files_present": true,
+    "no_unexpected_release_files": true,
+    "total_parquet_size_matches": true,
+    "total_rows_match": true,
+    "per_source_available_file_counts": true,
+    "missing_source_month_rows_8": true,
+    "missingness_sources_3": true,
+    "normalization_exception_present": true,
+    "non_endorsement_statement_present": true,
+    "official_permission_text_present": true
+  },
+  "problems": [],
+  "observed": {
+    "parquet_files": 388,
+    "parquet_size_bytes": 2661216619,
+    "rows": 1008249180,
+    "per_source_files": {
+      "demand": 128,
+      "dispatch": 130,
+      "state_estimation": 130
+    },
+    "auxiliary_files": [
+      "DATA_DICTIONARY.md",
+      "README.md",
+      "SOURCE_LICENSE.md",
+      "dataset-metadata.json",
+      "missing_source_months.csv",
+      "missingness_summary.csv",
+      "normalization_exceptions.json",
+      "release_manifest.json"
+    ]
+  }
+}

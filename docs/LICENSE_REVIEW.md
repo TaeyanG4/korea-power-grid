@@ -93,9 +93,9 @@ Before a public Kaggle release, all items below must be true:
 - [x] data.go.kr license field re-checked for demand
 - [x] data.go.kr license field re-checked for dispatch
 - [x] data.go.kr license field re-checked for state estimation
-- [ ] official KPX/data.go.kr source URLs included in package documentation
-- [ ] release files contain no unrelated copyrighted website assets
-- [ ] package describes transformations and does not imply KPX endorsement
-- [ ] release manifest records the license-review date
+- [x] official KPX/data.go.kr source URLs included in package documentation
+- [x] release files contain no unrelated copyrighted website assets
+- [x] package describes transformations and does not imply KPX endorsement
+- [x] release manifest records the license-review date
 
 If any item fails, public redistribution pauses even if collection/analysis can continue locally.
