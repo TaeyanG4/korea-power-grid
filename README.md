@@ -8,7 +8,7 @@ Generator Dispatch, State Estimation and Demand Forecasts from official Korea Po
 - Phase 1 — 2026-07 one-month pilot: complete (`PASS WITH OBSERVATIONS`)
 - Phase 2 — repository/pipeline structure: complete
 - Phase 3 — historical backfill: **complete through the full observed board history** (`2015-08` through `2026-07`, `PASS WITH OBSERVATIONS`)
-- V1 release package — built and full SHA-256 QA complete (`PASS`); private Kaggle version 1 uploaded and remote QA complete (`PASS`); public release gate next
+- V1 release — **published on Kaggle**; package QA, private remote QA, final license gate, and anonymous public-access verification all pass
 
 See:
 
@@ -34,6 +34,9 @@ See:
 - `data/audits/phase3_checkpoint4_summary.json`
 - `data/audits/phase3_checkpoint5_summary.json`
 - `data/audits/kaggle_v1_remote_qa.json`
+- `data/audits/kaggle_v1_publish.json`
+
+Kaggle V1: `https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute`
 
 ## Pilot headline numbers
 

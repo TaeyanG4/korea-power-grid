@@ -1,0 +1,35 @@
+{
+  "release": "v1",
+  "dataset": "taeyangg4/south-korea-power-grid-5-minute",
+  "url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute",
+  "status": "PUBLISHED",
+  "published_at_asia_seoul": "2026-09-10T10:29:17.279972+09:00",
+  "action": "already_public_verify_only",
+  "prechecks": {
+    "release_qa_pass": true,
+    "remote_qa_pass": true,
+    "license_qa_pass": true,
+    "license_checked_today": true,
+    "remote_qa_was_private": true
+  },
+  "runtime_checks": {
+    "dataset_ready_before": true,
+    "dataset_version_1_before": true
+  },
+  "postchecks": {
+    "dataset_ready_after": true,
+    "dataset_version_1_after": true,
+    "dataset_public_after": true,
+    "anonymous_http_200": true,
+    "anonymous_title_present": true,
+    "anonymous_no_login_redirect": true
+  },
+  "observed": {
+    "status": "ready",
+    "current_version_number": 1,
+    "is_private": null,
+    "title": "South Korea Power Grid 5-Minute Data 2015-2026",
+    "anonymous_http_status": 200,
+    "anonymous_final_url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute"
+  }
+}

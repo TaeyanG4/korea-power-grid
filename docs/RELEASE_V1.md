@@ -1,6 +1,6 @@
 # V1 Release Package Results
 
-Status: **PRIVATE KAGGLE DRAFT QA PASS**
+Status: **PUBLIC V1 PUBLISHED**
 
 The V1 package has been assembled at `data/release/v1` from the five validated
 Phase 3 processed roots without reprocessing the historical data. Available
@@ -88,6 +88,27 @@ upload tokens. A retry reused those completed uploads; the dataset was then
 confirmed server-side as `ready`, with no second transfer of the 2.66 GB data
 payload required.
 
-The next action is to re-run the official license check immediately before
-publication and, if it still passes, switch the verified version 1 dataset to
-public visibility.
+## Public publication
+
+The official license check was re-run at `2026-09-10T10:26:19+09:00` and
+remained `PASS`. The verified version 1 dataset was then switched from private
+to public visibility.
+
+Publication audit: `data/audits/kaggle_v1_publish.json`
+
+Status: **PUBLISHED**
+
+- Kaggle dataset: `taeyangg4/south-korea-power-grid-5-minute`
+- version: **1**
+- dataset status: **ready**
+- anonymous page request: **HTTP 200**
+- anonymous title check: **pass**
+- anonymous login redirect: **none**
+
+Public URL:
+
+`https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute`
+
+The first CLI create attempt uploaded the complete payload but failed while
+parsing the final create response. The successful retry reused Kaggle's 395
+completed resumable-upload records. No duplicate 2.66 GB transfer was required.

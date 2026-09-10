@@ -83,7 +83,7 @@ def main() -> int:
     passed = all(item["pass"] for item in results)
     audit = {
         "checked_at_asia_seoul": checked_at.isoformat(),
-        "purpose": "Final redistribution gate immediately before release packaging",
+        "purpose": "Final redistribution gate immediately before release packaging or public publication",
         "status": "PASS" if passed else "FAIL",
         "expected": {
             "provider": "Korea Power Exchange (한국전력거래소)",

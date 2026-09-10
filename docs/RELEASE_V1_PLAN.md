@@ -1,6 +1,6 @@
 # V1 Release / Kaggle Plan
 
-Status: **PRIVATE KAGGLE DRAFT QA PASS — READY FOR PUBLIC RELEASE GATE**
+Status: **COMPLETE — V1 PUBLISHED**
 
 Phase 3 completed the full observed KPX board history from `2015-08` through
 `2026-07`. The measured normalized footprint is 2.661 GB, within the V1 target.
@@ -53,7 +53,8 @@ minus eight explicitly unavailable official source attachments.
 - initial upload visibility: **private**
 - CLI upload mode: `--keep-tabular` so Parquet is not converted to CSV
 
-The private draft is now `ready` at version 1. Remote QA confirms all 395 upload
-files match the local release package exactly by filename and byte size. Public
-visibility is enabled only after the license gate is re-run immediately before
-publication.
+The private draft reached `ready` at version 1 and remote QA confirmed all 395
+upload files matched the local release package exactly by filename and byte
+size. The license gate was then re-run immediately before publication and the
+dataset was switched to public visibility. Anonymous HTTP verification confirms
+the public Kaggle page is accessible without a login redirect.

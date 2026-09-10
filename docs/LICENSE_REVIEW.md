@@ -10,7 +10,7 @@ This is a project-level source and redistribution review, not legal advice.
 
 **Historical collection: GO only after the Phase 1 pilot validates the physical files and the project records source provenance/checksums.**
 
-**Kaggle redistribution: GO. Package QA and private remote QA pass; public release is permitted after the final same-day license re-check.**
+**Kaggle redistribution: GO. V1 was published after package QA, private remote QA, and the final same-day license re-check all passed.**
 
 The current official data.go.kr records for all three V1 datasets state:
 

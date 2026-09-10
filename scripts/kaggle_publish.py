@@ -6,6 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import requests
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 
@@ -61,7 +62,6 @@ def main() -> int:
     runtime_checks = {
         "dataset_ready_before": status_before.get("status") == "ready",
         "dataset_version_1_before": int(status_before.get("current_version_number", 0)) == 1,
-        "dataset_private_before": metadata_before.get("isPrivate") is True,
     }
     if not all(runtime_checks.values()):
         report = {
@@ -75,33 +75,56 @@ def main() -> int:
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 1
 
-    with tempfile.TemporaryDirectory() as temp_dir:
-        meta_path = Path(api.dataset_metadata(DATASET, temp_dir))
-        payload = json.loads(meta_path.read_text(encoding="utf-8"))
-        info = payload.get("info") or payload
-        info["isPrivate"] = False
-        if "info" in payload:
-            payload["info"] = info
-        else:
-            payload = info
-        meta_path.write_text(json.dumps(payload, ensure_ascii=True, indent=2), encoding="utf-8")
-        api.dataset_metadata_update(DATASET, temp_dir)
+    was_private = metadata_before.get("isPrivate") is True
+    if was_private:
+        action = "set_public"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            meta_path = Path(api.dataset_metadata(DATASET, temp_dir))
+            payload = json.loads(meta_path.read_text(encoding="utf-8"))
+            info = payload.get("info") or payload
+            info["isPrivate"] = False
+            if "info" in payload:
+                payload["info"] = info
+            else:
+                payload = info
+            meta_path.write_text(
+                json.dumps(payload, ensure_ascii=True, indent=2), encoding="utf-8"
+            )
+            api.dataset_metadata_update(DATASET, temp_dir)
+    else:
+        action = "already_public_verify_only"
 
     status_after = json.loads(api.dataset_status(DATASET, format="json"))
     metadata_after = remote_metadata(api)
+    public_url = "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute"
+    anonymous_response = requests.get(
+        public_url,
+        timeout=30,
+        allow_redirects=True,
+        headers={"User-Agent": "Mozilla/5.0"},
+    )
+    anonymous_title_present = (
+        "South Korea Power Grid 5-Minute Data 2015-2026" in anonymous_response.text
+    )
+    anonymous_login_redirect = "/account/login" in anonymous_response.url.lower()
     postchecks = {
         "dataset_ready_after": status_after.get("status") == "ready",
         "dataset_version_1_after": int(status_after.get("current_version_number", 0)) == 1,
-        "dataset_public_after": metadata_after.get("isPrivate") is False,
+        # Kaggle omits isPrivate from downloaded metadata once it is false/public.
+        "dataset_public_after": metadata_after.get("isPrivate") is not True,
+        "anonymous_http_200": anonymous_response.status_code == 200,
+        "anonymous_title_present": anonymous_title_present,
+        "anonymous_no_login_redirect": not anonymous_login_redirect,
     }
     passed = all(postchecks.values())
 
     report = {
         "release": "v1",
         "dataset": DATASET,
-        "url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute",
+        "url": public_url,
         "status": "PUBLISHED" if passed else "FAIL",
         "published_at_asia_seoul": datetime.now(SEOUL).isoformat(),
+        "action": action,
         "prechecks": prechecks,
         "runtime_checks": runtime_checks,
         "postchecks": postchecks,
@@ -110,6 +133,8 @@ def main() -> int:
             "current_version_number": status_after.get("current_version_number"),
             "is_private": metadata_after.get("isPrivate"),
             "title": metadata_after.get("title"),
+            "anonymous_http_status": anonymous_response.status_code,
+            "anonymous_final_url": anonymous_response.url,
         },
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
