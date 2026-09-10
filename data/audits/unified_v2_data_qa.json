@@ -1,0 +1,59 @@
+{
+  "release": "v2-unified-data",
+  "checked_at_utc": "2026-09-10T08:57:18.637162+00:00",
+  "status": "PASS",
+  "checks": {
+    "parquet_exists": true,
+    "csv_exists": true,
+    "no_partial_files": true,
+    "parquet_schema_exact": true,
+    "parquet_rows_exact": true,
+    "source_rows_exact": true,
+    "csv_header_exact": true,
+    "csv_rows_exact": true,
+    "parquet_binary_has_no_row_accounting_requirement": true
+  },
+  "problems": [],
+  "observed": {
+    "rows": 1008249180,
+    "source_rows": {
+      "demand": 1122013,
+      "dispatch": 479357481,
+      "state_estimation": 527769686
+    },
+    "schema": [
+      [
+        "timestamp",
+        "timestamp[ns]",
+        false
+      ],
+      [
+        "source",
+        "string",
+        false
+      ],
+      [
+        "generator_id",
+        "string",
+        true
+      ],
+      [
+        "value_mw",
+        "double",
+        true
+      ]
+    ],
+    "parquet": {
+      "path": "data/release/v2/south_korea_power_grid_5min.parquet",
+      "bytes": 1992834865,
+      "row_groups": 2296,
+      "sha256": "c8eb5fb8113e328cfe9595231135babc9a25688a2bbb0e3b3a803c7e6f792ea6"
+    },
+    "csv": {
+      "path": "data/release/v2/south_korea_power_grid_5min.csv",
+      "bytes": 50138174924,
+      "data_rows": 1008249180,
+      "sha256": "c377df3f0698cd728d1141a7e52a7f4ec3f3b35b1f8b83c1a7bd907831aeb5fb"
+    }
+  }
+}

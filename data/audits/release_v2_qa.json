@@ -1,0 +1,45 @@
+{
+  "release": "v2-unified",
+  "status": "PASS",
+  "checks": {
+    "unified_data_qa_pass": true,
+    "manifest_rows_exact": true,
+    "manifest_parquet_hash_matches": true,
+    "manifest_csv_hash_matches": true,
+    "package_filename_set_exact": true,
+    "metadata_id_expected": true,
+    "metadata_license_other": true,
+    "metadata_subtitle_valid": true,
+    "metadata_description_complete": true,
+    "metadata_keywords_6": true,
+    "metadata_update_frequency_monthly": true,
+    "metadata_provenance_present": true,
+    "metadata_cover_declared": true,
+    "cover_exists": true,
+    "resource_paths_exact": true,
+    "all_resource_descriptions_present": true,
+    "main_file_descriptions_present": true,
+    "main_column_descriptions_complete": true,
+    "parquet_smaller_than_csv": true,
+    "total_data_bytes_below_200gb": true
+  },
+  "observed": {
+    "package_files": 11,
+    "upload_resources": 9,
+    "data_rows": 1008249180,
+    "parquet_bytes": 1992834865,
+    "csv_bytes": 50138174924,
+    "total_data_bytes": 52131009789,
+    "resource_paths": [
+      "DATA_DICTIONARY.md",
+      "README.md",
+      "SOURCE_LICENSE.md",
+      "missing_source_months.csv",
+      "missingness_summary.csv",
+      "normalization_exceptions.json",
+      "release_manifest.json",
+      "south_korea_power_grid_5min.csv",
+      "south_korea_power_grid_5min.parquet"
+    ]
+  }
+}

@@ -8,14 +8,15 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE_ROOT = ROOT / "data" / "release" / "v1"
+SOURCE_RELEASE_ROOT = ROOT / "data" / "release" / "v1"
+TARGET_RELEASE_ROOT = ROOT / "data" / "release" / "v2"
 ASSET_ROOT = ROOT / "docs" / "assets"
 ASSET_PATH = ASSET_ROOT / "dataset-cover-image.png"
-RELEASE_PATH = RELEASE_ROOT / "dataset-cover-image.png"
+RELEASE_PATH = TARGET_RELEASE_ROOT / "dataset-cover-image.png"
 
 
 def main() -> int:
-    demand_path = RELEASE_ROOT / "demand_2026_07.parquet"
+    demand_path = SOURCE_RELEASE_ROOT / "demand_2026_07.parquet"
     frame = pd.read_parquet(demand_path, columns=["timestamp", "demand_forecast_mw"])
     frame = frame.dropna().sort_values("timestamp")
     first_day = frame["timestamp"].dt.normalize().iloc[0]
@@ -71,7 +72,7 @@ def main() -> int:
     fig.text(
         0.94,
         0.88,
-        "1.0B+ rows\n388 Parquet files\nKorea Power Exchange",
+        "1.0B+ rows\n1 Parquet + 1 CSV\nKorea Power Exchange",
         color="#dbeafe",
         fontsize=12,
         ha="right",
