@@ -26,6 +26,7 @@ REQUIRED_AUXILIARY = {
     "missingness_summary.csv",
     "normalization_exceptions.json",
     "release_manifest.json",
+    "dataset-cover-image.png",
 }
 
 
@@ -92,6 +93,7 @@ def main() -> int:
         "metadata_provenance_present": "Korea Power Exchange"
         in metadata.get("userSpecifiedSources", ""),
         "metadata_resources_395": len(metadata.get("resources", [])) == 395,
+        "metadata_data_entries_395": len(metadata.get("data", [])) == 395,
         "latest_license_check_not_older_than_manifest": bool(
             manifest_license_checked
             and latest_license_checked

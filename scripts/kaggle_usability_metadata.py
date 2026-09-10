@@ -29,6 +29,7 @@ def main() -> int:
                 "expected_update_frequency": metadata["expectedUpdateFrequency"],
                 "provenance_chars": len(metadata["userSpecifiedSources"]),
                 "resources": len(metadata["resources"]),
+                "data_entries": len(metadata["data"]),
             },
             ensure_ascii=False,
             indent=2,

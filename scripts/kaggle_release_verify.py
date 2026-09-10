@@ -11,6 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 RELEASE_ROOT = ROOT / "data" / "release" / "v1"
 OUT = ROOT / "data" / "audits" / "kaggle_v1_remote_qa.json"
 DATASET = "taeyangg4/south-korea-power-grid-5-minute"
+KAGGLE_METADATA_ONLY_FILES = {
+    "dataset-metadata.json",
+    "dataset-cover-image.png",
+    "dataset-cover-image.jpg",
+    "dataset-cover-image.jpeg",
+    "dataset-cover-image.webp",
+}
 
 
 def load_remote_metadata(api: KaggleApi) -> dict:
@@ -53,7 +60,7 @@ def main() -> int:
     local_files = {
         path.name: int(path.stat().st_size)
         for path in RELEASE_ROOT.iterdir()
-        if path.is_file() and path.name != "dataset-metadata.json"
+        if path.is_file() and path.name not in KAGGLE_METADATA_ONLY_FILES
     }
 
     missing_remote = sorted(set(local_files) - set(remote_files))

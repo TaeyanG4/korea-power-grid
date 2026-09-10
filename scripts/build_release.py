@@ -15,6 +15,7 @@ RELEASE_ROOT = ROOT / "data" / "release" / "v1"
 FINAL_AUDIT = ROOT / "data" / "audits" / "phase3_checkpoint5_summary.json"
 LICENSE_AUDIT = ROOT / "data" / "audits" / "release_license_check_2026-09-10.json"
 EXCEPTIONS = ROOT / "data" / "manifests" / "normalization_exceptions.json"
+COVER_ASSET = ROOT / "docs" / "assets" / "dataset-cover-image.png"
 
 PROCESSED_ROOTS = (
     ROOT / "data" / "processed" / "checkpoint_full_extension",
@@ -366,7 +367,33 @@ def kaggle_resources(entries: list[dict]) -> list[dict]:
     return resources
 
 
+def kaggle_data_entries(resources: list[dict]) -> list[dict]:
+    data: list[dict] = []
+    for resource in resources:
+        path = RELEASE_ROOT / str(resource["path"])
+        entry = {
+            "name": str(resource["path"]),
+            "description": str(resource.get("description", "")),
+            "totalBytes": int(path.stat().st_size),
+        }
+        fields = resource.get("schema", {}).get("fields", [])
+        if fields:
+            entry["columns"] = [
+                {
+                    "name": str(field["name"]),
+                    "description": str(
+                        field.get("description") or field.get("title") or ""
+                    ),
+                    "type": str(field.get("type") or ""),
+                }
+                for field in fields
+            ]
+        data.append(entry)
+    return data
+
+
 def dataset_metadata(entries: list[dict]) -> dict:
+    resources = kaggle_resources(entries)
     return {
         "title": "South Korea Power Grid 5-Minute Data 2015-2026",
         "subtitle": "KPX demand, dispatch and state estimation at 5-minute resolution",
@@ -428,7 +455,13 @@ def dataset_metadata(entries: list[dict]) -> dict:
             "The official records were re-checked before release and state "
             "이용허락범위 제한 없음."
         ),
-        "resources": kaggle_resources(entries),
+        # `resources` is consumed when a dataset version is created so file and
+        # column descriptions travel with the uploaded file tokens.
+        "resources": resources,
+        # `data` is retained as the DatasetSettings representation used by
+        # Kaggle's metadata-update API. Keeping both forms makes the release
+        # metadata reproducible across create/version/update workflows.
+        "data": kaggle_data_entries(resources),
     }
 
 
@@ -516,6 +549,11 @@ def main() -> int:
         )
 
     shutil.copyfile(EXCEPTIONS, RELEASE_ROOT / "normalization_exceptions.json")
+    if not COVER_ASSET.exists():
+        raise RuntimeError(
+            "Kaggle cover asset is missing; run scripts/build_kaggle_cover.py first"
+        )
+    shutil.copyfile(COVER_ASSET, RELEASE_ROOT / "dataset-cover-image.png")
     (RELEASE_ROOT / "README.md").write_text(
         release_readme(final_audit, license_audit), encoding="utf-8"
     )
@@ -524,13 +562,6 @@ def main() -> int:
     )
     (RELEASE_ROOT / "SOURCE_LICENSE.md").write_text(
         source_license(license_audit), encoding="utf-8"
-    )
-    (RELEASE_ROOT / "dataset-metadata.json").write_text(
-        # Kaggle CLI 2.2.4 opens this file with the Windows process default
-        # encoding. Keep the JSON byte stream ASCII-only while preserving the
-        # same Unicode values after JSON decoding, so CP949 Windows hosts do
-        # not fail before upload.
-        json.dumps(dataset_metadata(entries), ensure_ascii=True, indent=2), encoding="ascii"
     )
     write_csv(
         RELEASE_ROOT / "missing_source_months.csv",
@@ -584,6 +615,15 @@ def main() -> int:
     }
     (RELEASE_ROOT / "release_manifest.json").write_text(
         json.dumps(release_manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    (RELEASE_ROOT / "dataset-metadata.json").write_text(
+        # Kaggle CLI 2.2.4 opens this file with the Windows process default
+        # encoding. Keep the JSON byte stream ASCII-only while preserving the
+        # same Unicode values after JSON decoding, so CP949 Windows hosts do
+        # not fail before upload. Write this last because its rich file metadata
+        # records the final byte size of all uploaded auxiliary files.
+        json.dumps(dataset_metadata(entries), ensure_ascii=True, indent=2),
+        encoding="ascii",
     )
 
     print(
