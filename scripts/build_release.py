@@ -335,7 +335,11 @@ def main() -> int:
         source_license(license_audit), encoding="utf-8"
     )
     (RELEASE_ROOT / "dataset-metadata.json").write_text(
-        json.dumps(dataset_metadata(), ensure_ascii=False, indent=2), encoding="utf-8"
+        # Kaggle CLI 2.2.4 opens this file with the Windows process default
+        # encoding. Keep the JSON byte stream ASCII-only while preserving the
+        # same Unicode values after JSON decoding, so CP949 Windows hosts do
+        # not fail before upload.
+        json.dumps(dataset_metadata(), ensure_ascii=True, indent=2), encoding="ascii"
     )
     write_csv(
         RELEASE_ROOT / "missing_source_months.csv",
