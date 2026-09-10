@@ -119,6 +119,27 @@ def main() -> int:
     full_dedup_removed = sum(
         int(row["exact_duplicate_rows_removed"]) for row in all_manifests
     )
+    full_exception_rows_removed = sum(
+        int(row.get("normalization_exception_rows_removed", 0))
+        for row in all_manifests
+    )
+    normalization_exception_timestamps: dict[tuple[str, str], set[str]] = {}
+    normalization_exception_records: list[dict] = []
+    for manifest in all_manifests:
+        for applied in manifest.get("normalization_exceptions_applied", []):
+            if applied.get("action") != "drop_ambiguous_duplicate_timestamp":
+                continue
+            key = (str(manifest["source"]), str(manifest["month"]))
+            normalization_exception_timestamps.setdefault(key, set()).add(
+                str(applied["timestamp"])
+            )
+            normalization_exception_records.append(
+                {
+                    "source": manifest["source"],
+                    "month": manifest["month"],
+                    **applied,
+                }
+            )
 
     expected_full_months = expected_months(FULL_START, FULL_END)
     per_source_month_coverage = {
@@ -143,19 +164,46 @@ def main() -> int:
             [row for row in combined_content_details if row["source"] == source],
             key=lambda row: row["month"],
         )
-        max_row = max(rows, key=lambda row: int(row["missing_timestamp_count"]))
+        adjusted_rows = []
+        for row in rows:
+            exception_count = len(
+                normalization_exception_timestamps.get(
+                    (str(row["source"]), str(row["month"])), set()
+                )
+            )
+            adjusted_rows.append(
+                {
+                    **row,
+                    "downstream_missing_timestamp_count": int(
+                        row["missing_timestamp_count"]
+                    )
+                    + exception_count,
+                    "normalization_exception_timestamp_count": exception_count,
+                }
+            )
+        max_row = max(
+            adjusted_rows,
+            key=lambda row: int(row["downstream_missing_timestamp_count"]),
+        )
         max_month = str(max_row["month"])
         max_missing = parquet_missing(source, max_month)
 
         source_missingness[source] = {
-            "months": len(rows),
+            "months": len(adjusted_rows),
             "months_with_missing": sum(
-                1 for row in rows if int(row["missing_timestamp_count"]) > 0
+                1
+                for row in adjusted_rows
+                if int(row["downstream_missing_timestamp_count"]) > 0
             ),
             "missing_timestamps": sum(
-                int(row["missing_timestamp_count"]) for row in rows
+                int(row["downstream_missing_timestamp_count"])
+                for row in adjusted_rows
             ),
-            "max_monthly_missing": int(max_row["missing_timestamp_count"]),
+            "normalization_exception_timestamps_removed": sum(
+                int(row["normalization_exception_timestamp_count"])
+                for row in adjusted_rows
+            ),
+            "max_monthly_missing": int(max_row["downstream_missing_timestamp_count"]),
             "max_missing_month": max_month,
         }
         key_gap_observations[source] = {
@@ -202,6 +250,16 @@ def main() -> int:
         "extension_remaining_candidate_duplicates_zero": (
             extension_remaining_duplicates == 0
         ),
+        "normalization_exception_manifest_present": any(
+            row.get("source") == "state_estimation"
+            and row.get("month") == "2016-06"
+            and any(
+                applied.get("timestamp") == "2016-06-03T17:20:00"
+                and int(applied.get("conflicting_candidate_keys", 0)) == 219
+                for applied in row.get("normalization_exceptions_applied", [])
+            )
+            for row in extension_manifests
+        ),
         "combined_manifest_records_396": len(all_manifests) == EXPECTED_FULL_RECORDS,
         "combined_timestamp_parse_failures_zero": full_parse_failures == 0,
         "combined_remaining_candidate_duplicates_zero": full_remaining_duplicates == 0,
@@ -242,6 +300,10 @@ def main() -> int:
             "timestamp_parse_failure_count": extension_parse_failures,
             "remaining_candidate_key_duplicate_rows": extension_remaining_duplicates,
             "source_unavailable_records": processed_unavailable,
+            "normalization_exception_rows_removed": sum(
+                int(row.get("normalization_exception_rows_removed", 0))
+                for row in extension_manifests
+            ),
         },
         "logical_full_history_dataset": {
             "source_month_records": len(all_manifests),
@@ -251,6 +313,7 @@ def main() -> int:
             },
             "timestamp_parse_failure_count": full_parse_failures,
             "exact_duplicate_rows_removed": full_dedup_removed,
+            "normalization_exception_rows_removed": full_exception_rows_removed,
             "remaining_candidate_key_duplicate_rows": full_remaining_duplicates,
             "source_unavailable_records": sum(
                 1 for row in all_manifests if row.get("status") == "source_unavailable"
@@ -259,6 +322,7 @@ def main() -> int:
         },
         "source_level_missingness": source_missingness,
         "key_gap_observations": key_gap_observations,
+        "normalization_exceptions_applied": normalization_exception_records,
     }
 
     out = ROOT / "data" / "audits" / "phase3_checkpoint5_summary.json"

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "exceptions": [
+    {
+      "source": "state_estimation",
+      "month": "2016-06",
+      "action": "drop_ambiguous_duplicate_timestamp",
+      "timestamps": [
+        "2016-06-03T17:20:00"
+      ],
+      "reason": "The official raw file contains every generator twice at this five-minute timestamp. All 407 candidate keys have two adjacent source rows and 219 keys have conflicting MW values. The source has no version/revision discriminator and the official article contains no correction or re-upload note, so selecting either row would be arbitrary. The complete ambiguous timestamp is excluded from the normalized release and reported as source-level missingness.",
+      "evidence": {
+        "source_article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61121&tag=&nPage=13",
+        "source_attachment_sha256": "e5dcd7356f6cb9de02d838e1397f9b7cd775cbd44684794bb2c6465e4944e09a",
+        "rows_at_timestamp": 814,
+        "unique_candidate_keys": 407,
+        "rows_per_candidate_key": 2,
+        "conflicting_candidate_keys": 219,
+        "exact_candidate_keys": 188,
+        "comparison_exact_duplicate_timestamp": "2016-06-29T17:20:00"
+      }
+    }
+  ]
+}
