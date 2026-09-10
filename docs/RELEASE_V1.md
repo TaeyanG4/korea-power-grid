@@ -1,6 +1,6 @@
 # V1 Release Package Results
 
-Status: **PACKAGE QA PASS**
+Status: **PRIVATE KAGGLE DRAFT QA PASS**
 
 The V1 package has been assembled at `data/release/v1` from the five validated
 Phase 3 processed roots without reprocessing the historical data. Available
@@ -59,14 +59,35 @@ and the documented `state_estimation 2016-06-03 17:20` ambiguity policy.
 Kaggle metadata uses license category `other`; the package does not assert a
 Creative Commons license that the official source metadata does not state.
 
-## Kaggle draft target
+## Kaggle private draft verification
 
 - owner: `taeyangg4`
 - dataset id: `taeyangg4/south-korea-power-grid-5-minute`
 - title: `South Korea Power Grid 5-Minute Data 2015-2026`
-- initial visibility: **private**
+- current visibility: **private**
 - upload option: `--keep-tabular` to preserve Parquet
 
-The next action is a private Kaggle dataset draft upload. Public visibility is
-not required for validating the upload and can be decided after the private
-draft is confirmed complete.
+`data/audits/kaggle_v1_remote_qa.json` records the post-upload remote QA.
+
+Status: **PASS**
+
+The Kaggle dataset is `ready` at version 1. The remote check verifies:
+
+- 395/395 upload files present
+- exact remote/local filename set
+- exact remote/local byte size for every file
+- exact aggregate upload size of 2,661,466,672 bytes
+- title and subtitle match release metadata
+- Kaggle license category is `other`
+- description retains KPX attribution and `이용허락범위 제한 없음`
+- visibility remains private during validation
+
+The initial CLI invocation uploaded all files but failed while parsing the final
+dataset-create response. Kaggle's resumable state retained all 395 completed
+upload tokens. A retry reused those completed uploads; the dataset was then
+confirmed server-side as `ready`, with no second transfer of the 2.66 GB data
+payload required.
+
+The next action is to re-run the official license check immediately before
+publication and, if it still passes, switch the verified version 1 dataset to
+public visibility.

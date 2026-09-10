@@ -1,0 +1,39 @@
+{
+  "release": "v1",
+  "dataset": "taeyangg4/south-korea-power-grid-5-minute",
+  "status": "PASS",
+  "checks": {
+    "dataset_status_ready": true,
+    "dataset_version_1": true,
+    "remote_is_private": true,
+    "remote_title_matches": true,
+    "remote_subtitle_matches": true,
+    "remote_license_other": true,
+    "remote_description_mentions_kpx": true,
+    "remote_description_contains_permission_text": true,
+    "local_upload_files_395": true,
+    "remote_upload_files_395": true,
+    "remote_filename_set_exact": true,
+    "remote_file_sizes_exact": true,
+    "remote_total_bytes_exact": true
+  },
+  "problems": {
+    "missing_remote": [],
+    "unexpected_remote": [],
+    "size_mismatches": []
+  },
+  "observed": {
+    "dataset_status": "ready",
+    "current_version_number": 1,
+    "is_private": true,
+    "title": "South Korea Power Grid 5-Minute Data 2015-2026",
+    "subtitle": "KPX demand, dispatch and state estimation at 5-minute resolution",
+    "licenses": [
+      "other"
+    ],
+    "local_upload_file_count": 395,
+    "remote_upload_file_count": 395,
+    "local_total_bytes": 2661466672,
+    "remote_total_bytes": 2661466672
+  }
+}

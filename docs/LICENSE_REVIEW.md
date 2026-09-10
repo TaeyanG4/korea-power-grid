@@ -10,7 +10,7 @@ This is a project-level source and redistribution review, not legal advice.
 
 **Historical collection: GO only after the Phase 1 pilot validates the physical files and the project records source provenance/checksums.**
 
-**Kaggle redistribution: GO for release packaging and private Kaggle draft upload. Public release remains gated on package QA.**
+**Kaggle redistribution: GO. Package QA and private remote QA pass; public release is permitted after the final same-day license re-check.**
 
 The current official data.go.kr records for all three V1 datasets state:
 
@@ -22,8 +22,8 @@ No dataset-specific restriction is currently displayed on those records.
 
 ## Final release re-verification
 
-The release gate was re-run on `2026-09-10T09:28:09+09:00` immediately after
-the full-history checkpoint completed. The machine-readable result is:
+The release gate was re-run again on `2026-09-10T10:26:19+09:00` immediately
+before public publication. The machine-readable result is:
 
 `data/audits/release_license_check_2026-09-10.json`
 
