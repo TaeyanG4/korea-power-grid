@@ -45,6 +45,70 @@ SOURCE_INFO = {
     },
 }
 
+KAGGLE_KEYWORDS = [
+    "energy",
+    "electricity",
+    "government",
+    "time series analysis",
+    "tabular",
+    "asia",
+]
+
+KAGGLE_COLUMN_METADATA = {
+    "demand": [
+        {
+            "name": "timestamp",
+            "title": (
+                "Five-minute source timestamp from KPX, stored as a timezone-naive datetime."
+            ),
+            "type": "datetime",
+        },
+        {
+            "name": "demand_forecast_mw",
+            "title": "KPX five-minute system demand forecast in megawatts (MW).",
+            "type": "numeric",
+        },
+    ],
+    "dispatch": [
+        {
+            "name": "timestamp",
+            "title": (
+                "Five-minute source timestamp from KPX, stored as a timezone-naive datetime."
+            ),
+            "type": "datetime",
+        },
+        {
+            "name": "generator_id",
+            "title": "Source-native KPX generator CODE; no guessed crosswalk is applied.",
+            "type": "string",
+        },
+        {
+            "name": "dispatch_mw",
+            "title": "Generator economic-dispatch BASEPOINT / target value in megawatts (MW).",
+            "type": "numeric",
+        },
+    ],
+    "state_estimation": [
+        {
+            "name": "timestamp",
+            "title": (
+                "Five-minute source timestamp from KPX, stored as a timezone-naive datetime."
+            ),
+            "type": "datetime",
+        },
+        {
+            "name": "generator_id",
+            "title": "Source-native KPX generator CODE; no guessed crosswalk is applied.",
+            "type": "string",
+        },
+        {
+            "name": "estimated_generation_mw",
+            "title": "State-estimated generator output in megawatts (MW).",
+            "type": "numeric",
+        },
+    ],
+}
+
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -223,21 +287,148 @@ def source_license(license_audit: dict) -> str:
     return "\n".join(lines)
 
 
-def dataset_metadata() -> dict:
+def kaggle_resources(entries: list[dict]) -> list[dict]:
+    resources: list[dict] = []
+    candidate_grain = {
+        "demand": "timestamp",
+        "dispatch": "timestamp + generator_id",
+        "state_estimation": "timestamp + generator_id",
+    }
+
+    for item in entries:
+        if item.get("status") != "success":
+            continue
+        source = str(item["source"])
+        month = str(item["month"])
+        resources.append(
+            {
+                "path": str(item["release_file"]),
+                "description": (
+                    f"Normalized KPX {SOURCE_INFO[source]['label']} for {month}. "
+                    f"Rows: {int(item['output_rows']):,}. Candidate grain: "
+                    f"{candidate_grain[source]}. Missing timestamps are not imputed."
+                ),
+                "schema": {"fields": KAGGLE_COLUMN_METADATA[source]},
+            }
+        )
+
+    resources.extend(
+        [
+            {
+                "path": "README.md",
+                "description": "Dataset overview, coverage, transformations, caveats, and source notes.",
+            },
+            {
+                "path": "DATA_DICTIONARY.md",
+                "description": "Canonical schemas, column meanings, units, and candidate grains.",
+            },
+            {
+                "path": "SOURCE_LICENSE.md",
+                "description": "KPX/data.go.kr provenance, attribution, and reuse-permission notes.",
+            },
+            {
+                "path": "missing_source_months.csv",
+                "description": "Official source-month attachments that were unavailable and therefore not fabricated.",
+                "schema": {
+                    "fields": [
+                        {"name": "source", "title": "Canonical source key.", "type": "string"},
+                        {"name": "month", "title": "Unavailable source month in YYYY-MM form.", "type": "yearmonth"},
+                        {"name": "evidence", "title": "Observed evidence for source unavailability.", "type": "string"},
+                        {"name": "source_article_url", "title": "Official KPX article URL.", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "path": "missingness_summary.csv",
+                "description": "Source-level summary of missing five-minute timestamps across the release period.",
+                "schema": {
+                    "fields": [
+                        {"name": "source", "title": "Canonical source key.", "type": "string"},
+                        {"name": "months", "title": "Number of logical months assessed.", "type": "numeric"},
+                        {"name": "months_with_missing", "title": "Months containing at least one missing timestamp.", "type": "numeric"},
+                        {"name": "missing_timestamps", "title": "Total missing five-minute timestamps.", "type": "numeric"},
+                        {"name": "normalization_exception_timestamps_removed", "title": "Timestamps excluded by an evidence-backed normalization exception.", "type": "numeric"},
+                        {"name": "max_monthly_missing", "title": "Largest missing-timestamp count in one month.", "type": "numeric"},
+                        {"name": "max_missing_month", "title": "Month with the largest missing-timestamp count.", "type": "yearmonth"},
+                    ]
+                },
+            },
+            {
+                "path": "normalization_exceptions.json",
+                "description": "Evidence-backed exception manifest for the ambiguous 2016-06 state-estimation snapshot.",
+            },
+            {
+                "path": "release_manifest.json",
+                "description": "Machine-readable source/month lineage, row counts, checksums, sizes, and release provenance.",
+            },
+        ]
+    )
+    return resources
+
+
+def dataset_metadata(entries: list[dict]) -> dict:
     return {
         "title": "South Korea Power Grid 5-Minute Data 2015-2026",
         "subtitle": "KPX demand, dispatch and state estimation at 5-minute resolution",
         "description": (
-            "Normalized Korea Power Exchange (KPX) 5-minute demand forecasts, "
-            "generator economic dispatch, and generator state-estimation data "
-            "covering 2015-08 through 2026-07. Source-unavailable months, "
-            "missing timestamps, duplicate handling, and one ambiguous historical "
-            "snapshot are documented explicitly. This is a derivative dataset, "
-            "not an official KPX distribution channel. Official data.go.kr records "
-            "were re-checked before packaging and state 이용허락범위 제한 없음."
+            "## What is included\n\n"
+            "A normalized, analysis-ready collection of Korea Power Exchange (KPX) "
+            "five-minute operating data covering the observed monthly board history "
+            "from **2015-08 through 2026-07**. The release contains three complementary "
+            "time-series sources: system demand forecasts, generator economic-dispatch "
+            "BASEPOINT values, and generator state-estimated output. Files are ZSTD "
+            "Parquet, one file per available source-month, with more than 1.0 billion "
+            "normalized rows in total.\n\n"
+            "## Files and schema\n\n"
+            "`demand_YYYY_MM.parquet` contains `timestamp` and `demand_forecast_mw`. "
+            "`dispatch_YYYY_MM.parquet` contains `timestamp`, `generator_id`, and "
+            "`dispatch_mw`. `state_estimation_YYYY_MM.parquet` contains `timestamp`, "
+            "`generator_id`, and `estimated_generation_mw`. Generator identifiers are "
+            "kept in source-native form; no guessed crosswalk between dispatch and "
+            "state-estimation identifiers is imposed. All power values are in MW.\n\n"
+            "## Data-quality policy\n\n"
+            "Missing five-minute timestamps are preserved as missing rather than "
+            "silently imputed. Exact duplicate rows are removed only when candidate-key "
+            "duplicates are byte-for-byte equivalent at the canonical-column level. "
+            "Eight official source-month attachments are unavailable and are listed in "
+            "`missing_source_months.csv` instead of being replaced with fabricated empty "
+            "files. One historical state-estimation timestamp (2016-06-03 17:20) contains "
+            "two conflicting full-generator snapshots with no revision discriminator; "
+            "that entire ambiguous timestamp is excluded and documented in "
+            "`normalization_exceptions.json`. Timestamps are stored as naive datetimes "
+            "because the source attachments do not provide verified timezone metadata.\n\n"
+            "## Provenance and reuse\n\n"
+            "The original provider is **Korea Power Exchange (한국전력거래소, KPX)**. "
+            "This Kaggle package is a cleaned/normalized derivative and is **not an "
+            "official KPX distribution channel** and does not imply KPX endorsement. "
+            "The three official data.go.kr records were re-checked immediately before "
+            "release and reported `비용부과유무 = 무료` and "
+            "`이용허락범위 = 이용허락범위 제한 없음`. Kaggle license metadata therefore "
+            "uses `other` rather than assigning a Creative Commons license not stated by "
+            "the official source. See `SOURCE_LICENSE.md`, `DATA_DICTIONARY.md`, and "
+            "`release_manifest.json` for full attribution, schemas, transformations, "
+            "checksums, and reproducibility metadata.\n\n"
+            "## Good starting questions\n\n"
+            "Use the dataset for load-forecast error studies, generator dispatch/state "
+            "comparison, operational time-series analysis, data-quality research, and "
+            "long-horizon studies of South Korea's power-system operating patterns."
         ),
         "id": "taeyangg4/south-korea-power-grid-5-minute",
         "licenses": [{"name": "other"}],
+        "keywords": KAGGLE_KEYWORDS,
+        "expectedUpdateFrequency": "monthly",
+        "userSpecifiedSources": (
+            "Korea Power Exchange (KPX), Republic of Korea. Official monthly boards: "
+            "[5-minute demand forecast](https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065), "
+            "[generator economic dispatch](https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070), and "
+            "[generator state estimation](https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068). "
+            "Official data.go.kr records: [demand](https://www.data.go.kr/data/15051432/fileData.do), "
+            "[dispatch](https://www.data.go.kr/data/15051425/fileData.do), and "
+            "[state estimation](https://www.data.go.kr/data/15051426/fileData.do). "
+            "The official records were re-checked before release and state "
+            "이용허락범위 제한 없음."
+        ),
+        "resources": kaggle_resources(entries),
     }
 
 
@@ -339,7 +530,7 @@ def main() -> int:
         # encoding. Keep the JSON byte stream ASCII-only while preserving the
         # same Unicode values after JSON decoding, so CP949 Windows hosts do
         # not fail before upload.
-        json.dumps(dataset_metadata(), ensure_ascii=True, indent=2), encoding="ascii"
+        json.dumps(dataset_metadata(entries), ensure_ascii=True, indent=2), encoding="ascii"
     )
     write_csv(
         RELEASE_ROOT / "missing_source_months.csv",

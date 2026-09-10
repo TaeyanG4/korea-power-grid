@@ -4,6 +4,7 @@ import argparse
 import csv
 import hashlib
 import json
+from datetime import datetime
 from pathlib import Path
 
 import pyarrow.parquet as pq
@@ -58,6 +59,10 @@ def main() -> int:
     license_audit = load_json(
         ROOT / "data" / "audits" / "release_license_check_2026-09-10.json"
     )
+    manifest_license_checked = manifest.get("license_review", {}).get(
+        "checked_at_asia_seoul"
+    )
+    latest_license_checked = license_audit.get("checked_at_asia_seoul")
 
     checks = {
         "full_history_checkpoint_passed": final_audit.get("status")
@@ -80,10 +85,19 @@ def main() -> int:
         "metadata_subtitle_length_valid": 20
         <= len(metadata.get("subtitle", ""))
         <= 80,
-        "license_timestamp_matches": manifest.get("license_review", {}).get(
-            "checked_at_asia_seoul"
-        )
-        == license_audit.get("checked_at_asia_seoul"),
+        "metadata_description_complete": len(metadata.get("description", "")) >= 1500,
+        "metadata_keywords_present": len(metadata.get("keywords", [])) >= 5,
+        "metadata_update_frequency_monthly": metadata.get("expectedUpdateFrequency")
+        == "monthly",
+        "metadata_provenance_present": "Korea Power Exchange"
+        in metadata.get("userSpecifiedSources", ""),
+        "metadata_resources_395": len(metadata.get("resources", [])) == 395,
+        "latest_license_check_not_older_than_manifest": bool(
+            manifest_license_checked
+            and latest_license_checked
+            and datetime.fromisoformat(latest_license_checked)
+            >= datetime.fromisoformat(manifest_license_checked)
+        ),
     }
 
     actual_names = {path.name for path in RELEASE_ROOT.iterdir() if path.is_file()}
