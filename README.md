@@ -1,65 +1,127 @@
-# South Korea Power Grid Operations — 5-Minute Data
+<p align="center">
+  <img src="docs/assets/dataset-cover-image.png" alt="South Korea power-grid operations dataset cover" width="560">
+</p>
 
-Generator Dispatch, State Estimation and Demand Forecasts from official Korea Power Exchange (KPX) sources.
+# South Korea Power Grid — 5-Minute KPX Operations Dataset
 
-## Project status
+**English** · [한국어](README.ko.md) · [日本語](README.ja.md) · [简体中文](README.zh-CN.md)
 
-- Phase 0 — source/license discovery: complete
-- Phase 1 — 2026-07 one-month pilot: complete (`PASS WITH OBSERVATIONS`)
-- Phase 2 — repository/pipeline structure: complete
-- Phase 3 — historical backfill: **complete through the full observed board history** (`2015-08` through `2026-07`, `PASS WITH OBSERVATIONS`)
-- V1 release — **published on Kaggle**; package QA, private remote QA, final license gate, and anonymous public-access verification all pass
+This repository is the reproducible collection, normalization, quality-assurance, and publishing pipeline behind the **South Korea Power Grid 5-Minute Data** dataset on Kaggle.
 
-See:
+It turns monthly public files from the **Korea Power Exchange (KPX / 한국전력거래소)** into one analysis-ready long table covering three operational signals: **5-minute demand forecasts, generator economic-dispatch BASEPOINT targets, and generator state-estimated output**.
 
-- `docs/DATA_SOURCES.md`
-- `docs/LICENSE_REVIEW.md`
-- `docs/PHASE1_PILOT_RESULTS.md`
-- `docs/PHASE2_PIPELINE.md`
-- `docs/PHASE3_CHECKPOINT1.md`
-- `docs/PHASE3_CHECKPOINT2_PLAN.md`
-- `docs/PHASE3_CHECKPOINT2.md`
-- `docs/PHASE3_CHECKPOINT3_PLAN.md`
-- `docs/PHASE3_CHECKPOINT3.md`
-- `docs/PHASE3_CHECKPOINT4_PLAN.md`
-- `docs/PHASE3_CHECKPOINT4.md`
-- `docs/PHASE3_CHECKPOINT5_PLAN.md`
-- `docs/PHASE3_CHECKPOINT5.md`
-- `docs/RELEASE_V1_PLAN.md`
-- `docs/RELEASE_V1.md`
-- `data/audits/pilot_2026_07.json`
-- `data/audits/phase3_checkpoint1_summary.json`
-- `data/audits/phase3_checkpoint2_summary.json`
-- `data/audits/phase3_checkpoint3_summary.json`
-- `data/audits/phase3_checkpoint4_summary.json`
-- `data/audits/phase3_checkpoint5_summary.json`
-- `data/audits/kaggle_v1_remote_qa.json`
-- `data/audits/kaggle_v1_publish.json`
+**Dataset:** https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute
 
-Kaggle V1: `https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute`
+## Dataset at a glance
 
-## Pilot headline numbers
+| Item | V2 release |
+|---|---|
+| Observed KPX board range | **2015-08 → 2026-07** |
+| Resolution | **5 minutes** |
+| Normalized rows | **1,008,249,180** |
+| Signals | `demand`, `dispatch`, `state_estimation` |
+| Primary file | `south_korea_power_grid_5min.parquet` — **1.99 GB** |
+| Compatibility file | `south_korea_power_grid_5min.csv` — **50.14 GB** |
+| Provider | Korea Power Exchange (KPX) |
 
-For 2026-07, the three source ZIPs total 45,526,021 bytes. The normalized ZSTD Parquet pilot totals 22,771,769 bytes across 10,060,444 rows.
+V2 deliberately replaces hundreds of monthly analysis files with **one Parquet and one equivalent CSV**. Use Parquet for normal analysis; the CSV is mainly for compatibility with tools that cannot read Parquet.
 
-The full measured 132-month normalized dataset is about **2.661 GB of ZSTD
-Parquet** across **1,008,249,180 output rows**. This supersedes the pilot-only
-linear size projection.
+## What the three signals mean
 
-## Collection
+| `source` | Meaning of `value_mw` | `generator_id` |
+|---|---|---|
+| `demand` | 5-minute system **demand forecast** in MW | blank / null |
+| `dispatch` | Generator **economic-dispatch BASEPOINT / target** in MW | source-native KPX generator CODE |
+| `state_estimation` | **State-estimated generator output** in MW | source-native KPX generator CODE |
 
-The collector discovers monthly posts from the official KPX boards and then resolves the attachment from each article. It does not hard-code 132 historical attachment URLs.
+These are related operating signals, but they are **not interchangeable measurements**. In particular, the project does not invent a generator-ID crosswalk between dispatch and state-estimation sources.
 
-Dry-run example:
+## Unified schema
 
-```powershell
-python scripts/collect.py --start 2023-08 --end 2026-07 --dry-run
+Both V2 data files use the same four columns:
+
+| Column | Description |
+|---|---|
+| `timestamp` | Five-minute source timestamp. Stored without an asserted timezone because the source files do not provide verified timezone metadata. |
+| `source` | `demand`, `dispatch`, or `state_estimation`. |
+| `generator_id` | Source-native KPX generator CODE for generator-level sources; null/blank for demand. |
+| `value_mw` | MW value whose semantics are determined by `source`. |
+
+## Quick start
+
+The full dataset has more than one billion rows, so filter the Parquet file **before** converting data to pandas.
+
+```python
+from datetime import datetime
+import pyarrow.dataset as ds
+
+grid = ds.dataset("south_korea_power_grid_5min.parquet", format="parquet")
+
+week = grid.to_table(
+    columns=["timestamp", "value_mw"],
+    filter=(
+        (ds.field("source") == "demand")
+        & (ds.field("timestamp") >= datetime(2026, 7, 1))
+        & (ds.field("timestamp") < datetime(2026, 7, 8))
+    ),
+)
+
+df = week.to_pandas()
+print(df.head())
 ```
 
-Download example:
+A public Kaggle notebook linked to the dataset demonstrates memory-conscious slicing, ramp analysis, aggregate operating signals, generator concentration, and coverage checks.
+
+## Data-quality policy
+
+The pipeline favors explicit provenance over silent repair:
+
+- **8 official source-month attachments are unavailable** and are listed instead of being fabricated.
+- Missing 5-minute timestamps remain missing; the release does not silently impute them.
+- Exact duplicates are removed only under documented canonical-key rules.
+- One ambiguous state-estimation timestamp, `2016-06-03 17:20`, contained conflicting full-generator snapshots and is excluded rather than arbitrarily choosing a version.
+- Timestamps remain timezone-naive because a verified source timezone is not asserted by the files.
+
+See the Kaggle package files `missing_source_months.csv`, `missingness_summary.csv`, `normalization_exceptions.json`, and `release_manifest.json` for machine-readable evidence.
+
+## Repository vs. Kaggle dataset
+
+| GitHub repository | Kaggle dataset |
+|---|---|
+| Source discovery and downloading | Published analysis-ready data |
+| Historical format handling | One unified Parquet + one CSV |
+| Normalization code | Data dictionary and provenance files |
+| QA, manifests, checksums, release gates | Public notebook and dataset card |
+| Reproducible publishing tooling | End-user download / analysis surface |
+
+Large raw, working, processed, and release data are intentionally excluded from Git. Small manifests and audit outputs are retained so the build can be inspected and reproduced.
+
+## Collecting from KPX
+
+The collector discovers monthly KPX board posts and resolves the attachment from each article; it does not hard-code the complete historical attachment list.
 
 ```powershell
+# Inspect what would be collected
+python scripts/collect.py --start 2023-08 --end 2026-07 --dry-run
+
+# Download and record provenance
 python scripts/collect.py --start 2023-08 --end 2026-07
 ```
 
-Raw downloads are intentionally ignored by Git. Small manifests and audit outputs are retained as reproducibility metadata.
+## Documentation
+
+- [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) — official KPX/data.go.kr sources and measured historical format drift
+- [`docs/LICENSE_REVIEW.md`](docs/LICENSE_REVIEW.md) — redistribution and source-permission review
+- [`docs/KAGGLE_PUBLISHING.md`](docs/KAGGLE_PUBLISHING.md) — cover geometry, Data Card refresh, and Usability metadata notes
+- [`docs/PROJECT_HISTORY.md`](docs/PROJECT_HISTORY.md) — Phase 0–3 and V1 build/release history
+- [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) — V2 four-column schema and source semantics
+
+The old phase-by-phase material is preserved for reproducibility, but it is no longer the front page of the project.
+
+## Source, attribution, and reuse
+
+Original provider: **Korea Power Exchange (한국전력거래소, KPX)**.
+
+This project publishes a cleaned/normalized derivative and is **not an official KPX distribution channel** and does not imply KPX endorsement. The official data.go.kr records were re-checked before release and reported `이용허락범위 제한 없음`. Kaggle therefore uses the `other` license category instead of assigning a Creative Commons license that the official source does not state.
+
+For source URLs, verification dates, and release checksums, see the provenance documents above and the Kaggle release manifest.

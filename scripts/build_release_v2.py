@@ -280,6 +280,7 @@ def resources() -> list[dict]:
 
 
 def metadata() -> dict:
+    resource_items = resources()
     return {
         "title": TITLE,
         "subtitle": SUBTITLE,
@@ -313,7 +314,24 @@ def metadata() -> dict:
             "The original provider is **Korea Power Exchange (한국전력거래소, KPX)**. This "
             "is a cleaned derivative dataset, not an official KPX distribution channel. "
             "Official data.go.kr records were re-checked before release and report "
-            "`이용허락범위 제한 없음`; Kaggle license metadata therefore remains `other`."
+            "`이용허락범위 제한 없음`; Kaggle license metadata therefore remains `other`.\n\n"
+            "### 한국어 요약\n\n"
+            "한국전력거래소(KPX)의 5분 단위 전력수요 예측, 발전기별 경제급전 "
+            "BASEPOINT, 발전기별 상태추정 출력을 2015-08부터 2026-07까지 하나의 "
+            "통합 long-format 데이터로 정규화했습니다. 일반 분석에는 1.99 GB Parquet을 "
+            "권장하며, 50.14 GB CSV는 호환용입니다. 누락 시각은 임의 보간하지 않고 "
+            "확보할 수 없었던 공식 첨부파일과 정규화 예외를 별도 파일로 공개합니다.\n\n"
+            "### 日本語の概要\n\n"
+            "Korea Power Exchange (KPX) が公開する5分間隔の需要予測、発電機別の "
+            "Economic Dispatch BASEPOINT、状態推定出力を、2015-08から2026-07までの "
+            "統一 long-format データに正規化しました。通常の解析には1.99 GBのParquetを "
+            "推奨し、50.14 GBのCSVは互換用です。欠損時刻は補間せず、取得不能だった "
+            "公式添付ファイルと正規化例外を明示しています。\n\n"
+            "### 简体中文摘要\n\n"
+            "本数据集将 Korea Power Exchange (KPX) 发布的5分钟电力需求预测、发电机经济调度 "
+            "BASEPOINT 和状态估计出力，标准化为覆盖2015-08至2026-07的统一 long-format 数据。"
+            "日常分析推荐使用1.99 GB的Parquet，50.14 GB的CSV主要用于兼容。缺失时间点不会被 "
+            "静默插值，无法获取的官方附件和标准化例外均有单独记录。"
         ),
         "id": DATASET_ID,
         "licenses": [{"name": "other"}],
@@ -321,7 +339,7 @@ def metadata() -> dict:
         "expectedUpdateFrequency": "monthly",
         "userSpecifiedSources": SOURCE_TEXT,
         "image": "dataset-cover-image.png",
-        "resources": resources(),
+        "resources": resource_items,
     }
 
 
