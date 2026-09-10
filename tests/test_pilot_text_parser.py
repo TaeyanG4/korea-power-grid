@@ -14,6 +14,7 @@ from openpyxl import Workbook
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
+from format_qa import inspect_demand  # noqa: E402
 from pilot_audit import (  # noqa: E402
     _dispatch_text_projection,
     detect_text_encoding,
@@ -119,6 +120,28 @@ def test_read_source_dispatch_extended_header_keeps_provenance() -> None:
         "LFC_MIN",
         "LFC_MAX",
     ]
+
+
+def test_demand_format_probe_tolerates_incomplete_cp949_tail() -> None:
+    project_root = Path(__file__).resolve().parents[1]
+    header = "\uc2dc\uac04,LF05_1\n2016-03-01,1\n".encode("cp949")
+    multibyte = "\ud55c".encode("cp949")
+    filler = b"x" * (65535 - len(header))
+    payload = header + filler + multibyte
+    assert len(payload[:65536]) == 65536
+    assert payload[65535:65536] == multibyte[:1]
+
+    with tempfile.TemporaryDirectory(dir=project_root) as temp_dir:
+        path = Path(temp_dir) / "demand.zip"
+        with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr("demand.csv", payload)
+        with zipfile.ZipFile(path) as archive:
+            info = archive.infolist()[0]
+            result = inspect_demand(archive, info)
+
+    assert result["physical_format"] == "comma-delimited text"
+    assert result["encoding"] == "cp949"
+    assert result["preamble_rows"] == 0
 
 
 def test_header_scan_is_bounded() -> None:

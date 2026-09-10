@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import codecs
 import json
 import sys
 import zipfile
@@ -41,7 +42,8 @@ def inspect_demand(archive: zipfile.ZipFile, info: zipfile.ZipInfo) -> dict:
         }
 
     encoding = detect_text_encoding(probe[:4096])
-    lines = probe.decode(encoding, errors="strict").splitlines()
+    decoder = codecs.getincrementaldecoder(encoding)(errors="strict")
+    lines = decoder.decode(probe, final=False).splitlines()
     header_index = next(
         (
             index
