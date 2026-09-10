@@ -7,7 +7,8 @@ Generator Dispatch, State Estimation and Demand Forecasts from official Korea Po
 - Phase 0 — source/license discovery: complete
 - Phase 1 — 2026-07 one-month pilot: complete (`PASS WITH OBSERVATIONS`)
 - Phase 2 — repository/pipeline structure: complete
-- Phase 3 — historical backfill: Checkpoints 1–4 complete through the recent 10-year window (`PASS WITH OBSERVATIONS`); Checkpoint 5 (full observed board history) next
+- Phase 3 — historical backfill: **complete through the full observed board history** (`2015-08` through `2026-07`, `PASS WITH OBSERVATIONS`)
+- Next — release packaging, final license re-verification, and Kaggle publication preparation
 
 See:
 
@@ -23,17 +24,21 @@ See:
 - `docs/PHASE3_CHECKPOINT4_PLAN.md`
 - `docs/PHASE3_CHECKPOINT4.md`
 - `docs/PHASE3_CHECKPOINT5_PLAN.md`
+- `docs/PHASE3_CHECKPOINT5.md`
 - `data/audits/pilot_2026_07.json`
 - `data/audits/phase3_checkpoint1_summary.json`
 - `data/audits/phase3_checkpoint2_summary.json`
 - `data/audits/phase3_checkpoint3_summary.json`
 - `data/audits/phase3_checkpoint4_summary.json`
+- `data/audits/phase3_checkpoint5_summary.json`
 
 ## Pilot headline numbers
 
 For 2026-07, the three source ZIPs total 45,526,021 bytes. The normalized ZSTD Parquet pilot totals 22,771,769 bytes across 10,060,444 rows.
 
-The pilot-only linear projection for all 132 monthly board entries is about 3.006 GB of Parquet. This is not a final release size estimate; historical checkpoints will replace the linear projection with measured values.
+The full measured 132-month normalized dataset is about **2.661 GB of ZSTD
+Parquet** across **1,008,249,180 output rows**. This supersedes the pilot-only
+linear size projection.
 
 ## Collection
 

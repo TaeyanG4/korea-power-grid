@@ -1,0 +1,101 @@
+{
+  "requested_start": "2015-08",
+  "requested_end": "2016-07",
+  "manifest_records": 36,
+  "status_counts": {
+    "source_unavailable": 7,
+    "success": 29
+  },
+  "per_source_records": {
+    "demand": 12,
+    "dispatch": 12,
+    "state_estimation": 12
+  },
+  "per_source_bytes": {
+    "demand": 621707,
+    "dispatch": 153535099,
+    "state_estimation": 186416625
+  },
+  "total_bytes": 340573431,
+  "month_dirs": {
+    "demand": 132,
+    "dispatch": 132,
+    "state_estimation": 132
+  },
+  "part_file_count": 0,
+  "problem_count": 0,
+  "problems": [],
+  "source_unavailable_count": 7,
+  "source_unavailable_records": [
+    {
+      "source": "demand",
+      "month": "2015-08",
+      "manifest": "data\\manifests\\downloads\\demand\\2015-08.json",
+      "zip": "data\\raw\\demand\\2015-08\\demand_2015_08.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "demand",
+      "month": "2015-09",
+      "manifest": "data\\manifests\\downloads\\demand\\2015-09.json",
+      "zip": "data\\raw\\demand\\2015-09\\demand_2015_09.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "demand",
+      "month": "2016-07",
+      "manifest": "data\\manifests\\downloads\\demand\\2016-07.json",
+      "zip": "data\\raw\\demand\\2016-07\\demand_2016_07.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-08",
+      "manifest": "data\\manifests\\downloads\\dispatch\\2015-08.json",
+      "zip": "data\\raw\\dispatch\\2015-08\\dispatch_2015_08.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-09",
+      "manifest": "data\\manifests\\downloads\\dispatch\\2015-09.json",
+      "zip": "data\\raw\\dispatch\\2015-09\\dispatch_2015_09.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-08",
+      "manifest": "data\\manifests\\downloads\\state_estimation\\2015-08.json",
+      "zip": "data\\raw\\state_estimation\\2015-08\\state_estimation_2015_08.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-09",
+      "manifest": "data\\manifests\\downloads\\state_estimation\\2015-09.json",
+      "zip": "data\\raw\\state_estimation\\2015-09\\state_estimation_2015_09.zip",
+      "exists": false,
+      "source_unavailable": true,
+      "evidence": "official article reports attachment as 0Byte",
+      "observed_payload_size": 4
+    }
+  ]
+}

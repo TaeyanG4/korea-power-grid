@@ -1,0 +1,17 @@
+{
+  "source": "state_estimation",
+  "month": "2015-08",
+  "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61111&tag=&nPage=14",
+  "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0068&list_no=61111&seq=88",
+  "downloaded_at": null,
+  "file_size": null,
+  "sha256": null,
+  "status": "source_unavailable",
+  "retry_count": 0,
+  "source_delivery_format": "official_zero_byte_attachment",
+  "source_attachment_filename": "2_라_발전기별+5분+상태추정MW_2015년08월(공개).zip",
+  "observed_payload_size": 4,
+  "observed_payload_sha256": "dba5166ad9db9ba648c1032ebbd34dcd0d085b50023b839ef5c68ca1db93a563",
+  "local_storage_format": null,
+  "evidence": "official article reports attachment as 0Byte"
+}

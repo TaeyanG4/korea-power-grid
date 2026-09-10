@@ -1,0 +1,229 @@
+{
+  "phase": "Phase 3",
+  "checkpoint": "Checkpoint 5",
+  "period": {
+    "start": "2015-08",
+    "end": "2026-07",
+    "months": 132
+  },
+  "extension_period": {
+    "start": "2015-08",
+    "end": "2016-07",
+    "months": 12
+  },
+  "status": "PASS_WITH_OBSERVATIONS",
+  "hard_checks": {
+    "checkpoint4_passed": true,
+    "extension_download_records_36": true,
+    "extension_download_problem_count_zero": true,
+    "extension_download_part_files_zero": true,
+    "extension_format_qa_records_accounted_36": true,
+    "extension_format_qa_problem_count_zero": true,
+    "extension_content_qa_records_36": true,
+    "extension_content_outside_timestamp_count_zero": true,
+    "extension_source_unavailable_accounting_consistent": true,
+    "extension_processed_summary_records_36": true,
+    "extension_processed_manifest_records_36": true,
+    "extension_processed_status_accounting": true,
+    "extension_timestamp_parse_failures_zero": true,
+    "extension_remaining_candidate_duplicates_zero": true,
+    "normalization_exception_manifest_present": true,
+    "combined_manifest_records_396": true,
+    "combined_timestamp_parse_failures_zero": true,
+    "combined_remaining_candidate_duplicates_zero": true,
+    "combined_exact_month_coverage": true
+  },
+  "downloads": {
+    "extension_records": 36,
+    "problem_count": 0,
+    "part_file_count": 0,
+    "total_bytes": 340573431,
+    "source_unavailable_count": 7,
+    "source_unavailable_records": [
+      {
+        "source": "demand",
+        "month": "2015-08",
+        "manifest": "data\\manifests\\downloads\\demand\\2015-08.json",
+        "zip": "data\\raw\\demand\\2015-08\\demand_2015_08.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "demand",
+        "month": "2015-09",
+        "manifest": "data\\manifests\\downloads\\demand\\2015-09.json",
+        "zip": "data\\raw\\demand\\2015-09\\demand_2015_09.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "demand",
+        "month": "2016-07",
+        "manifest": "data\\manifests\\downloads\\demand\\2016-07.json",
+        "zip": "data\\raw\\demand\\2016-07\\demand_2016_07.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "dispatch",
+        "month": "2015-08",
+        "manifest": "data\\manifests\\downloads\\dispatch\\2015-08.json",
+        "zip": "data\\raw\\dispatch\\2015-08\\dispatch_2015_08.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "dispatch",
+        "month": "2015-09",
+        "manifest": "data\\manifests\\downloads\\dispatch\\2015-09.json",
+        "zip": "data\\raw\\dispatch\\2015-09\\dispatch_2015_09.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "state_estimation",
+        "month": "2015-08",
+        "manifest": "data\\manifests\\downloads\\state_estimation\\2015-08.json",
+        "zip": "data\\raw\\state_estimation\\2015-08\\state_estimation_2015_08.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      },
+      {
+        "source": "state_estimation",
+        "month": "2015-09",
+        "manifest": "data\\manifests\\downloads\\state_estimation\\2015-09.json",
+        "zip": "data\\raw\\state_estimation\\2015-09\\state_estimation_2015_09.zip",
+        "exists": false,
+        "source_unavailable": true,
+        "evidence": "official article reports attachment as 0Byte",
+        "observed_payload_size": 4
+      }
+    ]
+  },
+  "processed_extension": {
+    "records": 36,
+    "status_counts": {
+      "source_unavailable": 7,
+      "success": 29
+    },
+    "input_rows": 69492469,
+    "exact_duplicate_rows_removed": 4038,
+    "output_rows": 69487617,
+    "parquet_size_bytes": 195852680,
+    "timestamp_parse_failure_count": 0,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 7,
+    "normalization_exception_rows_removed": 814
+  },
+  "logical_full_history_dataset": {
+    "source_month_records": 396,
+    "expected_source_month_records": 396,
+    "per_source_months": {
+      "demand": 132,
+      "dispatch": 132,
+      "state_estimation": 132
+    },
+    "timestamp_parse_failure_count": 0,
+    "exact_duplicate_rows_removed": 4581246,
+    "normalization_exception_rows_removed": 814,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 8,
+    "roots": [
+      "data\\processed\\checkpoint_full_extension",
+      "data\\processed\\checkpoint_10y_extension",
+      "data\\processed\\checkpoint_8y_extension",
+      "data\\processed\\checkpoint_5y_extension",
+      "data\\processed\\checkpoint_3y"
+    ]
+  },
+  "source_level_missingness": {
+    "demand": {
+      "months": 132,
+      "months_with_missing": 17,
+      "missing_timestamps": 35171,
+      "normalization_exception_timestamps_removed": 0,
+      "max_monthly_missing": 8928,
+      "max_missing_month": "2015-08"
+    },
+    "dispatch": {
+      "months": 132,
+      "months_with_missing": 11,
+      "missing_timestamps": 23921,
+      "normalization_exception_timestamps_removed": 0,
+      "max_monthly_missing": 8928,
+      "max_missing_month": "2015-08"
+    },
+    "state_estimation": {
+      "months": 132,
+      "months_with_missing": 125,
+      "missing_timestamps": 23578,
+      "normalization_exception_timestamps_removed": 1,
+      "max_monthly_missing": 8928,
+      "max_missing_month": "2015-08"
+    }
+  },
+  "key_gap_observations": {
+    "demand": {
+      "month": "2015-08",
+      "missing_timestamp_count": 8928,
+      "longest_contiguous_gap": {
+        "start": "2015-08-01T00:00:00",
+        "end": "2015-08-31T23:55:00",
+        "timestamps": 8928
+      }
+    },
+    "dispatch": {
+      "month": "2015-08",
+      "missing_timestamp_count": 8928,
+      "longest_contiguous_gap": {
+        "start": "2015-08-01T00:00:00",
+        "end": "2015-08-31T23:55:00",
+        "timestamps": 8928
+      }
+    },
+    "state_estimation": {
+      "month": "2015-08",
+      "missing_timestamp_count": 8928,
+      "longest_contiguous_gap": {
+        "start": "2015-08-01T00:00:00",
+        "end": "2015-08-31T23:55:00",
+        "timestamps": 8928
+      }
+    }
+  },
+  "normalization_exceptions_applied": [
+    {
+      "source": "state_estimation",
+      "month": "2016-06",
+      "action": "drop_ambiguous_duplicate_timestamp",
+      "timestamp": "2016-06-03T17:20:00",
+      "rows_removed": 814,
+      "unique_candidate_keys": 407,
+      "conflicting_candidate_keys": 219,
+      "exact_candidate_keys": 188,
+      "reason": "The official raw file contains every generator twice at this five-minute timestamp. All 407 candidate keys have two adjacent source rows and 219 keys have conflicting MW values. The source has no version/revision discriminator and the official article contains no correction or re-upload note, so selecting either row would be arbitrary. The complete ambiguous timestamp is excluded from the normalized release and reported as source-level missingness.",
+      "evidence": {
+        "source_article_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61121&tag=&nPage=13",
+        "source_attachment_sha256": "e5dcd7356f6cb9de02d838e1397f9b7cd775cbd44684794bb2c6465e4944e09a",
+        "rows_at_timestamp": 814,
+        "unique_candidate_keys": 407,
+        "rows_per_candidate_key": 2,
+        "conflicting_candidate_keys": 219,
+        "exact_candidate_keys": 188,
+        "comparison_exact_duplicate_timestamp": "2016-06-29T17:20:00"
+      }
+    }
+  ]
+}

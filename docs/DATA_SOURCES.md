@@ -235,3 +235,36 @@ failures.
 The `dispatch 2018-05` full parse contains 3,553,344 rows, spans
 `2018-05-01 00:00` through `2018-05-31 23:55`, has zero timestamp parse
 failures, and has no candidate-key duplicates after canonical projection.
+
+## Phase 3 full-history findings (2015-08 through 2026-07)
+
+The historical backfill now accounts for all 132 observed board months for all
+three sources (396 logical source-month records). Eight source-month attachments
+are currently unavailable from the official KPX board because the article
+reports the attachment as `0Byte` and the download endpoint returns only four
+CR/LF bytes:
+
+- `demand`: `2015-08`, `2015-09`, `2016-07`, `2019-11`
+- `dispatch`: `2015-08`, `2015-09`
+- `state_estimation`: `2015-08`, `2015-09`
+
+These are retained as explicit `source_unavailable` records. The pipeline does
+not create placeholder raw ZIPs or impute normalized values for those months.
+
+One additional source ambiguity is recorded in
+`data/manifests/normalization_exceptions.json`:
+
+- `state_estimation 2016-06-03 17:20`: all 407 generator keys occur twice in
+  adjacent source rows; 188 pairs are exact and 219 pairs contain different MW
+  values. The official article contains no correction/re-upload note and the
+  file has no revision discriminator. Rather than arbitrarily selecting one
+  row from each pair, the normalized dataset excludes the entire ambiguous
+  five-minute timestamp (814 raw rows) and reports it as one source-level
+  missing timestamp.
+- A comparison snapshot at `2016-06-29 17:20` also duplicates all 407
+  generators, but all pairs are exact; that timestamp is safely handled by the
+  ordinary exact-duplicate rule.
+
+The full-history normalization has zero timestamp parse failures and zero
+remaining candidate-key duplicates after documented exact deduplication and the
+single ambiguity exception above.

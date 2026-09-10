@@ -1,0 +1,16 @@
+{
+  "source": "state_estimation",
+  "month": "2015-12",
+  "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068&act=view&list_no=61115&tag=&nPage=13",
+  "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0068&list_no=61115&seq=92",
+  "downloaded_at": "2026-09-10T00:08:16.752714+00:00",
+  "file_size": 19229546,
+  "sha256": "810f97c1cc9762676f08ba2f02ec494cff396d12de0d0a10b8afd10f42dabd09",
+  "status": "success",
+  "retry_count": 0,
+  "source_delivery_format": "zip",
+  "source_attachment_filename": "2_라_발전기별+5분+상태추정MW_2015년12월.zip",
+  "source_payload_size": 19229546,
+  "source_payload_sha256": "810f97c1cc9762676f08ba2f02ec494cff396d12de0d0a10b8afd10f42dabd09",
+  "local_storage_format": "source_zip"
+}

@@ -1,0 +1,16 @@
+{
+  "source": "dispatch",
+  "month": "2016-06",
+  "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070&act=view&list_no=60634&tag=&nPage=13",
+  "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0070&list_no=60634&seq=148",
+  "downloaded_at": "2026-09-10T00:07:30.806398+00:00",
+  "file_size": 15091170,
+  "sha256": "620925dc4313ee3d7c5d3c3b9e928f2d6a28e9d4d171d20b45f3aad7d0edac96",
+  "status": "success",
+  "retry_count": 0,
+  "source_delivery_format": "zip",
+  "source_attachment_filename": "발전기별+5분+경제급전자료(201606).zip",
+  "source_payload_size": 15091170,
+  "source_payload_sha256": "620925dc4313ee3d7c5d3c3b9e928f2d6a28e9d4d171d20b45f3aad7d0edac96",
+  "local_storage_format": "source_zip"
+}

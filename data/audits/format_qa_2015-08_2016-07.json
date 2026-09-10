@@ -1,0 +1,516 @@
+{
+  "start": "2015-08",
+  "end": "2016-07",
+  "months": 12,
+  "records_expected": 36,
+  "records_inspected": 29,
+  "records_accounted": 36,
+  "source_unavailable_count": 7,
+  "source_unavailable_records": [
+    {
+      "source": "demand",
+      "month": "2015-08",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-08",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-08",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "demand",
+      "month": "2015-09",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-09",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-09",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    },
+    {
+      "source": "demand",
+      "month": "2016-07",
+      "status": "source_unavailable",
+      "evidence": "official article reports attachment as 0Byte"
+    }
+  ],
+  "problem_count": 0,
+  "signature_counts": [
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "BASEPOINT"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "dispatch"
+      },
+      "records": 10
+    },
+    {
+      "signature": {
+        "columns": [
+          "시간",
+          "발전기CODE",
+          "상태추정MW"
+        ],
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "state_estimation"
+      },
+      "records": 10
+    },
+    {
+      "signature": {
+        "columns": null,
+        "encoding": "cp949",
+        "physical_format": "comma-delimited text",
+        "preamble_rows": 0,
+        "source": "demand"
+      },
+      "records": 9
+    }
+  ],
+  "problems": [],
+  "details": [
+    {
+      "source": "demand",
+      "month": "2015-10",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2015│Γ10┐∙.csv",
+      "member_size_bytes": 338983,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-10",
+      "member_name": "2_│¬_╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß_2015│Γ10┐∙.txt",
+      "member_size_bytes": 116538418,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-10",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2015│Γ10┐∙.csv",
+      "member_size_bytes": 129769019,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2015-11",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2015│Γ11┐∙.csv",
+      "member_size_bytes": 320292,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-11",
+      "member_name": "2_│¬_╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß_2015│Γ11┐∙.txt",
+      "member_size_bytes": 113091874,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-11",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2015│Γ11┐∙.txt",
+      "member_size_bytes": 125795928,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2015-12",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2015│Γ12┐∙.csv",
+      "member_size_bytes": 338314,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2015-12",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201512).txt",
+      "member_size_bytes": 118757163,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2015-12",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2015│Γ12┐∙.txt",
+      "member_size_bytes": 132041111,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-01",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ01┐∙.csv",
+      "member_size_bytes": 338308,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-01",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201601).txt",
+      "member_size_bytes": 119689061,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-01",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ01┐∙.txt",
+      "member_size_bytes": 133484986,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-02",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ02┐∙.csv",
+      "member_size_bytes": 316669,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-02",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201602).txt",
+      "member_size_bytes": 110997702,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-02",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ02┐∙.txt",
+      "member_size_bytes": 123819463,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-03",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ03┐∙.csv",
+      "member_size_bytes": 338645,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-03",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201603).txt",
+      "member_size_bytes": 120154160,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-03",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ03┐∙.txt",
+      "member_size_bytes": 133703481,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-04",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ04┐∙.csv",
+      "member_size_bytes": 327888,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-04",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201604).txt",
+      "member_size_bytes": 115659109,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-04",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ04┐∙.txt",
+      "member_size_bytes": 128438111,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-05",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ05┐∙.csv",
+      "member_size_bytes": 338802,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-05",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201605).txt",
+      "member_size_bytes": 119971070,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-05",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ05┐∙.txt",
+      "member_size_bytes": 132897170,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "demand",
+      "month": "2016-06",
+      "member_name": "2_╗τ_5║╨╝÷┐Σ┐╣├°MW_2016│Γ06┐∙.txt",
+      "member_size_bytes": 327888,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-06",
+      "member_name": "╣▀└ⁿ▒Γ║░ 5║╨ ░µ┴ª▒▐└ⁿ└┌╖ß(201606).txt",
+      "member_size_bytes": 116855032,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-06",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ06┐∙.txt",
+      "member_size_bytes": 129485838,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    },
+    {
+      "source": "dispatch",
+      "month": "2016-07",
+      "member_name": "╣▀└ⁿ▒Γ║░_5║╨_░µ┴ª▒▐└ⁿ└┌╖ß(201607).txt",
+      "member_size_bytes": 108075755,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "BASEPOINT"
+      ]
+    },
+    {
+      "source": "state_estimation",
+      "month": "2016-07",
+      "member_name": "2_╢≤_╣▀└ⁿ▒Γ║░ 5║╨ ╗≤┼┬├▀┴ñMW_2016│Γ07┐∙.txt",
+      "member_size_bytes": 136447433,
+      "outer_zip_member_count": 1,
+      "ignored_outer_zip_members": [],
+      "physical_format": "comma-delimited text",
+      "encoding": "cp949",
+      "preamble_rows": 0,
+      "columns": [
+        "시간",
+        "발전기CODE",
+        "상태추정MW"
+      ]
+    }
+  ]
+}
