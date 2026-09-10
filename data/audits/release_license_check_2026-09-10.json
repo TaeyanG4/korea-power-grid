@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_seoul": "2026-09-10T10:26:19.878787+09:00",
-  "purpose": "Final redistribution gate immediately before public publication",
+  "checked_at_asia_seoul": "2026-09-10T18:11:58.754754+09:00",
+  "purpose": "Final redistribution gate immediately before release packaging or public publication",
   "status": "PASS",
   "expected": {
     "provider": "Korea Power Exchange (한국전력거래소)",
