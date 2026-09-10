@@ -1,0 +1,16 @@
+{
+  "source": "demand",
+  "month": "2017-08",
+  "source_url": "https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065&act=view&list_no=60873&tag=&nPage=11",
+  "attachment_url": "https://www.kpx.or.kr/boardDownload.es?bid=0065&list_no=60873&seq=688",
+  "downloaded_at": "2026-09-09T23:49:14.899614+00:00",
+  "file_size": 69453,
+  "sha256": "2641ee677139d663a4374d6a2763d398346a32ae05ee25be418c3a0dce5634d5",
+  "status": "success",
+  "retry_count": 0,
+  "source_delivery_format": "zip",
+  "source_attachment_filename": "5분수요예측MW_2017년08월.zip",
+  "source_payload_size": 69453,
+  "source_payload_sha256": "2641ee677139d663a4374d6a2763d398346a32ae05ee25be418c3a0dce5634d5",
+  "local_storage_format": "source_zip"
+}

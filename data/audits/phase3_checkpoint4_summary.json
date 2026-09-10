@@ -1,0 +1,126 @@
+{
+  "phase": "Phase 3",
+  "checkpoint": "Checkpoint 4",
+  "period": {
+    "start": "2016-08",
+    "end": "2026-07",
+    "months": 120
+  },
+  "extension_period": {
+    "start": "2016-08",
+    "end": "2018-07",
+    "months": 24
+  },
+  "status": "PASS_WITH_OBSERVATIONS",
+  "hard_checks": {
+    "checkpoint3_passed": true,
+    "extension_download_records_72": true,
+    "extension_download_problem_count_zero": true,
+    "extension_download_part_files_zero": true,
+    "extension_format_qa_records_accounted_72": true,
+    "extension_format_qa_problem_count_zero": true,
+    "extension_content_qa_records_72": true,
+    "extension_source_unavailable_accounting_consistent": true,
+    "extension_processed_summary_records_72": true,
+    "extension_processed_manifest_records_72": true,
+    "extension_processed_status_accounting": true,
+    "extension_timestamp_parse_failures_zero": true,
+    "extension_remaining_candidate_duplicates_zero": true,
+    "combined_manifest_records_360": true,
+    "combined_timestamp_parse_failures_zero": true,
+    "combined_remaining_candidate_duplicates_zero": true,
+    "combined_exact_month_coverage": true
+  },
+  "downloads": {
+    "extension_records": 72,
+    "problem_count": 0,
+    "part_file_count": 0,
+    "total_bytes": 849786630,
+    "source_unavailable_count": 0,
+    "source_unavailable_records": []
+  },
+  "processed_extension": {
+    "records": 72,
+    "status_counts": {
+      "success": 72
+    },
+    "input_rows": 170669906,
+    "exact_duplicate_rows_removed": 48073,
+    "output_rows": 170621833,
+    "parquet_size_bytes": 499628735,
+    "timestamp_parse_failure_count": 0,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 0
+  },
+  "logical_ten_year_dataset": {
+    "source_month_records": 360,
+    "expected_source_month_records": 360,
+    "per_source_months": {
+      "demand": 120,
+      "dispatch": 120,
+      "state_estimation": 120
+    },
+    "timestamp_parse_failure_count": 0,
+    "exact_duplicate_rows_removed": 4577208,
+    "remaining_candidate_key_duplicate_rows": 0,
+    "source_unavailable_records": 1,
+    "roots": [
+      "data\\processed\\checkpoint_10y_extension",
+      "data\\processed\\checkpoint_8y_extension",
+      "data\\processed\\checkpoint_5y_extension",
+      "data\\processed\\checkpoint_3y"
+    ]
+  },
+  "source_level_missingness": {
+    "demand": {
+      "months": 120,
+      "months_with_missing": 11,
+      "missing_timestamps": 8671,
+      "max_monthly_missing": 8640,
+      "max_missing_month": "2019-11"
+    },
+    "dispatch": {
+      "months": 120,
+      "months_with_missing": 5,
+      "missing_timestamps": 6348,
+      "max_monthly_missing": 6326,
+      "max_missing_month": "2022-07"
+    },
+    "state_estimation": {
+      "months": 120,
+      "months_with_missing": 114,
+      "missing_timestamps": 5968,
+      "max_monthly_missing": 1228,
+      "max_missing_month": "2026-05"
+    }
+  },
+  "key_gap_observations": {
+    "demand": {
+      "month": "2019-11",
+      "missing_timestamp_count": 8640,
+      "longest_contiguous_gap": {
+        "start": "2019-11-01T00:00:00",
+        "end": "2019-11-30T23:55:00",
+        "timestamps": 8640
+      }
+    },
+    "dispatch": {
+      "month": "2022-07",
+      "missing_timestamp_count": 6326,
+      "longest_contiguous_gap": {
+        "start": "2022-07-10T00:50:00",
+        "end": "2022-07-31T23:55:00",
+        "timestamps": 6326
+      }
+    },
+    "state_estimation": {
+      "month": "2026-05",
+      "missing_timestamp_count": 1228,
+      "longest_contiguous_gap": {
+        "start": "2026-05-10T08:35:00",
+        "end": "2026-05-14T14:15:00",
+        "timestamps": 1221
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Phase 3 — Checkpoint 4 Plan: Extend to Recent Ten Years
 
-Status: **READY**
+Status: **COMPLETE — PASS WITH OBSERVATIONS**
 
 Checkpoint 3 validated the logical eight-year window `2018-08` through
 `2026-07`. Checkpoint 4 extends it to ten years using only the missing older

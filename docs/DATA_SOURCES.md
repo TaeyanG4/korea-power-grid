@@ -213,3 +213,25 @@ data schema:
   `0Byte`; the current download endpoint returns only four CR/LF bytes. This
   month is recorded as `source_unavailable`. No placeholder raw data or
   imputed demand values are created.
+
+## Phase 3 historical-format findings (2016-08 through 2018-07)
+
+Checkpoint 4 accounted for all 72 source-months with no unavailable source
+attachments. All files pass raw integrity QA and timestamp parsing has zero
+failures.
+
+- `demand`: CP949 comma-delimited text, with either no preamble or a two-row
+  preamble before the header.
+- `dispatch`: CP949 comma-delimited text. Most months use the familiar
+  `시간,발전기CODE,BASEPOINT` layout with 0, 4, or 5 preamble rows.
+- `dispatch 2018-05` has an extended source header:
+  `시간,발전기Name,발전기CODE,BASEPOINT,LFC_MIN,LFC_MAX`. The canonical V1
+  projection uses only time, generator CODE, and BASEPOINT. The generator-name
+  and LFC columns remain recorded in physical provenance metadata and are not
+  silently reinterpreted as canonical fields.
+- `state_estimation`: CP949 comma-delimited text with either no preamble or a
+  three-row preamble.
+
+The `dispatch 2018-05` full parse contains 3,553,344 rows, spans
+`2018-05-01 00:00` through `2018-05-31 23:55`, has zero timestamp parse
+failures, and has no candidate-key duplicates after canonical projection.
