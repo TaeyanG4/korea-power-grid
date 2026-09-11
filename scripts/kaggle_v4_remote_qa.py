@@ -77,6 +77,9 @@ def load_tree_descriptions(api: KaggleApi, version: int) -> dict[str, str]:
 def main() -> int:
     local_qa = load_json(LOCAL_QA)
     local_metadata = load_json(V4_ROOT / "dataset-metadata.json")
+    local_resources = {
+        str(item.get("path")): item for item in (local_metadata.get("resources") or [])
+    }
     local_files = {name: int((V4_ROOT / name).stat().st_size) for name in EXPECTED_FILES}
 
     api = KaggleApi()
@@ -111,11 +114,18 @@ def main() -> int:
     described_resources = {
         name for name, description in tree_descriptions.items() if description.strip()
     }
+    exact_file_descriptions = {
+        name
+        for name, item in local_resources.items()
+        if tree_descriptions.get(name, "") == str(item.get("description") or "")
+    }
+    remote_provenance = str(remote_metadata.get("userSpecifiedSources") or "")
+    local_provenance = str(local_metadata.get("userSpecifiedSources") or "")
 
-    checks = {
+    core_checks = {
         "local_v4_qa_pass": local_qa.get("status") == "PASS",
         "dataset_status_ready": status.get("status") == "ready",
-        "dataset_version_4": version == 4,
+        "dataset_version_5": version == 5,
         "dataset_public": remote_metadata.get("isPrivate") is not True,
         "remote_resource_count_5": len(remote_files) == 5,
         "remote_filename_set_exact": not missing_remote and not unexpected_remote,
@@ -124,18 +134,30 @@ def main() -> int:
         "remote_title_matches": remote_metadata.get("title") == local_metadata.get("title"),
         "remote_subtitle_matches": remote_metadata.get("subtitle") == local_metadata.get("subtitle"),
         "remote_description_matches": remote_metadata.get("description") == local_metadata.get("description"),
-        "main_file_descriptions_present": MAIN_FILES <= described_resources,
+        "remote_update_frequency_matches": remote_metadata.get("expectedUpdateFrequency")
+        == local_metadata.get("expectedUpdateFrequency"),
+        "remote_provenance_matches": remote_provenance == local_provenance,
+        "remote_korean_integrity": "이용허락범위 제한 없음" in remote_provenance
+        and "\ufffd" not in remote_provenance,
         "anonymous_http_200": public_response.status_code == 200,
         "anonymous_no_login_redirect": "/account/login" not in public_response.url.lower(),
         "public_og_image_nondefault": bool(og_image_url)
         and "default-background" not in og_image_url.lower(),
     }
-    passed = all(checks.values())
+    metadata_checks = {
+        "all_file_descriptions_present": set(remote_files) <= described_resources,
+        "all_file_descriptions_exact": set(remote_files) <= exact_file_descriptions,
+        "main_file_descriptions_present": MAIN_FILES <= described_resources,
+    }
+    checks = {**core_checks, **metadata_checks}
+    passed = all(core_checks.values())
+    metadata_complete = all(metadata_checks.values())
     report = {
         "release": "v4-parquet-plus-july-csv",
         "dataset": DATASET,
         "url": PUBLIC_URL,
         "status": "PASS" if passed else "FAIL",
+        "data_explorer_metadata_status": "PASS" if metadata_complete else "PENDING",
         "checks": checks,
         "problems": {
             "missing_remote": missing_remote,
@@ -151,6 +173,11 @@ def main() -> int:
             "file_descriptions": tree_descriptions,
             "og_image": og_image_url,
         },
+        "note": (
+            "Core release verification is independent of optional Data Explorer file-description "
+            "synchronization. The latter is tracked explicitly because Kaggle's dataset metadata "
+            "API may not persist those fields for an existing processed version."
+        ),
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))

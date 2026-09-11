@@ -14,7 +14,7 @@ It turns monthly public files from the **Korea Power Exchange (KPX / 한국전�
 
 ## Dataset at a glance
 
-| Item | Current Kaggle release (V4) |
+| Item | Current Kaggle release |
 |---|---|
 | Observed KPX board range | **2015-08 → 2026-07** |
 | Resolution | **5 minutes** |

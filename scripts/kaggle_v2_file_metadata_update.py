@@ -75,7 +75,7 @@ class LiveDatasetContext:
 
 
 def load_metadata() -> dict[str, Any]:
-    return json.loads(METADATA_PATH.read_text(encoding="ascii"))
+    return json.loads(METADATA_PATH.read_text(encoding="utf-8"))
 
 
 def resources_by_name() -> dict[str, dict[str, Any]]:
@@ -595,8 +595,8 @@ def main() -> int:
         )
 
     OUT.write_text(
-        json.dumps(output, ensure_ascii=True, indent=2, sort_keys=True),
-        encoding="ascii",
+        json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True),
+        encoding="utf-8",
     )
     print(json.dumps(output, ensure_ascii=True, indent=2, sort_keys=True))
     print(f"WROTE {OUT}")

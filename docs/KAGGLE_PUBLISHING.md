@@ -13,7 +13,10 @@ For this project, `scripts/build_kaggle_cover.py` therefore renders the canonica
 
 Do not replace the cover with a larger landscape canvas unless the upload/crop behavior is re-verified first; otherwise Kaggle can show only the empty top-left portion of the artwork.
 
-## Current V4 release shape
+## Current release shape
+
+The current live Kaggle dataset version is **5**. The repository keeps the `v4`
+release-tooling directory/name for the packaging work unit that produced this shape.
 
 V4 keeps one canonical full-history Parquet and adds a bounded UTF-8 CSV compatibility slice:
 
@@ -21,6 +24,12 @@ V4 keeps one canonical full-history Parquet and adds a bounded UTF-8 CSV compati
 - `south_korea_power_grid_5min_2026_07.csv` — all three sources for July 2026, 10,060,444 rows
 
 Do not publish an equivalent 50+ GB full-history CSV alongside the Parquet. Keep Parquet as the default in notebooks and examples; the July 2026 slice is the CSV-only interoperability path.
+
+The Kaggle dataset metadata API updates the dataset card successfully, but on the
+current processed version it does not persist the new CSV's Data Explorer file/column
+descriptions. The authenticated SDK-style Data Explorer write path returned HTTP 401;
+do not retry it unchanged. This gap is tracked separately from core release QA because
+the live dataset remains `ready` and its Kaggle Usability rating is 1.0.
 
 ## Usability score
 

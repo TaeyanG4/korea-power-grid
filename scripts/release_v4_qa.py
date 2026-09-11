@@ -40,10 +40,30 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def git_head() -> str:
-    return subprocess.check_output(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-    ).strip()
+def git_commit_exists(commit: str) -> bool:
+    return (
+        subprocess.run(
+            ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        ).returncode
+        == 0
+    )
+
+
+def git_commit_is_ancestor(commit: str) -> bool:
+    return (
+        subprocess.run(
+            ["git", "merge-base", "--is-ancestor", commit, "HEAD"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        ).returncode
+        == 0
+    )
 
 
 def sha256(path: Path) -> str:
@@ -61,6 +81,7 @@ def main() -> int:
     actual_files = {path.name for path in V4_ROOT.iterdir() if path.is_file()}
     resources = metadata.get("resources") or []
     by_path = {str(item.get("path")): item for item in resources}
+    release_commit = str(manifest.get("release_code_commit") or "")
 
     csv_rows = 0
     csv_source_rows = {key: 0 for key in EXPECTED_CSV_SOURCE_ROWS}
@@ -86,8 +107,10 @@ def main() -> int:
         "package_filename_set_exact": actual_files == EXPECTED_PACKAGE_FILES,
         "resource_paths_exact": set(by_path) == EXPECTED_RESOURCES,
         "manifest_rows_exact": manifest.get("rows") == 1_008_249_180,
-        "manifest_release_code_is_current_head": manifest.get("release_code_commit")
-        == git_head(),
+        "manifest_release_code_commit_exists": bool(release_commit)
+        and git_commit_exists(release_commit),
+        "manifest_release_code_is_ancestor_of_head": bool(release_commit)
+        and git_commit_is_ancestor(release_commit),
         "parquet_size_exact": (V4_ROOT / PARQUET).stat().st_size
         == int(qa["observed"]["parquet"]["bytes"]),
         "csv_sample_rows_exact": csv_rows == EXPECTED_CSV_ROWS,

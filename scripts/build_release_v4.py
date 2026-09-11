@@ -169,7 +169,7 @@ def metadata() -> dict:
         "subtitle": SUBTITLE,
         "description": (
             "## Analysis-ready South Korea power-grid operations data\n\n"
-            "Version 4 provides **1,008,249,180 normalized Korea Power Exchange (KPX) "
+            "The current release provides **1,008,249,180 normalized Korea Power Exchange (KPX) "
             "five-minute rows from 2015-08 through 2026-07** in one compact ZSTD Parquet "
             "file. A separate UTF-8 CSV contains the complete **2026-07 month** across all "
             "three sources (10,060,444 rows) for CSV-only tools and quick interoperability "
