@@ -7,6 +7,11 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pyarrow as pa
+import pyarrow.compute as pc
+import pyarrow.csv as pacsv
+import pyarrow.dataset as ds
+
 from build_release_v2 import (
     COLUMNS,
     LICENSE_PATH,
@@ -16,6 +21,7 @@ from build_release_v2 import (
     QA_PATH,
     SOURCE_TEXT,
     load_json,
+    sha256,
 )
 
 
@@ -25,10 +31,13 @@ V2_ROOT = ROOT / "data" / "release" / "v2"
 V4_ROOT = ROOT / "data" / "release" / "v4"
 COVER_PATH = ROOT / "docs" / "assets" / "dataset-cover-image.png"
 
-CSV_NAME = "south_korea_power_grid_5min.csv"
+CSV_NAME = "south_korea_power_grid_5min_2026_07.csv"
+CSV_START = datetime(2026, 7, 1)
+CSV_END = datetime(2026, 8, 1)
+CSV_ROWS = 10_060_444
 DATASET_ID = "taeyangg4/south-korea-power-grid-5-minute"
 TITLE = "South Korea Power Grid 5-Minute Data 2015-2026"
-SUBTITLE = "1B+ KPX rows in Parquet + CSV at 5-minute resolution"
+SUBTITLE = "1B+ KPX rows in Parquet + July 2026 CSV sample"
 KEYWORDS = [
     "energy",
     "electricity",
@@ -54,6 +63,63 @@ def link_or_copy(source: Path, destination: Path) -> None:
         shutil.copyfile(source, destination)
 
 
+def build_csv_sample(parquet_source: Path, destination: Path) -> dict:
+    dataset = ds.dataset(parquet_source, format="parquet")
+    predicate = (
+        (ds.field("timestamp") >= CSV_START)
+        & (ds.field("timestamp") < CSV_END)
+    )
+    scanner = dataset.scanner(
+        columns=["timestamp", "source", "generator_id", "value_mw"],
+        filter=predicate,
+        batch_size=131_072,
+    )
+    output_schema = pa.schema(
+        [
+            ("timestamp", pa.string()),
+            ("source", pa.string()),
+            ("generator_id", pa.string()),
+            ("value_mw", pa.float64()),
+        ]
+    )
+    rows = 0
+    source_rows: dict[str, int] = {
+        "demand": 0,
+        "dispatch": 0,
+        "state_estimation": 0,
+    }
+    with pacsv.CSVWriter(destination, output_schema) as writer:
+        for batch in scanner.to_batches():
+            formatted_timestamp = pc.cast(
+                pc.cast(batch.column(0), pa.timestamp("s")), pa.string()
+            )
+            output = pa.RecordBatch.from_arrays(
+                [
+                    formatted_timestamp,
+                    batch.column(1),
+                    batch.column(2),
+                    batch.column(3),
+                ],
+                schema=output_schema,
+            )
+            writer.write_batch(output)
+            rows += output.num_rows
+            counts = pc.value_counts(batch.column(1))
+            for item in counts.to_pylist():
+                source_rows[str(item["values"])] += int(item["counts"])
+
+    if rows != CSV_ROWS:
+        raise RuntimeError(f"CSV sample row count changed: expected {CSV_ROWS}, got {rows}")
+    return {
+        "path": CSV_NAME,
+        "period": {"start": "2026-07-01", "end_exclusive": "2026-08-01"},
+        "rows": rows,
+        "source_rows": source_rows,
+        "bytes": destination.stat().st_size,
+        "sha256": sha256(destination),
+    }
+
+
 def resources() -> list[dict]:
     main_schema = {"fields": COLUMNS}
     return [
@@ -68,8 +134,8 @@ def resources() -> list[dict]:
         {
             "path": CSV_NAME,
             "description": (
-                "Full-history UTF-8 compatibility export with the same 1,008,249,180 "
-                "rows and four columns as the Parquet file. Prefer Parquet for analysis."
+                "UTF-8 CSV compatibility slice for 2026-07 with all three sources and "
+                "10,060,444 rows. Use the Parquet file for the complete 2015-2026 history."
             ),
             "schema": main_schema,
         },
@@ -104,13 +170,14 @@ def metadata() -> dict:
         "description": (
             "## Analysis-ready South Korea power-grid operations data\n\n"
             "Version 4 provides **1,008,249,180 normalized Korea Power Exchange (KPX) "
-            "five-minute rows from 2015-08 through 2026-07** in two equivalent full-history "
-            "formats. `south_korea_power_grid_5min.parquet` is the recommended analytics "
-            "file; `south_korea_power_grid_5min.csv` is a plain UTF-8 compatibility export "
-            "for tools and workflows that require CSV. Both use the columns `timestamp`, "
-            "`source`, `generator_id`, and `value_mw`.\n\n"
-            "The CSV is intentionally redundant for compatibility and is much larger than "
-            "the typed ZSTD Parquet file. For exploratory analysis, notebooks, DuckDB, "
+            "five-minute rows from 2015-08 through 2026-07** in one compact ZSTD Parquet "
+            "file. A separate UTF-8 CSV contains the complete **2026-07 month** across all "
+            "three sources (10,060,444 rows) for CSV-only tools and quick interoperability "
+            "tests. Both files use the columns `timestamp`, `source`, `generator_id`, and "
+            "`value_mw`.\n\n"
+            "Use `south_korea_power_grid_5min.parquet` for the full history. The July 2026 "
+            "CSV is intentionally a bounded compatibility slice rather than a duplicate "
+            "50+ GB copy of the entire table. For exploratory analysis, notebooks, DuckDB, "
             "Polars, Spark, or PyArrow, use Parquet and filter by source/time before "
             "materializing rows.\n\n"
             "### Source semantics\n\n"
@@ -152,13 +219,9 @@ def main() -> int:
         raise RuntimeError("Release license QA has not passed")
 
     parquet_source = V2_ROOT / PARQUET_NAME
-    csv_source = V2_ROOT / CSV_NAME
     expected_parquet_bytes = int(qa["observed"]["parquet"]["bytes"])
-    expected_csv_bytes = int(qa["observed"]["csv"]["bytes"])
     if parquet_source.stat().st_size != expected_parquet_bytes:
         raise RuntimeError("Local Parquet size no longer matches verified QA")
-    if csv_source.stat().st_size != expected_csv_bytes:
-        raise RuntimeError("Local CSV size no longer matches verified QA")
 
     V4_ROOT.mkdir(parents=True, exist_ok=True)
     for path in V4_ROOT.iterdir():
@@ -166,13 +229,13 @@ def main() -> int:
             path.unlink()
 
     link_or_copy(parquet_source, V4_ROOT / PARQUET_NAME)
-    link_or_copy(csv_source, V4_ROOT / CSV_NAME)
+    csv_info = build_csv_sample(parquet_source, V4_ROOT / CSV_NAME)
     shutil.copyfile(V1_ROOT / "missing_source_months.csv", V4_ROOT / "missing_source_months.csv")
     shutil.copyfile(V1_ROOT / "missingness_summary.csv", V4_ROOT / "missingness_summary.csv")
     shutil.copyfile(COVER_PATH, V4_ROOT / "dataset-cover-image.png")
 
     manifest = {
-        "release": "v4-parquet-csv",
+        "release": "v4-parquet-plus-july-csv",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "dataset_id": DATASET_ID,
         "packaging_change_only": True,
@@ -185,11 +248,11 @@ def main() -> int:
         "schema": COLUMNS,
         "files": {
             "parquet": qa["observed"]["parquet"],
-            "csv": qa["observed"]["csv"],
+            "csv_sample": csv_info,
         },
         "packaging_rationale": (
-            "Restore the complete UTF-8 CSV compatibility export alongside the canonical "
-            "Parquet file. Parquet remains the recommended analysis format."
+            "Keep one canonical full-history Parquet and add a bounded July 2026 UTF-8 CSV "
+            "compatibility slice instead of duplicating the full 50+ GB table."
         ),
         "license_review": {
             "checked_at_asia_seoul": license_audit["checked_at_asia_seoul"],
@@ -198,10 +261,10 @@ def main() -> int:
         },
     }
     (V4_ROOT / "release_manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=True, indent=2), encoding="ascii"
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     (V4_ROOT / "dataset-metadata.json").write_text(
-        json.dumps(metadata(), ensure_ascii=True, indent=2), encoding="ascii"
+        json.dumps(metadata(), ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
     print(
@@ -211,8 +274,9 @@ def main() -> int:
                 "root": str(V4_ROOT),
                 "rows": manifest["rows"],
                 "parquet_bytes": expected_parquet_bytes,
-                "csv_bytes": expected_csv_bytes,
-                "total_data_bytes": expected_parquet_bytes + expected_csv_bytes,
+                "csv_sample_rows": csv_info["rows"],
+                "csv_sample_bytes": csv_info["bytes"],
+                "total_data_bytes": expected_parquet_bytes + csv_info["bytes"],
                 "release_code_commit": manifest["release_code_commit"],
             },
             ensure_ascii=False,

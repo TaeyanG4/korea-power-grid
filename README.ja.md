@@ -21,10 +21,10 @@
 | 正規化済み行数 | **1,008,249,180** |
 | 信号 | `demand`, `dispatch`, `state_estimation` |
 | 推奨ファイル | `south_korea_power_grid_5min.parquet` — **1.99 GB** |
-| 互換用ファイル | `south_korea_power_grid_5min.csv` — **50.14 GB** |
+| CSV 互換スライス | `south_korea_power_grid_5min_2026_07.csv` — **2026-07、10,060,444 行** |
 | 原データ提供者 | Korea Power Exchange (KPX) |
 
-現在の Kaggle リリースでは、**全期間の Parquet 1ファイルと同じ10億行超を持つ CSV 1ファイル**を併せて提供します。通常の解析には Parquet を推奨し、50.14 GB の CSV は CSV を必要とするツールやワークフロー向けの互換用です。
+現在の Kaggle リリースでは、**2015-2026 の全履歴を Parquet 1ファイル**にまとめ、CSV が必要なツール向けに **2026年7月の全3信号・10,060,444行の CSV 互換スライス**を追加しています。50GB超の全履歴 CSV は重複公開せず、通常の解析には Parquet を推奨します。
 
 ## 3種類の信号
 

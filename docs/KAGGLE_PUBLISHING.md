@@ -15,18 +15,18 @@ Do not replace the cover with a larger landscape canvas unless the upload/crop b
 
 ## Current V4 release shape
 
-V4 restores the full UTF-8 compatibility CSV alongside the canonical Parquet file:
+V4 keeps one canonical full-history Parquet and adds a bounded UTF-8 CSV compatibility slice:
 
 - `south_korea_power_grid_5min.parquet` — recommended analytics file
-- `south_korea_power_grid_5min.csv` — equivalent full-history compatibility export
+- `south_korea_power_grid_5min_2026_07.csv` — all three sources for July 2026, 10,060,444 rows
 
-The CSV is intentionally much larger. Keep Parquet as the default in notebooks and examples, and use chunked/streaming CSV reads when CSV compatibility is required.
+Do not publish an equivalent 50+ GB full-history CSV alongside the Parquet. Keep Parquet as the default in notebooks and examples; the July 2026 slice is the CSV-only interoperability path.
 
 ## Usability score
 
 Kaggle's Data Explorer descriptions are platform-side metadata. The release metadata contains the target file and column descriptions, but every new dataset version must be read back after processing because CLI submission alone does not prove those descriptions were persisted.
 
-To complete that final criterion, enter these descriptions for **both** `south_korea_power_grid_5min.parquet` and `south_korea_power_grid_5min.csv` (4 columns x 2 files = 8 descriptions):
+To complete that final criterion, enter these descriptions for **both** `south_korea_power_grid_5min.parquet` and `south_korea_power_grid_5min_2026_07.csv` (4 columns x 2 files = 8 descriptions):
 
 | Column | Description |
 |---|---|

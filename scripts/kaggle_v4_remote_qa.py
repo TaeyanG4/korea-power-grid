@@ -19,14 +19,14 @@ DATASET = "taeyangg4/south-korea-power-grid-5-minute"
 PUBLIC_URL = f"https://www.kaggle.com/datasets/{DATASET}"
 EXPECTED_FILES = {
     "south_korea_power_grid_5min.parquet",
-    "south_korea_power_grid_5min.csv",
+    "south_korea_power_grid_5min_2026_07.csv",
     "missing_source_months.csv",
     "missingness_summary.csv",
     "release_manifest.json",
 }
 MAIN_FILES = {
     "south_korea_power_grid_5min.parquet",
-    "south_korea_power_grid_5min.csv",
+    "south_korea_power_grid_5min_2026_07.csv",
 }
 
 
@@ -132,7 +132,7 @@ def main() -> int:
     }
     passed = all(checks.values())
     report = {
-        "release": "v4-parquet-csv",
+        "release": "v4-parquet-plus-july-csv",
         "dataset": DATASET,
         "url": PUBLIC_URL,
         "status": "PASS" if passed else "FAIL",

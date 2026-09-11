@@ -21,10 +21,10 @@ It turns monthly public files from the **Korea Power Exchange (KPX / 한국전�
 | Normalized rows | **1,008,249,180** |
 | Signals | `demand`, `dispatch`, `state_estimation` |
 | Primary file | `south_korea_power_grid_5min.parquet` — **1.99 GB** |
-| Compatibility file | `south_korea_power_grid_5min.csv` — **50.14 GB** |
+| CSV compatibility slice | `south_korea_power_grid_5min_2026_07.csv` — **2026-07, 10,060,444 rows** |
 | Provider | Korea Power Exchange (KPX) |
 
-The current Kaggle release exposes **one Parquet and one equivalent full-history CSV**. Use Parquet for normal analysis; the 50.14 GB CSV is intentionally provided for compatibility with tools and workflows that require CSV.
+The current Kaggle release keeps the **complete 2015-2026 history in one Parquet file** and adds a **bounded July 2026 CSV compatibility slice** containing all three signals. This gives CSV-only tools a practical entry point without duplicating the full 50+ GB table.
 
 ## What the three signals mean
 
@@ -38,7 +38,7 @@ These are related operating signals, but they are **not interchangeable measurem
 
 ## Unified schema
 
-Both main data files use the same four columns:
+The full Parquet and July 2026 CSV use the same four columns:
 
 | Column | Description |
 |---|---|
@@ -89,7 +89,7 @@ See the Kaggle package files `missing_source_months.csv`, `missingness_summary.c
 | GitHub repository | Kaggle dataset |
 |---|---|
 | Source discovery and downloading | Published analysis-ready data |
-| Historical format handling | One unified Parquet + one CSV |
+| Historical format handling | Full-history Parquet + July 2026 CSV slice |
 | Normalization code | Data dictionary and provenance files |
 | QA, manifests, checksums, release gates | Public notebook and dataset card |
 | Reproducible publishing tooling | End-user download / analysis surface |

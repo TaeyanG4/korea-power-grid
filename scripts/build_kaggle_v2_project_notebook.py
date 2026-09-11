@@ -36,7 +36,7 @@ def main() -> int:
             """
             # South Korea Power Grid V2: daily operations study
 
-            This notebook turns the unified Korea Power Exchange (KPX) 5-minute dataset into a compact operations-analysis project. The current release provides the same 1B+ rows as both Parquet and CSV. The notebook deliberately uses **predicate-filtered slices from the Parquet file** instead of loading the 50+ GB compatibility CSV or materializing the full table in memory.
+            This notebook turns the unified Korea Power Exchange (KPX) 5-minute dataset into a compact operations-analysis project. The current release keeps the complete 1B+ row history in Parquet and includes a bounded July 2026 CSV compatibility slice. The notebook deliberately uses **predicate-filtered slices from the Parquet file** for scalable analysis.
 
             We answer four practical questions:
 
@@ -89,12 +89,12 @@ def main() -> int:
 
 
             PARQUET = find_input_file("south_korea_power_grid_5min.parquet")
-            CSV = find_input_file("south_korea_power_grid_5min.csv")
+            CSV = find_input_file("south_korea_power_grid_5min_2026_07.csv")
             MANIFEST = find_input_file("release_manifest.json")
             DATA_DIR = PARQUET.parent
 
             print(f"Parquet: {PARQUET}")
-            print(f"CSV compatibility export: {CSV}")
+            print(f"July 2026 CSV compatibility slice: {CSV}")
             print(f"Manifest: {MANIFEST}")
             """
         ),
@@ -113,7 +113,7 @@ def main() -> int:
             print(f"Rows: {pf.metadata.num_rows:,}")
             print(f"Row groups: {pf.metadata.num_row_groups:,}")
             print(f"Parquet size: {PARQUET.stat().st_size / 1e9:.2f} GB")
-            print(f"CSV size: {CSV.stat().st_size / 1e9:.2f} GB")
+            print(f"July 2026 CSV size: {CSV.stat().st_size / 1e9:.2f} GB")
             print(pf.schema_arrow)
 
             source_counts = (
@@ -131,9 +131,9 @@ def main() -> int:
             """
             ## Memory-conscious reader
 
-            Arrow predicates restrict both the source and timestamp interval. Only the requested columns are materialized. This is the preferred pattern for this release; avoid `pd.read_csv()` on the 50+ GB compatibility CSV for exploratory work.
+            Arrow predicates restrict both the source and timestamp interval. Only the requested columns are materialized. This is the preferred pattern for the full-history Parquet.
 
-            The CSV is still useful for interoperability. When you only need to verify its schema or feed a CSV-only downstream tool, read it incrementally or in chunks rather than loading the full file into pandas.
+            The separate CSV contains all three signals for July 2026. It is useful for interoperability and quick CSV-only experiments without duplicating the full 50+ GB history.
             """
         ),
         code(
@@ -450,7 +450,7 @@ def main() -> int:
             - **Generator portfolio structure:** measure within-source concentration, persistence, and changes in active generator counts over time.
             - **Aggregate operating-signal diagnostics:** compare demand forecast, total BASEPOINT, and total state estimation at matching timestamps while respecting their different semantics.
             - **Missingness and source-quality monitoring:** use the documented unavailable source-months and timestamp gaps to build data-quality dashboards.
-            - **Scalable ML features:** train models on filtered demand windows or sampled generator windows using Parquet predicate pushdown rather than the 50+ GB CSV.
+            - **Scalable ML features:** train models on filtered demand windows or sampled generator windows using Parquet predicate pushdown; use the July 2026 CSV when a CSV-only workflow is required.
 
             For broader historical work, keep the same rule used here: **filter by source, time range, and columns before converting to pandas**. DuckDB, Polars, Spark, or PyArrow can extend the same approach to larger slices.
 

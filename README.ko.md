@@ -21,10 +21,10 @@
 | 정규화 행 수 | **1,008,249,180** |
 | 신호 종류 | `demand`, `dispatch`, `state_estimation` |
 | 권장 파일 | `south_korea_power_grid_5min.parquet` — **1.99 GB** |
-| 호환용 파일 | `south_korea_power_grid_5min.csv` — **50.14 GB** |
+| CSV 호환용 일부 파일 | `south_korea_power_grid_5min_2026_07.csv` — **2026-07, 10,060,444행** |
 | 원 제공기관 | 한국전력거래소(KPX) |
 
-현재 Kaggle 릴리스는 **전체 기간 Parquet 1개와 동일한 10억+ 행을 담은 CSV 1개**를 함께 제공합니다. 일반 분석에는 Parquet 사용을 권장하며, 50.14 GB CSV는 CSV가 필요한 도구·워크플로 호환용입니다.
+현재 Kaggle 릴리스는 **2015-2026 전체 기간을 Parquet 1개**로 제공하고, CSV가 꼭 필요한 도구를 위해 **2026년 7월 전체 신호 10,060,444행을 담은 CSV 호환용 일부 파일**을 함께 제공합니다. 50GB가 넘는 전체 CSV를 중복 배포하지 않아 파일 선택과 다운로드 부담을 줄였습니다.
 
 ## 세 신호의 의미
 
@@ -38,7 +38,7 @@
 
 ## 통합 스키마
 
-Parquet과 CSV는 모두 다음 4개 열을 사용합니다.
+전체 Parquet과 2026-07 CSV는 모두 다음 4개 열을 사용합니다.
 
 | 열 | 설명 |
 |---|---|
@@ -87,7 +87,7 @@ Kaggle 패키지의 `missing_source_months.csv`, `missingness_summary.csv`, `nor
 | GitHub | Kaggle |
 |---|---|
 | 원천 게시물 탐색 및 수집 | 최종 분석용 데이터 배포 |
-| 과거 파일 형식 변화 처리 | 통합 Parquet 1개 + CSV 1개 |
+| 과거 파일 형식 변화 처리 | 전체 Parquet + 2026-07 CSV 일부 파일 |
 | 정규화 코드 | 데이터 사전 및 출처 문서 |
 | QA, manifest, checksum, 릴리스 게이트 | 공개 노트북 및 Data Card |
 
