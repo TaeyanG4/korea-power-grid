@@ -10,7 +10,7 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "audits" / "kaggle_v2_usability_qa.json"
 DATASET = "taeyangg4/south-korea-power-grid-5-minute"
-EXPECTED_NOTEBOOK = "taeyangg4/south-korea-power-grid-v2-quickstart"
+EXPECTED_NOTEBOOK = "taeyangg4/south-korea-power-grid-v2-daily-operations-study"
 
 
 def main() -> int:

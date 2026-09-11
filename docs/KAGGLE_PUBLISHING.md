@@ -13,9 +13,18 @@ For this project, `scripts/build_kaggle_cover.py` therefore renders the canonica
 
 Do not replace the cover with a larger landscape canvas unless the upload/crop behavior is re-verified first; otherwise Kaggle can show only the empty top-left portion of the artwork.
 
+## Current V4 release shape
+
+V4 restores the full UTF-8 compatibility CSV alongside the canonical Parquet file:
+
+- `south_korea_power_grid_5min.parquet` — recommended analytics file
+- `south_korea_power_grid_5min.csv` — equivalent full-history compatibility export
+
+The CSV is intentionally much larger. Keep Parquet as the default in notebooks and examples, and use chunked/streaming CSV reads when CSV compatibility is required.
+
 ## Usability score
 
-Kaggle's current usability breakdown reports every dataset-level criterion as complete except **column descriptions**. The V2 release already includes descriptions in `dataset-metadata.json`, but the public Kaggle API/CLI metadata-update path does not currently propagate those descriptions into the existing Data Explorer table metadata.
+Kaggle's Data Explorer descriptions are platform-side metadata. The release metadata contains the target file and column descriptions, but every new dataset version must be read back after processing because CLI submission alone does not prove those descriptions were persisted.
 
 To complete that final criterion, enter these descriptions for **both** `south_korea_power_grid_5min.parquet` and `south_korea_power_grid_5min.csv` (4 columns x 2 files = 8 descriptions):
 
@@ -26,7 +35,7 @@ To complete that final criterion, enter these descriptions for **both** `south_k
 | `generator_id` | Source-native KPX generator CODE for dispatch/state estimation; blank/null for system-level demand rows. |
 | `value_mw` | MW value. `demand` = demand forecast; `dispatch` = economic-dispatch BASEPOINT; `state_estimation` = state-estimated generator output. |
 
-After those eight Data Explorer descriptions are saved, re-run:
+After those eight main-table Data Explorer descriptions are saved, re-run the live usability check:
 
 ```powershell
 python scripts/kaggle_v2_usability_qa.py
@@ -42,16 +51,16 @@ Build the cover first:
 python scripts/build_kaggle_cover.py
 ```
 
-Then update the existing dataset metadata from inside the V2 release directory so the Kaggle CLI does not create a malformed temporary upload-state path for the cover image:
+For a metadata-only refresh, run the Kaggle metadata update from the current release directory and immediately read the live metadata back. Do not create a dataset version merely to retry metadata persistence.
 
 ```powershell
-cd data/release/v2
+cd data/release/v4
 python -c "from kaggle.api.kaggle_api_extended import KaggleApi; api=KaggleApi(); api.authenticate(); api.dataset_metadata_update('taeyangg4/south-korea-power-grid-5-minute', '.')"
 ```
 
 Finally, verify the public dataset and linked notebook:
 
 ```powershell
-python scripts/kaggle_v2_remote_qa.py
+python scripts/kaggle_v4_remote_qa.py
 python scripts/kaggle_v2_usability_qa.py
 ```

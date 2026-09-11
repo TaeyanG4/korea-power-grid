@@ -1,0 +1,29 @@
+{
+  "release": "v4-parquet-csv",
+  "status": "PASS",
+  "checks": {
+    "unified_data_qa_pass": true,
+    "package_filename_set_exact": true,
+    "resource_paths_exact": true,
+    "manifest_rows_exact": true,
+    "manifest_release_code_is_current_head": true,
+    "parquet_size_exact": true,
+    "csv_size_exact": true,
+    "manifest_parquet_hash_expected": true,
+    "manifest_csv_hash_expected": true,
+    "metadata_id_expected": true,
+    "metadata_subtitle_valid": true,
+    "metadata_description_present": true,
+    "all_resource_descriptions_present": true,
+    "main_schemas_exact": true,
+    "main_column_descriptions_complete": true
+  },
+  "observed": {
+    "package_files": 7,
+    "upload_resources": 5,
+    "rows": 1008249180,
+    "parquet_bytes": 1992834865,
+    "csv_bytes": 50138174924,
+    "total_data_bytes": 52131009789
+  }
+}

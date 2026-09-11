@@ -14,7 +14,7 @@ It turns monthly public files from the **Korea Power Exchange (KPX / 한국전�
 
 ## Dataset at a glance
 
-| Item | V2 release |
+| Item | Current Kaggle release (V4) |
 |---|---|
 | Observed KPX board range | **2015-08 → 2026-07** |
 | Resolution | **5 minutes** |
@@ -24,7 +24,7 @@ It turns monthly public files from the **Korea Power Exchange (KPX / 한국전�
 | Compatibility file | `south_korea_power_grid_5min.csv` — **50.14 GB** |
 | Provider | Korea Power Exchange (KPX) |
 
-V2 deliberately replaces hundreds of monthly analysis files with **one Parquet and one equivalent CSV**. Use Parquet for normal analysis; the CSV is mainly for compatibility with tools that cannot read Parquet.
+The current Kaggle release exposes **one Parquet and one equivalent full-history CSV**. Use Parquet for normal analysis; the 50.14 GB CSV is intentionally provided for compatibility with tools and workflows that require CSV.
 
 ## What the three signals mean
 
@@ -38,7 +38,7 @@ These are related operating signals, but they are **not interchangeable measurem
 
 ## Unified schema
 
-Both V2 data files use the same four columns:
+Both main data files use the same four columns:
 
 | Column | Description |
 |---|---|

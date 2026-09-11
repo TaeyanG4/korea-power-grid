@@ -1,0 +1,66 @@
+{
+  "release": "v2-unified",
+  "dataset": "taeyangg4/south-korea-power-grid-5-minute",
+  "url": "https://www.kaggle.com/datasets/taeyangg4/south-korea-power-grid-5-minute",
+  "status": "FAIL",
+  "checks": {
+    "local_v2_qa_pass": true,
+    "dataset_status_ready": true,
+    "dataset_version_2": true,
+    "dataset_public": true,
+    "remote_resource_count_9": true,
+    "remote_filename_set_exact": true,
+    "remote_file_sizes_exact": true,
+    "remote_total_bytes_exact": true,
+    "remote_title_matches": true,
+    "remote_subtitle_matches": true,
+    "remote_license_other": true,
+    "remote_description_matches": true,
+    "remote_keywords_match": true,
+    "remote_update_frequency_monthly": true,
+    "remote_provenance_matches": true,
+    "all_file_descriptions_present": false,
+    "main_file_descriptions_present": false,
+    "anonymous_http_200": true,
+    "anonymous_no_login_redirect": true,
+    "public_og_image_nondefault": true
+  },
+  "problems": {
+    "missing_remote": [],
+    "unexpected_remote": [],
+    "size_mismatches": [],
+    "resources_without_descriptions": [
+      "DATA_DICTIONARY.md",
+      "README.md",
+      "SOURCE_LICENSE.md",
+      "missing_source_months.csv",
+      "missingness_summary.csv",
+      "normalization_exceptions.json",
+      "release_manifest.json",
+      "south_korea_power_grid_5min.csv",
+      "south_korea_power_grid_5min.parquet"
+    ]
+  },
+  "observed": {
+    "dataset_status": "ready",
+    "current_version_number": 2,
+    "is_private": null,
+    "remote_file_count": 9,
+    "remote_total_bytes": 52131019558,
+    "usability_rating": 0.8235294,
+    "last_updated": "2026-09-10 09:39:23.827000",
+    "og_image": "https://storage.googleapis.com/kaggle-datasets-images/11964918/19553651/f503623d6351d26010f6a183a1b51eda/dataset-card.png?t=2026-09-10-20-33-01",
+    "file_descriptions": {
+      "DATA_DICTIONARY.md": "",
+      "README.md": "",
+      "SOURCE_LICENSE.md": "",
+      "normalization_exceptions.json": "",
+      "release_manifest.json": "",
+      "missing_source_months.csv": "",
+      "missingness_summary.csv": "",
+      "south_korea_power_grid_5min.csv": "",
+      "south_korea_power_grid_5min.parquet": ""
+    }
+  },
+  "note": "Kaggle's ListDatasetFiles response does not reliably expose column metadata. The V2 package QA verifies the four column descriptions supplied at version creation; the final platform-level Usability rating is checked separately."
+}

@@ -1,0 +1,73 @@
+{
+  "context": {
+    "databundle_version_id": 20684677,
+    "dataset_numeric_id": 11964918,
+    "dataset_version_id": 19569060,
+    "file_count": 4,
+    "table_shapes": {
+      "missing_source_months.csv": [
+        8,
+        0
+      ],
+      "missingness_summary.csv": [
+        3,
+        0
+      ],
+      "south_korea_power_grid_5min.parquet": [
+        0,
+        0
+      ]
+    },
+    "version_number": 3
+  },
+  "coverage_before": {
+    "all_column_descriptions_exact": false,
+    "all_column_descriptions_present": false,
+    "all_file_descriptions_exact": false,
+    "all_file_descriptions_present": false,
+    "exact_column_descriptions": 4,
+    "exact_file_descriptions": 1,
+    "metadata_complete": false,
+    "metadata_exact": false,
+    "per_table": {
+      "missing_source_months.csv": {
+        "exact_column_descriptions": 0,
+        "present_column_descriptions": 0,
+        "target_column_descriptions": 4
+      },
+      "missingness_summary.csv": {
+        "exact_column_descriptions": 0,
+        "present_column_descriptions": 0,
+        "target_column_descriptions": 7
+      },
+      "south_korea_power_grid_5min.parquet": {
+        "exact_column_descriptions": 4,
+        "present_column_descriptions": 4,
+        "target_column_descriptions": 4
+      }
+    },
+    "present_column_descriptions": 4,
+    "present_file_descriptions": 1,
+    "target_column_descriptions": 15,
+    "target_file_descriptions": 4
+  },
+  "dataset": "taeyangg4/south-korea-power-grid-5-minute",
+  "legacy_dataset_id_only_usability_before": {
+    "columnDescriptionScore": 0,
+    "coverImageScore": 1,
+    "fileFormatScore": 1,
+    "licenseScore": 1,
+    "overviewScore": 1,
+    "provenanceScore": 1,
+    "publicKernelScore": 1,
+    "score": 0.8235294,
+    "subtitleScore": 1,
+    "tagScore": 1,
+    "updateFrequencyScore": 1
+  },
+  "mode": "dry-run",
+  "plan": {
+    "columns": 15,
+    "files": 4
+  }
+}

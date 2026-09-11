@@ -10,6 +10,8 @@ This page preserves the phase-oriented build history that previously occupied th
 - **Phase 3 — historical backfill:** complete through the full observed KPX board history, `2015-08` through `2026-07` (`PASS WITH OBSERVATIONS`)
 - **V1:** published on Kaggle after package QA, private remote QA, final license gate, and anonymous public-access verification
 - **V2:** unified full-history release with one Parquet and one equivalent CSV, totaling `1,008,249,180` normalized rows
+- **V3:** packaging-only Parquet-first release that removed the 50+ GB duplicate CSV
+- **V4:** restores the full UTF-8 CSV compatibility export alongside the canonical Parquet file; data rows and coverage are unchanged from V2/V3
 
 ## Phase and release documents
 

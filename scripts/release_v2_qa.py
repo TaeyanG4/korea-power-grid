@@ -24,11 +24,35 @@ EXPECTED_PACKAGE_FILES = EXPECTED_RESOURCE_PATHS | {
     "dataset-metadata.json",
     "dataset-cover-image.png",
 }
-MAIN_FILES = {
-    "south_korea_power_grid_5min.parquet",
-    "south_korea_power_grid_5min.csv",
+EXPECTED_COLUMNS_BY_FILE = {
+    "south_korea_power_grid_5min.parquet": [
+        "timestamp",
+        "source",
+        "generator_id",
+        "value_mw",
+    ],
+    "south_korea_power_grid_5min.csv": [
+        "timestamp",
+        "source",
+        "generator_id",
+        "value_mw",
+    ],
+    "missing_source_months.csv": [
+        "source",
+        "month",
+        "evidence",
+        "source_article_url",
+    ],
+    "missingness_summary.csv": [
+        "source",
+        "months",
+        "months_with_missing",
+        "missing_timestamps",
+        "normalization_exception_timestamps_removed",
+        "max_monthly_missing",
+        "max_missing_month",
+    ],
 }
-EXPECTED_COLUMNS = ["timestamp", "source", "generator_id", "value_mw"]
 
 
 def load_json(path: Path) -> dict:
@@ -45,17 +69,23 @@ def main() -> int:
     by_path = {str(item.get("path")): item for item in resources}
     actual_files = {path.name for path in V2_ROOT.iterdir() if path.is_file()}
 
-    main_metadata_ok = True
-    main_column_metadata_ok = True
-    for name in MAIN_FILES:
+    tabular_column_metadata_ok = True
+    described_columns = 0
+    expected_column_count = sum(len(names) for names in EXPECTED_COLUMNS_BY_FILE.values())
+    for name, expected_columns in EXPECTED_COLUMNS_BY_FILE.items():
         resource = by_path.get(name, {})
-        if not str(resource.get("description", "")).strip():
-            main_metadata_ok = False
         fields = resource.get("schema", {}).get("fields", [])
-        if [field.get("name") for field in fields] != EXPECTED_COLUMNS:
-            main_column_metadata_ok = False
-        if not all(str(field.get("title", "")).strip() for field in fields):
-            main_column_metadata_ok = False
+        if [field.get("name") for field in fields] != expected_columns:
+            tabular_column_metadata_ok = False
+        if not all(
+            str(field.get("description") or field.get("title") or "").strip()
+            for field in fields
+        ):
+            tabular_column_metadata_ok = False
+        described_columns += sum(
+            bool(str(field.get("description") or field.get("title") or "").strip())
+            for field in fields
+        )
 
     checks = {
         "unified_data_qa_pass": data_qa.get("status") == "PASS",
@@ -85,8 +115,8 @@ def main() -> int:
         "all_resource_descriptions_present": all(
             str(item.get("description", "")).strip() for item in resources
         ),
-        "main_file_descriptions_present": main_metadata_ok,
-        "main_column_descriptions_complete": main_column_metadata_ok,
+        "all_tabular_column_descriptions_complete": tabular_column_metadata_ok,
+        "all_19_tabular_columns_described": described_columns == expected_column_count == 19,
         "parquet_smaller_than_csv": int(
             data_qa["observed"]["parquet"]["bytes"]
         )
@@ -112,6 +142,8 @@ def main() -> int:
             "total_data_bytes": int(data_qa["observed"]["parquet"]["bytes"])
             + int(data_qa["observed"]["csv"]["bytes"]),
             "resource_paths": sorted(by_path),
+            "described_tabular_columns": described_columns,
+            "expected_tabular_columns": expected_column_count,
         },
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -19,6 +19,8 @@ data/release/**
 
 # Long-running local execution logs are not release metadata.
 data/audits/logs/**
+data/audits/.*.png
+tmp_research/
 
 *.part
 *.tmp

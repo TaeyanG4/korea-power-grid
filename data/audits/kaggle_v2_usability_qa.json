@@ -1,0 +1,21 @@
+{
+  "release": "v2-unified",
+  "dataset": "taeyangg4/south-korea-power-grid-5-minute",
+  "checked_at_utc": "2026-09-10T22:35:51.908762+00:00",
+  "status": "PENDING",
+  "checks": {
+    "usability_rating_1": false,
+    "quickstart_notebook_public_and_linked": true
+  },
+  "observed": {
+    "usability_rating": 0.8235294,
+    "last_updated": "2026-09-10 09:39:23.827000",
+    "linked_kernels": [
+      {
+        "ref": "taeyangg4/south-korea-power-grid-v2-daily-operations-study",
+        "title": "South Korea Power Grid V2 - Daily Operations Study",
+        "is_private": false
+      }
+    ]
+  }
+}

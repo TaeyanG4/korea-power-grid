@@ -18,8 +18,8 @@
     "cover_exists": true,
     "resource_paths_exact": true,
     "all_resource_descriptions_present": true,
-    "main_file_descriptions_present": true,
-    "main_column_descriptions_complete": true,
+    "all_tabular_column_descriptions_complete": true,
+    "all_19_tabular_columns_described": true,
     "parquet_smaller_than_csv": true,
     "total_data_bytes_below_200gb": true
   },
@@ -40,6 +40,8 @@
       "release_manifest.json",
       "south_korea_power_grid_5min.csv",
       "south_korea_power_grid_5min.parquet"
-    ]
+    ],
+    "described_tabular_columns": 19,
+    "expected_tabular_columns": 19
   }
 }

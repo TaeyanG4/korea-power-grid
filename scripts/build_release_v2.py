@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 import hashlib
 import json
 import shutil
@@ -45,7 +44,7 @@ SOURCE_TEXT = (
 COLUMNS = [
     {
         "name": "timestamp",
-        "title": (
+        "description": (
             "Five-minute source timestamp from KPX. Parquet stores timestamp[ns]; "
             "CSV uses YYYY-MM-DD HH:MM:SS text. No timezone is asserted."
         ),
@@ -53,7 +52,7 @@ COLUMNS = [
     },
     {
         "name": "source",
-        "title": (
+        "description": (
             "Measurement family: demand, dispatch, or state_estimation. This field "
             "determines the semantic meaning of value_mw."
         ),
@@ -61,7 +60,7 @@ COLUMNS = [
     },
     {
         "name": "generator_id",
-        "title": (
+        "description": (
             "Source-native KPX generator CODE for dispatch/state_estimation; blank/null "
             "for system-level demand rows."
         ),
@@ -69,11 +68,90 @@ COLUMNS = [
     },
     {
         "name": "value_mw",
-        "title": (
+        "description": (
             "MW value. demand = demand forecast; dispatch = economic-dispatch BASEPOINT; "
             "state_estimation = state-estimated generator output."
         ),
         "type": "numeric",
+    },
+]
+
+MISSING_SOURCE_MONTHS_COLUMNS = [
+    {
+        "name": "source",
+        "description": (
+            "KPX measurement family whose official monthly attachment was unavailable: "
+            "demand, dispatch, or state_estimation."
+        ),
+        "type": "string",
+    },
+    {
+        "name": "month",
+        "description": "Affected source month in YYYY-MM format.",
+        "type": "datetime",
+    },
+    {
+        "name": "evidence",
+        "description": (
+            "Evidence describing why the official source-month attachment is treated as "
+            "unavailable."
+        ),
+        "type": "string",
+    },
+    {
+        "name": "source_article_url",
+        "description": (
+            "Official KPX board article URL used to verify the unavailable attachment."
+        ),
+        "type": "string",
+    },
+]
+
+MISSINGNESS_SUMMARY_COLUMNS = [
+    {
+        "name": "source",
+        "description": "Measurement family: demand, dispatch, or state_estimation.",
+        "type": "string",
+    },
+    {
+        "name": "months",
+        "description": "Number of calendar months evaluated for this source in the release.",
+        "type": "integer",
+    },
+    {
+        "name": "months_with_missing",
+        "description": (
+            "Number of source months containing one or more missing five-minute timestamps."
+        ),
+        "type": "integer",
+    },
+    {
+        "name": "missing_timestamps",
+        "description": (
+            "Total count of missing five-minute timestamps identified for this source "
+            "across the release period."
+        ),
+        "type": "integer",
+    },
+    {
+        "name": "normalization_exception_timestamps_removed",
+        "description": (
+            "Number of timestamps intentionally removed under documented normalization "
+            "exceptions."
+        ),
+        "type": "integer",
+    },
+    {
+        "name": "max_monthly_missing",
+        "description": (
+            "Largest number of missing five-minute timestamps in any single source month."
+        ),
+        "type": "integer",
+    },
+    {
+        "name": "max_missing_month",
+        "description": "Source month in YYYY-MM format with the largest missing count.",
+        "type": "datetime",
     },
 ]
 
@@ -263,10 +341,12 @@ def resources() -> list[dict]:
         {
             "path": "missing_source_months.csv",
             "description": "Eight official source-month attachments that were unavailable and not fabricated.",
+            "schema": {"fields": MISSING_SOURCE_MONTHS_COLUMNS},
         },
         {
             "path": "missingness_summary.csv",
             "description": "Source-level summary of missing five-minute timestamps across the release period.",
+            "schema": {"fields": MISSINGNESS_SUMMARY_COLUMNS},
         },
         {
             "path": "normalization_exceptions.json",
@@ -314,24 +394,7 @@ def metadata() -> dict:
             "The original provider is **Korea Power Exchange (한국전력거래소, KPX)**. This "
             "is a cleaned derivative dataset, not an official KPX distribution channel. "
             "Official data.go.kr records were re-checked before release and report "
-            "`이용허락범위 제한 없음`; Kaggle license metadata therefore remains `other`.\n\n"
-            "### 한국어 요약\n\n"
-            "한국전력거래소(KPX)의 5분 단위 전력수요 예측, 발전기별 경제급전 "
-            "BASEPOINT, 발전기별 상태추정 출력을 2015-08부터 2026-07까지 하나의 "
-            "통합 long-format 데이터로 정규화했습니다. 일반 분석에는 1.99 GB Parquet을 "
-            "권장하며, 50.14 GB CSV는 호환용입니다. 누락 시각은 임의 보간하지 않고 "
-            "확보할 수 없었던 공식 첨부파일과 정규화 예외를 별도 파일로 공개합니다.\n\n"
-            "### 日本語の概要\n\n"
-            "Korea Power Exchange (KPX) が公開する5分間隔の需要予測、発電機別の "
-            "Economic Dispatch BASEPOINT、状態推定出力を、2015-08から2026-07までの "
-            "統一 long-format データに正規化しました。通常の解析には1.99 GBのParquetを "
-            "推奨し、50.14 GBのCSVは互換用です。欠損時刻は補間せず、取得不能だった "
-            "公式添付ファイルと正規化例外を明示しています。\n\n"
-            "### 简体中文摘要\n\n"
-            "本数据集将 Korea Power Exchange (KPX) 发布的5分钟电力需求预测、发电机经济调度 "
-            "BASEPOINT 和状态估计出力，标准化为覆盖2015-08至2026-07的统一 long-format 数据。"
-            "日常分析推荐使用1.99 GB的Parquet，50.14 GB的CSV主要用于兼容。缺失时间点不会被 "
-            "静默插值，无法获取的官方附件和标准化例外均有单独记录。"
+            "`이용허락범위 제한 없음`; Kaggle license metadata therefore remains `other`."
         ),
         "id": DATASET_ID,
         "licenses": [{"name": "other"}],
