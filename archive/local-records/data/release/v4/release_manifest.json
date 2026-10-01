@@ -1,0 +1,71 @@
+{
+  "release": "v4-parquet-plus-july-csv",
+  "generated_at_utc": "2026-09-11T04:17:04.274318+00:00",
+  "dataset_id": "taeyangg4/south-korea-power-grid-5-minute",
+  "packaging_change_only": true,
+  "release_code_commit": "c8d4fc9f64c5dbe2c8db8705ff932f459de3cecc",
+  "period": {
+    "start": "2015-08",
+    "end": "2026-07",
+    "months": 132
+  },
+  "logical_source_month_records": 396,
+  "source_unavailable_records": 8,
+  "rows": 1008249180,
+  "source_rows": {
+    "demand": 1122013,
+    "dispatch": 479357481,
+    "state_estimation": 527769686
+  },
+  "schema": [
+    {
+      "name": "timestamp",
+      "description": "Five-minute source timestamp from KPX. Parquet stores timestamp[ns]; CSV uses YYYY-MM-DD HH:MM:SS text. No timezone is asserted.",
+      "type": "datetime"
+    },
+    {
+      "name": "source",
+      "description": "Measurement family: demand, dispatch, or state_estimation. This field determines the semantic meaning of value_mw.",
+      "type": "string"
+    },
+    {
+      "name": "generator_id",
+      "description": "Source-native KPX generator CODE for dispatch/state_estimation; blank/null for system-level demand rows.",
+      "type": "string"
+    },
+    {
+      "name": "value_mw",
+      "description": "MW value. demand = demand forecast; dispatch = economic-dispatch BASEPOINT; state_estimation = state-estimated generator output.",
+      "type": "numeric"
+    }
+  ],
+  "files": {
+    "parquet": {
+      "path": "data/release/v2/south_korea_power_grid_5min.parquet",
+      "bytes": 1992834865,
+      "row_groups": 2296,
+      "sha256": "c8eb5fb8113e328cfe9595231135babc9a25688a2bbb0e3b3a803c7e6f792ea6"
+    },
+    "csv_sample": {
+      "path": "south_korea_power_grid_5min_2026_07.csv",
+      "period": {
+        "start": "2026-07-01",
+        "end_exclusive": "2026-08-01"
+      },
+      "rows": 10060444,
+      "source_rows": {
+        "demand": 8928,
+        "dispatch": 4679698,
+        "state_estimation": 5371818
+      },
+      "bytes": 502736368,
+      "sha256": "825b0e75e1580746829b187b5dba747e9d4de1d15e5eeb55f05ac4dc88e18ed3"
+    }
+  },
+  "packaging_rationale": "Keep one canonical full-history Parquet and add a bounded July 2026 UTF-8 CSV compatibility slice instead of duplicating the full 50+ GB table.",
+  "license_review": {
+    "checked_at_asia_seoul": "2026-09-10T18:11:58.754754+09:00",
+    "status": "PASS",
+    "kaggle_license_category": "other"
+  }
+}

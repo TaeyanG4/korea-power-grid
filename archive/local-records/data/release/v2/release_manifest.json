@@ -1,0 +1,64 @@
+{
+  "release": "v2-unified",
+  "generated_at_utc": "2026-09-10T22:32:39.974796+00:00",
+  "git_commit": "aa8d26cc21d69ef9393fd9ec480a150ed5700f6e",
+  "dataset_id": "taeyangg4/south-korea-power-grid-5-minute",
+  "period": {
+    "start": "2015-08",
+    "end": "2026-07",
+    "months": 132
+  },
+  "logical_source_month_records": 396,
+  "source_unavailable_records": 8,
+  "rows": 1008249180,
+  "source_rows": {
+    "demand": 1122013,
+    "dispatch": 479357481,
+    "state_estimation": 527769686
+  },
+  "schema": [
+    {
+      "name": "timestamp",
+      "description": "Five-minute source timestamp from KPX. Parquet stores timestamp[ns]; CSV uses YYYY-MM-DD HH:MM:SS text. No timezone is asserted.",
+      "type": "datetime"
+    },
+    {
+      "name": "source",
+      "description": "Measurement family: demand, dispatch, or state_estimation. This field determines the semantic meaning of value_mw.",
+      "type": "string"
+    },
+    {
+      "name": "generator_id",
+      "description": "Source-native KPX generator CODE for dispatch/state_estimation; blank/null for system-level demand rows.",
+      "type": "string"
+    },
+    {
+      "name": "value_mw",
+      "description": "MW value. demand = demand forecast; dispatch = economic-dispatch BASEPOINT; state_estimation = state-estimated generator output.",
+      "type": "numeric"
+    }
+  ],
+  "files": {
+    "parquet": {
+      "path": "data/release/v2/south_korea_power_grid_5min.parquet",
+      "bytes": 1992834865,
+      "row_groups": 2296,
+      "sha256": "c8eb5fb8113e328cfe9595231135babc9a25688a2bbb0e3b3a803c7e6f792ea6"
+    },
+    "csv": {
+      "path": "data/release/v2/south_korea_power_grid_5min.csv",
+      "bytes": 50138174924,
+      "data_rows": 1008249180,
+      "sha256": "c377df3f0698cd728d1141a7e52a7f4ec3f3b35b1f8b83c1a7bd907831aeb5fb"
+    }
+  },
+  "upstream_v1": {
+    "manifest": "data/release/v1/release_manifest.json",
+    "manifest_sha256": "0418b465e8ac267b94a523d34e68858f859efe621583bc602ed465e32a2ccef0"
+  },
+  "license_review": {
+    "checked_at_asia_seoul": "2026-09-10T18:11:58.754754+09:00",
+    "status": "PASS",
+    "kaggle_license_category": "other"
+  }
+}

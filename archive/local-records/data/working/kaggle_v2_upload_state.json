@@ -1,0 +1,10 @@
+﻿{
+    "pid":  61876,
+    "started_at":  "2026-09-10T18:12:49.9382662+09:00",
+    "dataset":  "taeyangg4/south-korea-power-grid-5-minute",
+    "expected_version":  2,
+    "release_dir":  "H:\\dev\\kaggle-data\\korea-power-grid\\data\\release\\v2",
+    "stdout_log":  "H:\\dev\\kaggle-data\\korea-power-grid\\data\\audits\\logs\\kaggle_v2_upload.out.log",
+    "stderr_log":  "H:\\dev\\kaggle-data\\korea-power-grid\\data\\audits\\logs\\kaggle_v2_upload.err.log",
+    "command":  "kaggle datasets version -p . -m \u003cversion message\u003e -t"
+}

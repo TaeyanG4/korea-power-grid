@@ -1,0 +1,8 @@
+{
+  "stage": "csv",
+  "status": "complete",
+  "path": "H:\\dev\\kaggle-data\\korea-power-grid\\data\\release\\v2\\south_korea_power_grid_5min.csv",
+  "rows": 1008249180,
+  "bytes": 50138174924,
+  "completed_at_utc": "2026-09-10T08:53:49.625858+00:00"
+}

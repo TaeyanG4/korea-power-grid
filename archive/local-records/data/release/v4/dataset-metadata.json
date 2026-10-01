@@ -1,0 +1,156 @@
+{
+  "title": "South Korea Power Grid 5-Minute Data 2015-2026",
+  "subtitle": "1B+ KPX rows in Parquet + July 2026 CSV sample",
+  "description": "## Analysis-ready South Korea power-grid operations data\n\nThe current release provides **1,008,249,180 normalized Korea Power Exchange (KPX) five-minute rows from 2015-08 through 2026-07** in one compact ZSTD Parquet file. A separate UTF-8 CSV contains the complete **2026-07 month** across all three sources (10,060,444 rows) for CSV-only tools and quick interoperability tests. Both files use the columns `timestamp`, `source`, `generator_id`, and `value_mw`.\n\nUse `south_korea_power_grid_5min.parquet` for the full history. The July 2026 CSV is intentionally a bounded compatibility slice rather than a duplicate 50+ GB copy of the entire table. For exploratory analysis, notebooks, DuckDB, Polars, Spark, or PyArrow, use Parquet and filter by source/time before materializing rows.\n\n### Source semantics\n\n`source=demand` stores the five-minute system demand forecast and has no generator ID. `source=dispatch` stores generator economic-dispatch BASEPOINT targets. `source=state_estimation` stores state-estimated generator output. All values are MW. Generator codes remain source-native and are not joined by a guessed crosswalk.\n\n### Data-quality policy\n\nMissing timestamps remain missing, eight unavailable official source-month attachments are documented explicitly, exact duplicates are removed only under the documented candidate-key rule, and one ambiguous 2016-06 state-estimation timestamp with two conflicting full-generator snapshots is excluded rather than arbitrarily selecting a version. Timestamps are timezone-naive because verified timezone metadata is not present in the source files.\n\n### Provenance\n\nThe original provider is **Korea Power Exchange (KPX), Republic of Korea**. This is a cleaned derivative dataset, not an official KPX distribution channel. Official KPX/data.go.kr source links are recorded in the provenance field; Kaggle license metadata remains `other`.",
+  "id": "taeyangg4/south-korea-power-grid-5-minute",
+  "id_no": 11964918,
+  "licenses": [
+    {
+      "name": "other"
+    }
+  ],
+  "keywords": [
+    "energy",
+    "electricity",
+    "government",
+    "time series analysis",
+    "tabular",
+    "asia"
+  ],
+  "expectedUpdateFrequency": "monthly",
+  "userSpecifiedSources": "Korea Power Exchange (KPX), Republic of Korea. Official monthly boards: [5-minute demand forecast](https://www.kpx.or.kr/board.es?mid=a10109020700&bid=0065), [generator economic dispatch](https://www.kpx.or.kr/board.es?mid=a10109020200&bid=0070), and [generator state estimation](https://www.kpx.or.kr/board.es?mid=a10109020400&bid=0068). Official data.go.kr records: [demand](https://www.data.go.kr/data/15051432/fileData.do), [dispatch](https://www.data.go.kr/data/15051425/fileData.do), and [state estimation](https://www.data.go.kr/data/15051426/fileData.do). The official records were re-checked before release and state 이용허락범위 제한 없음.",
+  "image": "dataset-cover-image.png",
+  "resources": [
+    {
+      "path": "south_korea_power_grid_5min.parquet",
+      "description": "Recommended analytics file: the complete normalized 2015-2026 KPX 5-minute dataset in one ZSTD Parquet file with 1,008,249,180 rows.",
+      "schema": {
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Five-minute source timestamp from KPX. Parquet stores timestamp[ns]; CSV uses YYYY-MM-DD HH:MM:SS text. No timezone is asserted.",
+            "type": "datetime"
+          },
+          {
+            "name": "source",
+            "description": "Measurement family: demand, dispatch, or state_estimation. This field determines the semantic meaning of value_mw.",
+            "type": "string"
+          },
+          {
+            "name": "generator_id",
+            "description": "Source-native KPX generator CODE for dispatch/state_estimation; blank/null for system-level demand rows.",
+            "type": "string"
+          },
+          {
+            "name": "value_mw",
+            "description": "MW value. demand = demand forecast; dispatch = economic-dispatch BASEPOINT; state_estimation = state-estimated generator output.",
+            "type": "numeric"
+          }
+        ]
+      }
+    },
+    {
+      "path": "south_korea_power_grid_5min_2026_07.csv",
+      "description": "UTF-8 CSV compatibility slice for 2026-07 with all three sources and 10,060,444 rows. Use the Parquet file for the complete 2015-2026 history.",
+      "schema": {
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Five-minute source timestamp from KPX. Parquet stores timestamp[ns]; CSV uses YYYY-MM-DD HH:MM:SS text. No timezone is asserted.",
+            "type": "datetime"
+          },
+          {
+            "name": "source",
+            "description": "Measurement family: demand, dispatch, or state_estimation. This field determines the semantic meaning of value_mw.",
+            "type": "string"
+          },
+          {
+            "name": "generator_id",
+            "description": "Source-native KPX generator CODE for dispatch/state_estimation; blank/null for system-level demand rows.",
+            "type": "string"
+          },
+          {
+            "name": "value_mw",
+            "description": "MW value. demand = demand forecast; dispatch = economic-dispatch BASEPOINT; state_estimation = state-estimated generator output.",
+            "type": "numeric"
+          }
+        ]
+      }
+    },
+    {
+      "path": "missing_source_months.csv",
+      "description": "Eight official source-month attachments that were unavailable and not fabricated.",
+      "schema": {
+        "fields": [
+          {
+            "name": "source",
+            "description": "KPX measurement family whose official monthly attachment was unavailable: demand, dispatch, or state_estimation.",
+            "type": "string"
+          },
+          {
+            "name": "month",
+            "description": "Affected source month in YYYY-MM format.",
+            "type": "datetime"
+          },
+          {
+            "name": "evidence",
+            "description": "Evidence describing why the official source-month attachment is treated as unavailable.",
+            "type": "string"
+          },
+          {
+            "name": "source_article_url",
+            "description": "Official KPX board article URL used to verify the unavailable attachment.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "path": "missingness_summary.csv",
+      "description": "Source-level summary of missing five-minute timestamps across the release period.",
+      "schema": {
+        "fields": [
+          {
+            "name": "source",
+            "description": "Measurement family: demand, dispatch, or state_estimation.",
+            "type": "string"
+          },
+          {
+            "name": "months",
+            "description": "Number of calendar months evaluated for this source in the release.",
+            "type": "integer"
+          },
+          {
+            "name": "months_with_missing",
+            "description": "Number of source months containing one or more missing five-minute timestamps.",
+            "type": "integer"
+          },
+          {
+            "name": "missing_timestamps",
+            "description": "Total count of missing five-minute timestamps identified for this source across the release period.",
+            "type": "integer"
+          },
+          {
+            "name": "normalization_exception_timestamps_removed",
+            "description": "Number of timestamps intentionally removed under documented normalization exceptions.",
+            "type": "integer"
+          },
+          {
+            "name": "max_monthly_missing",
+            "description": "Largest number of missing five-minute timestamps in any single source month.",
+            "type": "integer"
+          },
+          {
+            "name": "max_missing_month",
+            "description": "Source month in YYYY-MM format with the largest missing count.",
+            "type": "datetime"
+          }
+        ]
+      }
+    },
+    {
+      "path": "release_manifest.json",
+      "description": "V4 packaging manifest with row counts, source counts, Parquet/CSV checksums, lineage, and release-code Git commit."
+    }
+  ]
+}
